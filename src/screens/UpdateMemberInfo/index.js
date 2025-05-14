@@ -1,0 +1,1 @@
+export { UpdateMemberInfo } from "./UpdateMemberInfo";

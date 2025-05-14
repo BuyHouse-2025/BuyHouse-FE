@@ -1,0 +1,49 @@
+.screen-8 {
+  background-color: #ffffff01;
+
+  border-radius: 10px;
+  height: 444px;
+  overflow: hidden;
+  width: 363px;
+}
+
+.screen-8 .overlap-group-5 {
+  height: 443px;
+  left: 1px;
+  position: relative;
+  width: 361px;
+}
+
+.screen-8 .background-14 {
+  background-color: #ffffff;
+  height: 442px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 361px;
+}
+
+.screen-8 .view-10 {
+  background-color: #3b81f5;
+  border-radius: 6px;
+  height: 40px;
+  left: 16px;
+  position: absolute;
+  top: 388px;
+  width: 329px;
+}
+
+.screen-8 .text-wrapper-126 {
+  color: #ffffff;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 12.9px;
+  font-weight: 100;
+  height: 13px;
+  left: 124px;
+  letter-spacing: -0.40px;
+  line-height: 13px;
+  position: absolute;
+  text-align: center;
+  top: 12px;
+  white-space: nowrap;
+}

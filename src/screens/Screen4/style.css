@@ -1,0 +1,261 @@
+.screen-4 {
+  background-color: #ffffff;
+  border-radius: 16px;
+  height: 349px;
+  overflow: hidden;
+  width: 450px;
+}
+
+.screen-4 .overlap-group-2 {
+  height: 308px;
+  position: relative;
+}
+
+.screen-4 .frame-91 {
+  height: 238px;
+  left: 35px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 20px;
+  width: 380px;
+}
+
+.screen-4 .frame-91::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.screen-4 .frame-92 {
+  height: 433px;
+  position: relative;
+  top: 1px;
+  width: 380px;
+}
+
+.screen-4 .frame-93 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 0;
+  width: 380px;
+}
+
+.screen-4 .mask-group-12 {
+  left: unset !important;
+  position: relative !important;
+  top: unset !important;
+}
+
+.screen-4 .text-wrapper-112 {
+  color: #2a2f37;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.screen-4 .frame-94 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 128px;
+  position: absolute;
+  top: 39px;
+  width: 380px;
+}
+
+.screen-4 .mask-group-13 {
+  left: unset !important;
+  margin-left: -22.00px !important;
+  position: relative !important;
+  top: unset !important;
+}
+
+.screen-4 .text-wrapper-113 {
+  color: #2a2f37;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -22.00px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.screen-4 .frame-95 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 106px;
+  position: absolute;
+  top: 78px;
+  width: 380px;
+}
+
+.screen-4 .frame-96 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 117px;
+  width: 380px;
+}
+
+.screen-4 .frame-97 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 156px;
+  width: 380px;
+}
+
+.screen-4 .frame-98 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 195px;
+  width: 380px;
+}
+
+.screen-4 .frame-99 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 234px;
+  width: 380px;
+}
+
+.screen-4 .frame-100 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 273px;
+  width: 380px;
+}
+
+.screen-4 .frame-101 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 312px;
+  width: 380px;
+}
+
+.screen-4 .frame-102 {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  justify-content: center;
+  left: 0;
+  padding: 1px 0px;
+  position: absolute;
+  top: 351px;
+  width: 380px;
+}
+
+.screen-4 .rectangle-2 {
+  background-color: #ffffff;
+  border-radius: 16px 16px 0px 0px;
+  height: 71px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 450px;
+}
+
+.screen-4 .frame-103 {
+  align-items: center;
+  display: flex;
+  height: 24px;
+  justify-content: space-between;
+  left: 16px;
+  position: absolute;
+  top: 17px;
+  width: 418px;
+}
+
+.screen-4 .text-wrapper-114 {
+  color: #000000;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 14px;
+  font-weight: 100;
+  height: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: 54px;
+}
+
+.screen-4 .background-10 {
+  height: 24px;
+  position: relative;
+  transform: rotate(180deg);
+  width: 24px;
+}
+
+.screen-4 .close-svg-fill-3 {
+  height: 24px;
+}
+
+.screen-4 .close-svg-4 {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.screen-4 .mask-group-14 {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(-180deg);
+  width: 24px;
+}

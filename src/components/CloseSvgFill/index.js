@@ -1,0 +1,1 @@
+export { CloseSvgFill } from "./CloseSvgFill";

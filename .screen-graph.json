@@ -1,0 +1,247 @@
+{
+  "nodes": [
+    {
+      "id": "src/screens/Screen/Screen.jsx",
+      "label": "Screen",
+      "routes": [
+        "/",
+        "/main",
+        "*"
+      ],
+      "isRoot": true
+    },
+    {
+      "id": "src/screens/ScreenScreen/ScreenScreen.jsx",
+      "label": "ScreenScreen",
+      "routes": [
+        "/price"
+      ],
+      "dataModelId": "1:1318"
+    },
+    {
+      "id": "src/screens/ScreenWrapper/ScreenWrapper.jsx",
+      "label": "ScreenWrapper",
+      "routes": [
+        "/area"
+      ],
+      "dataModelId": "1:1298"
+    },
+    {
+      "id": "src/screens/Screen3/Screen3.jsx",
+      "label": "Screen3",
+      "routes": [
+        "/join"
+      ]
+    },
+    {
+      "id": "src/screens/Screen4/Screen4.jsx",
+      "label": "Screen4",
+      "routes": [
+        "/favoriteRegion"
+      ],
+      "dataModelId": "1:1338"
+    },
+    {
+      "id": "src/screens/Screen5/Screen5.jsx",
+      "label": "Screen5",
+      "routes": [
+        "/economyIndicator"
+      ],
+      "dataModelId": "1:1193"
+    },
+    {
+      "id": "src/screens/Screen6/Screen6.jsx",
+      "label": "Screen6",
+      "routes": [
+        "/login"
+      ],
+      "dataModelId": "1:557"
+    },
+    {
+      "id": "src/screens/Screen7/Screen7.jsx",
+      "label": "Screen7",
+      "routes": [
+        "/sideBar"
+      ],
+      "dataModelId": "1:167"
+    },
+    {
+      "id": "src/screens/Screen8/Screen8.jsx",
+      "label": "Screen8",
+      "routes": [
+        "/region"
+      ],
+      "dataModelId": "1:923"
+    },
+    {
+      "id": "src/screens/Screen9/Screen9.jsx",
+      "label": "Screen9",
+      "routes": [
+        "/mypage"
+      ],
+      "dataModelId": "1:1009"
+    },
+    {
+      "id": "src/screens/Favorite/Favorite.jsx",
+      "label": "Favorite",
+      "routes": [
+        "/favorite"
+      ],
+      "dataModelId": "1:867"
+    },
+    {
+      "id": "src/screens/MyEstate/MyEstate.jsx",
+      "label": "MyEstate",
+      "routes": [
+        "/myEstate"
+      ],
+      "dataModelId": "1:803"
+    },
+    {
+      "id": "src/screens/FindId/FindId.jsx",
+      "label": "FindId",
+      "routes": [
+        "/findId"
+      ],
+      "dataModelId": "1:611"
+    },
+    {
+      "id": "src/screens/UpdatePwd/UpdatePwd.jsx",
+      "label": "UpdatePwd",
+      "routes": [
+        "/updatePwd"
+      ],
+      "dataModelId": "1:780"
+    },
+    {
+      "id": "src/screens/UpdateMemberInfo/UpdateMemberInfo.jsx",
+      "label": "UpdateMemberInfo",
+      "routes": [
+        "/updateMemberInfo"
+      ],
+      "dataModelId": "1:732"
+    },
+    {
+      "id": "src/screens/FindPwd/FindPwd.jsx",
+      "label": "FindPwd",
+      "routes": [
+        "/findPwd"
+      ],
+      "dataModelId": "1:661"
+    }
+  ],
+  "edges": [
+    {
+      "id": "src\\screens\\Screen\\Screen.jsx:308:12-to-src\\screens\\Screen6\\Screen6.jsx",
+      "source": "src\\screens\\Screen\\Screen.jsx",
+      "target": "src\\screens\\Screen6\\Screen6.jsx",
+      "data": {
+        "viaRoute": "/login",
+        "trigger": {
+          "element": "<Link className=\"background-4\" to=\"/login\">\n              <div className=\"text-wrapper-93\">로그인하기</div>\n            </Link>",
+          "line": 308,
+          "endLine": 310,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Screen\\Screen.jsx:312:12-to-src\\screens\\Screen3\\Screen3.jsx",
+      "source": "src\\screens\\Screen\\Screen.jsx",
+      "target": "src\\screens\\Screen3\\Screen3.jsx",
+      "data": {
+        "viaRoute": "/join",
+        "trigger": {
+          "element": "<Link to=\"/join\">\n              <button className=\"button-2\">\n                <div className=\"text-wrapper-94\">회원가입</div>\n              </button>\n            </Link>",
+          "line": 312,
+          "endLine": 316,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Screen3\\Screen3.jsx:63:10-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Screen3\\Screen3.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link className=\"frame-81\" to=\"/\">\n            <img className=\"v-2\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\" />\n            <div className=\"text-wrapper-104\">집사</div>\n          </Link>",
+          "line": 63,
+          "endLine": 66,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src\\screens\\Screen3\\Screen3.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Screen6\\Screen6.jsx:34:6-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Screen6\\Screen6.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link className=\"frame-107\" to=\"/\">\n        <img className=\"v-3\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\" />\n        <div className=\"text-wrapper-116\">집사</div>\n      </Link>",
+          "line": 34,
+          "endLine": 37,
+          "column": 6,
+          "endColumn": 13,
+          "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Screen6\\Screen6.jsx:92:10-to-src\\screens\\Screen3\\Screen3.jsx",
+      "source": "src\\screens\\Screen6\\Screen6.jsx",
+      "target": "src\\screens\\Screen3\\Screen3.jsx",
+      "data": {
+        "viaRoute": "/join",
+        "trigger": {
+          "element": "<Link to=\"/join\">\n            <button type=\"button\" className=\"button-3\">\n              <div className=\"text-wrapper-121\">회원가입</div>\n            </button>\n          </Link>",
+          "line": 92,
+          "endLine": 96,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\FindId\\FindId.jsx:43:8-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\FindId\\FindId.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link className=\"banner\" to=\"/\">\n          <img className=\"logo\" alt=\"V\" src=\"https://c.animaapp.com/DSoZdjN8/img/--------v4-1@2x.png\" />\n          <div className=\"jipsa\">집사</div>\n        </Link>",
+          "line": 43,
+          "endLine": 46,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src\\screens\\FindId\\FindId.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\FindPwd\\FindPwd.jsx:54:10-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\FindPwd\\FindPwd.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link className=\"findPwd-frame\" to=\"/\">\n            <img className=\"findPwd-logo\" alt=\"Logo\" src=\"https://c.animaapp.com/DSoZdjN8/img/--------v4-1@2x.png\" />\n            <div className=\"findPwd-jibsa\">집사</div>\n          </Link>",
+          "line": 54,
+          "endLine": 57,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src\\screens\\FindPwd\\FindPwd.jsx"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+.property-card {
+  width: 340px;
+  height: 177px;
+  border-radius: 12px;
+  border: 1px solid #dcdcdc;
+  background: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.property-card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.property-card .text {
+  font-family: "SUIT", sans-serif;
+  color: #2a2f37;
+  line-height: 1.4;
+}
+
+.property-card .text.name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.property-card .info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.property-card .deal-type-wrapper {
+  background-color: #f0f3fa;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.property-card .text.deal-type {
+  font-size: 12px;
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+.property-card .text.price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.property-card .text.area {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.property-card .vertical-divider {
+  width: 1px;
+  height: 14px;
+  background-color: #d1d5db;
+}
+
+.property-card .date,
+.property-card .gain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.property-card .label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.property-card .text.label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.property-card .gain-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.property-card .text.amount {
+  font-size: 15px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.property-card .text.rate {
+  font-size: 13px;
+  color: #10b981;
+}

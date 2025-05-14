@@ -1,0 +1,30 @@
+.screen .wish {align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  width: 228.67px;}
+
+.screen .basic-info {align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  position: relative;}
+
+.screen .price {align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;}
+
+.screen .mask-group-instance {left: 46px !important;}
+
+.screen .mask-group-wrapper {background-image: url(../../../../static/img/image-1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 12px;
+  height: 76px;
+  position: relative;
+  width: 76px;}

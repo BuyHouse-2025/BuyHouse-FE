@@ -1,0 +1,1 @@
+export { MyEstate } from "./MyEstate";

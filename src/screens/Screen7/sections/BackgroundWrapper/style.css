@@ -1,0 +1,77 @@
+.background-wrapper {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 388px;
+  height: 56px;
+  background-color: white;
+}
+.background-wrapper .frame-33 {
+  align-items: center;
+  display: inline-flex;
+  gap: 16px;
+  left: 20px;
+  position: relative;
+  top: 11px;
+}
+
+.background-wrapper .frame-34 {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  position: relative;
+  width: 244px;
+}
+
+.background-wrapper .mask-group-instance {
+  left: unset !important;
+  position: relative !important;
+  top: unset !important;
+}
+
+.background-wrapper .paragraph {
+  height: 24px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+  width: 201px;
+}
+
+.background-wrapper .paragraph::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.background-wrapper .text-wrapper-57 {
+  color: #17253c;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 15.9px;
+  font-weight: 100;
+  left: 0;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.background-wrapper .background-border-instance {
+  height: 14px !important;
+  left: 12px !important;
+  top: 9px !important;
+  white-space: nowrap !important;
+  width: unset !important;
+}
+
+.background-wrapper .mask-group-2 {
+  height: 24px;
+  position: relative;
+  width: 24.44px;
+}
+
+.sideclose-svg-fill-wrapper {
+  width: 24.441px;
+  height: 24px;
+  flex-shrink: 0;
+}

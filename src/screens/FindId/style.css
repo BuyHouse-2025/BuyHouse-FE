@@ -1,0 +1,401 @@
+.findId-screen {
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 1080px;
+  padding: 73px 730px;
+  position: relative;
+  width: 1920px;
+}
+
+.findId-screen .findId-frame {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 91px;
+  position: relative;
+  width: 460px;
+}
+
+.findId-screen .banner {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 106px;
+  gap: 10px;
+}
+
+.findId-screen .logo {
+  height: 90px;
+  object-fit: cover;
+  position: relative;
+  width: 90px;
+}
+
+.findId-screen .jipsa {
+  align-self: stretch;
+  color: #3182f6;
+  font-family: "Bnviit Lasik OTF-Black", Helvetica;
+  font-size: 48px;
+  font-weight: 900;
+  height: 48px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+}
+
+.findId-screen .findId-form {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 164px;
+  position: relative;
+  width: 100%;
+}
+
+.findId-screen .findId-input-frame {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 460px;
+}
+
+.findId-screen .findId-email {
+  align-self: stretch;
+  border: 1px solid;
+  border-color: #dfdfdf;
+  border-radius: 6px 6px 0px 0px;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.findId-screen .findId-input {
+  height: 22px;
+  left: 44px;
+  position: absolute;
+  top: 13px;
+  width: 405px;
+  z-index: 1;
+}
+
+.findId-screen .findId-inputbox {
+  background: none;
+  border: 0;
+  color: #929294;
+  font-family: "Malgun Gothic-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  height: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 0;
+  position: relative;
+  top: -1px;
+  width: 400px;
+}
+
+.findId-screen .findId-icon {
+  height: 30px;
+  left: 8px;
+  position: absolute;
+  top: 9px;
+  width: 30px;
+  pointer-events: none;
+}
+
+.findId-screen .findId-name {
+  align-self: stretch;
+  border: 1px solid;
+  border-color: #dfdfdf;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.findId-screen .findId-bir-wrapper {
+  align-self: stretch;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.findId-screen .findId-bir {
+  height: 50px;
+  position: relative;
+  width: 460px;
+}
+
+.findId-screen .findId-bir-input {
+  height: 22px;
+  left: 44px;
+  position: absolute;
+  top: 14px;
+  width: 405px;
+  z-index: 1;
+}
+
+.findId-screen .findId-icon {
+  height: 30px;
+  left: 9px;
+  position: absolute;
+  top: 10px;
+  width: 30px;
+  pointer-events: none;
+}
+
+.findId-screen .findId-border {
+  border: 1px solid;
+  border-color: #dfdfdf;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 460px;
+  pointer-events: none;
+}
+
+.findId-screen .findId-phone-wrapper {
+  align-self: stretch;
+  border-radius: 0px 0px 6px 6px;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.findId-screen .findId-phone {
+  border-radius: 0px 0px 6px 6px;
+  height: 50px;
+  position: relative;
+  width: 460px;
+}
+
+.findId-screen .findId-phone-input {
+  height: 22px;
+  left: 44px;
+  position: absolute;
+  top: 14px;
+  width: 405px;
+  z-index: 1;
+}
+
+.findId-screen .phone-input {
+  background: none;
+  border: 0;
+  color: #929294;
+  font-family: "Malgun Gothic-Regular", Helvetica;
+  font-size: 15px;
+  font-weight: 400;
+  height: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 0;
+  position: relative;
+  top: -1px;
+  width: 405px;
+}
+
+.findId-screen .findId-border-2 {
+  border: 1px solid;
+  border-color: #dfdfdf;
+  border-radius: 0px 0px 6px 6px;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 460px;
+  pointer-events: none;
+}
+
+.findId-screen .findId-button {
+  all: unset;
+  background-color: #3182f6;
+  border: 1px solid;
+  border-color: #0000000d;
+  border-radius: 6px;
+  box-sizing: border-box;
+  height: 52px;
+  position: relative;
+  width: 460px;
+}
+
+.findId-screen .findId-button-2 {
+  color: #ffffff;
+  font-family: "Malgun Gothic-Bold", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  height: 22px;
+  left: 196px;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+  white-space: nowrap;
+}
+
+.findId-screen .findId-footer {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 367.65px;
+}
+
+.findId-screen .findId-footer-frame {
+  align-items: flex-end;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 13px;
+  position: relative;
+  width: 100%;
+}
+
+.findId-screen .findId-footer-ssafy {
+  color: #888888;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.findId-screen .findId-footer-day {
+  height: 17px;
+  position: relative;
+  width: 97.33px;
+}
+
+.findId-screen .day {
+  color: #888888;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 12px;
+  font-weight: 700;
+  left: 25px;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.findId-screen .vertical-divider {
+  background-color: #dadada;
+  height: 11px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  width: 1px;
+}
+
+.findId-screen .findId-footer-name {
+  height: 17px;
+  position: relative;
+  width: 100.16px;
+}
+
+.findId-screen .won {
+  color: #888888;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  left: 23px;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.findId-screen .jang {
+  color: #888888;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  left: 22px;
+  letter-spacing: -0.5px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.findId-screen .findId-footer-frame2 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 6px;
+  position: relative;
+}
+
+.findId-screen .findId-footer-jibsa {
+  color: #3182f6;
+  font-family: "Bnviit Lasik OTF-Black", Helvetica;
+  font-size: 22px;
+  font-weight: 900;
+  height: 41px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  margin-top: -1px;
+  position: relative;
+  width: 55px;
+}
+
+.findId-screen .findId-footer-copyright {
+  color: #888888;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: -0.5px;
+  line-height: 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.findId-screen .findId-footer-corp {
+  color: #000000;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  background-color: #fdecea; /* 연한 빨강 배경 */
+  border-left: 4px solid #e74c3c; /* 진한 빨강 포인트 라인 */
+  color: #e74c3c; /* 텍스트도 진한 빨강 */
+  padding: 8px 12px;
+  margin: 8px 0 0 0;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+  width: 460px;
+}

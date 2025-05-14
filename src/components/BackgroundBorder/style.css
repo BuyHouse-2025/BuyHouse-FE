@@ -1,0 +1,32 @@
+.background-border {
+  border: 1px solid;
+  border-radius: 8px;
+  height: 33px;
+  position: relative;
+  width: 49px;
+}
+
+.background-border .div-5 {
+  color: #ffffff;
+  font-family: "SUIT-Bold", Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  height: 18px;
+  left: 11px;
+  letter-spacing: 0;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: 7px;
+  width: 27px;
+}
+
+.background-border.one {
+  background-color: #ff666f;
+  border-color: #ff6770;
+}
+
+.background-border.two {
+  background-color: #79cf68;
+  border-color: #7acf69;
+}

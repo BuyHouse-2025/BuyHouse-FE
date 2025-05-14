@@ -1,0 +1,181 @@
+.screen-9 {
+  background-color: #ffffff;
+  border-radius: 16px;
+  height: 867px;
+  overflow: visible;
+  position: static;
+  width: 360px;
+}
+
+.screen-9 .view-11 {
+  background-color: #ffffff;
+  height: 52px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 360px;
+}
+
+.screen-9 .view-12 {
+  align-items: flex-start;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  height: 815px;
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 52px;
+  width: 360px;
+}
+
+.screen-9 .view-12::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.screen-9 .overlay-4 {
+  align-self: stretch;
+  background-color: #18253d0f;
+  height: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-9 .text-wrapper-127 {
+  color: #c4cad1;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 11.8px;
+  font-weight: 100;
+  left: 291px;
+  letter-spacing: -0.4px;
+  line-height: 20px;
+  position: absolute;
+  text-decoration: underline;
+  top: 773px;
+  white-space: nowrap;
+  width: 41px;
+}
+
+.overlay-full {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* 중앙 카드 */
+.myestate-overlay-content {
+  background-color: #fff;
+  border-radius: 16px;
+  width: 360px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  position: relative; /* 부모의 flex 정렬을 따름 */
+
+  /* 애니메이션 */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* 활성 상태 시 */
+.myestate-overlay-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 스크롤바 숨기기 */
+.myestate-overlay-content::-webkit-scrollbar {
+  display: none;
+}
+
+.favorite-overlay-content {
+  width: 360px;
+  padding-bottom: 2px;
+
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+}
+
+.favorite-overlay-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  width: 360px;
+  padding-bottom: 2px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.favorite-overlay-content.active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* 중앙 카드 */
+.UpdateMemberInfo-overlay-content {
+  background-color: #fff;
+  border-radius: 16px;
+  width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  position: relative; /* 부모의 flex 정렬을 따름 */
+
+  /* 애니메이션 */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* 활성 상태 시 */
+.UpdateMemberInfo-overlay-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 스크롤바 숨기기 */
+.UpdateMemberInfo-overlay-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* 중앙 카드 */
+.UpdatePwd-overlay-content {
+  background-color: #fff;
+  border-radius: 16px;
+  width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  position: relative; /* 부모의 flex 정렬을 따름 */
+
+  /* 애니메이션 */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* 활성 상태 시 */
+.UpdatePwd-overlay-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 스크롤바 숨기기 */
+.UpdatePwd-overlay-content::-webkit-scrollbar {
+  display: none;
+}

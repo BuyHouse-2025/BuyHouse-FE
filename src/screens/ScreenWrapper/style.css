@@ -1,0 +1,118 @@
+.screen-wrapper {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  overflow: hidden;
+  padding: 15px 20px 55px;
+  position: relative;
+  width: 653px;
+}
+
+.screen-wrapper .frame-78 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 27px;
+  position: relative;
+}
+
+.screen-wrapper .frame-79 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  position: relative;
+}
+
+.screen-wrapper .input-wrapper {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e9eaec;
+  border-radius: 6px;
+  height: 40px;
+  position: relative;
+  width: 200px;
+}
+
+.screen-wrapper .text-input-3 {
+  background-color: transparent;
+  border: 0;
+  color: #8b97aa;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 16px;
+  font-weight: 100;
+  height: 20px;
+  left: 34px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 0;
+  position: relative;
+  text-align: right;
+  top: 9px;
+  width: 150px;
+}
+
+.screen-wrapper .text-input-3::placeholder {
+  color: #8b97aa99;
+}
+
+.screen-wrapper .text-wrapper-102 {
+  color: #2a2f37;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 16px;
+  font-weight: 100;
+  height: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: 20px;
+}
+
+.screen-wrapper .text-input-4 {
+  background-color: transparent;
+  border: 0;
+  color: #8b97aa;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 16px;
+  font-weight: 100;
+  height: 20px;
+  left: 35px;
+  letter-spacing: 0;
+  line-height: normal;
+  padding: 0;
+  position: relative;
+  text-align: right;
+  top: 9px;
+  width: 150px;
+}
+
+.screen-wrapper .text-input-4::placeholder {
+  color: #8b97aa99;
+}
+
+.screen-wrapper .background-9 {
+  background-color: #3b81f5;
+  border-radius: 6px;
+  height: 40px;
+  position: relative;
+  width: 80px;
+}
+
+.screen-wrapper .text-wrapper-103 {
+  color: #ffffff;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 12.9px;
+  font-weight: 100;
+  height: 13px;
+  left: 18px;
+  letter-spacing: -0.40px;
+  line-height: 13px;
+  position: absolute;
+  text-align: center;
+  top: 13px;
+  white-space: nowrap;
+}

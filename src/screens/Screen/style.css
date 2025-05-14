@@ -1,0 +1,1025 @@
+.screen {
+  background-color: #ffffff;
+  height: 1080px;
+  position: relative;
+  width: 1920px;
+}
+
+.screen .overlap {
+  height: 1139px;
+  left: 0;
+  position: absolute;
+  top: 83px;
+  width: 1956px;
+}
+
+.screen .element-wrapper {
+  align-items: center;
+  background-image: url(https://c.animaapp.com/JuAZje8Q/img/--@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  box-shadow: 3px 4px 4px #00000059;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 60px;
+  justify-content: center;
+  left: 894px;
+  padding: 8px 0px;
+  position: relative;
+  top: 287px;
+  width: 60px;
+}
+
+.screen .element-2 {
+  color: transparent;
+  font-family: "Symbol-Regular", Helvetica;
+  font-size: 9px;
+  font-weight: 400;
+  height: 42px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: 31px;
+}
+
+.screen .text-wrapper-87 {
+  color: #ffffffb2;
+}
+
+.screen .text-wrapper-88 {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+
+.screen .overlay-shadow {
+  background-color: #e9939301;
+  box-shadow: inset 0px 0px 60px #00000059;
+  position: fixed;
+  top: 83px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 83px); /* 💡 이 부분이 핵심 */
+  overflow-y: auto;
+  z-index: 900; /* 필요한 경우 다른 요소보다 위에 오도록 조정 */
+}
+
+
+
+.screen .overlay-shadow::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.screen .overlay-shadow {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  z-index: 0;
+	pointer-events: none;
+}
+
+
+.screen .view-3 {
+  background-color: #ffffff;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #eeeeee;
+  height: 83px;
+  left: 1px;
+  position: fixed;
+  top: 0;
+  width: 1919px;
+}
+
+.screen .frame-60 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  left: 1px;
+  position: fixed;
+  top: 2px;
+  width: 1901px;
+}
+
+.screen .frame-61 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.screen .frame-62 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.screen .frame-63 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  width: 187px;
+}
+
+.screen .frame-64 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+.screen .v {
+  height: 61px;
+  object-fit: cover;
+  position: relative;
+  width: 61px;
+}
+
+.screen .text-wrapper-89 {
+  color: #3182f6;
+  font-family: "Bnviit Lasik OTF-Black", Helvetica;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -0.32px;
+  position: relative;
+  width: 106px;
+  text-align: center;
+}
+
+.screen .frame-65 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 11px;
+  position: relative;
+}
+
+.background-border-2 {
+  background-color: #3182f6;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 8px;
+  height: 43px;
+  position: relative;
+  width: 85px;
+  cursor: pointer;
+}
+
+/* 포커스 시에도 외곽선 제거 */
+.background-border-2:focus,
+.background-border-2:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.screen .mask-group-6 {
+  height: 24px;
+  left: 9px;
+  position: absolute;
+  top: 10px;
+  width: 20px;
+}
+
+.screen .text-wrapper-90 {
+  color: #ffffff;
+  font-family: "SUIT-Bold", Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: 37px;
+  left: 36px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.screen .background-border-3 {
+  background-color: #ff666f;
+  border: 1px solid;
+  border-color: #ff6770;
+  border-radius: 8px;
+  display: block;
+  height: 43px;
+  position: relative;
+  width: 97px;
+  cursor: pointer;
+}
+
+.screen .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.screen .screen7-full-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+	border-radius: 10px;
+}
+
+
+.screen .overlay-content {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.screen .overlay-header {
+  flex-shrink: 0;
+}
+
+.screen .background-11 {
+  background-color: #ffffff;
+  border-radius: 16px 16px 0 0;
+  height: 56px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+  z-index: 1;
+}
+
+.screen .overlay-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 0;
+}
+
+
+.screen .frame-105 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.screen .frame-106 {
+  display: flex;
+  align-items: center;
+}
+
+.screen .EA-ED {
+  background-image: url(https://c.animaapp.com/JuAZje8Q/img/clip-path-group@2x.png);
+  background-size: 100% 100%;
+  border-radius: 4.8px;
+  height: 24px;
+  width: 24px;
+  margin-right: 10px;
+}
+
+.screen .paragraph-2 {
+  height: 24px;
+}
+
+.screen .text-wrapper-115 {
+  color: #2a2f37;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 17.9px;
+  font-weight: 100;
+  letter-spacing: -0.60px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.screen .mask-group-15 {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.screen .overlay-body {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.overlay-body {
+  flex-grow: 1;
+  overflow: hidden; /* ❗스크롤 제거 */
+}
+
+.screen .overlay-body::-webkit-scrollbar {
+  display: none;
+}
+
+.screen .overlay-body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.screen .screen9-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+	border-radius: 10px;
+  transform: translateX(100%); /* 숨긴 상태 */
+  transition: transform 0.3s ease-in-out;
+  pointer-events: none; /* 안 보일 땐 클릭 막기 */
+  opacity: 0;
+}
+
+.screen .screen9-overlay.active {
+  transform: translateX(0); /* 등장 */
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.screen .screen9-overlay.active {
+  transform: translateX(0);
+}
+
+
+
+.screen .screen7-overlay-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 388px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 2000;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  border-radius: 10px;
+	overflow: hidden;
+}
+
+.screen7-overlay-content {
+  width: 388px;
+  max-width: 100vw;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+}
+
+.screen7-overlay-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 388px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 2000;
+}
+
+
+.screen .screen7-overlay-content.active {
+  transform: translateX(0); /* 슬라이드 인 */
+	border-radius: 10px;
+}
+
+.screen .screen9-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.screen .screen9-content::-webkit-scrollbar {
+  display: none;
+}
+
+.screen .screen9-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.screen9-full-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* 💡 전체 가로 */
+  height: 100vh; /* 💡 전체 세로 */
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0); /* 💡 클릭 감지용 투명 배경 */
+}
+
+
+.screen .close-button {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+
+.screen .screenscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 以묒븰  곷떒  뺣젹 */
+  padding-top: 200px; /*  꾩뿉    쇰쭏留뚰겮  대젮 ъ  議곗젅 */
+  z-index: 1000;
+}
+
+
+
+.screen .screenscreen-content {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 653px;
+  height: 15vh;
+	box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.16);
+  max-height: 444px;
+  position: relative;
+  overflow: hidden;
+	display: flex;
+  flex-direction: column;
+
+}
+
+
+.screen .screenscreen-content .close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.screen .overlap-group-wrapper {
+  cursor: pointer;
+}
+
+.screen .text-wrapper-91 {
+  color: #ffffff;
+  font-family: "SUIT-Bold", Helvetica;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  width: 50px;
+  left: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.screen .profit {
+  height: 18px;
+  left: 11px;
+  object-fit: cover;
+  position: absolute;
+  top: 12px;
+  width: 18px;
+}
+
+.screen .frame-66 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  position: relative;
+}
+
+.screen .overlap-group-wrapper {
+  background-color: #3182f6;
+  border-radius: 8px;
+  display: block;
+  height: 43px;
+  position: relative;
+  width: 51px;
+}
+
+.screen .overlap-group {
+  height: 15px;
+  left: 7px;
+  position: relative;
+  top: 13px;
+  width: 37px;
+}
+
+.screen .text-wrapper-92 {
+  color: #ffffff;
+  font-family: "SUIT-Bold", Helvetica;
+  font-size: 12px;
+  font-weight: 700;
+  left: 12px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 25px;
+}
+
+.screen .user {
+  height: 13px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 2px;
+  width: 13px;
+}
+
+.screen .background-4 {
+  background-color: #3182f6;
+  border-radius: 8px;
+  display: block;
+  height: 43px;
+  position: relative;
+  width: 74px;
+}
+
+.screen .text-wrapper-93 {
+  color: #ffffff;
+  font-family: "SUIT-Bold", Helvetica;
+  font-size: 13px;
+  font-weight: 700;
+  left: 7px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 13px;
+  white-space: nowrap;
+  width: 60px;
+}
+
+.screen .button-2 {
+  all: unset;
+  background-color: #333a46;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 43px;
+  position: relative;
+  width: 71px;
+}
+
+.screen .text-wrapper-94 {
+  color: #ffffff;
+  font-family: "SUIT-Bold", Helvetica;
+  font-size: 13px;
+  font-weight: 700;
+  height: 15px;
+  left: 11px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 13px;
+  white-space: nowrap;
+  width: 50px;
+}
+
+.screen .frame-67 {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 1062.91px;
+}
+
+.screen .frame-68 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 9px;
+  padding: 0px 9px;
+  position: relative;
+}
+
+.screen .overlay-wrapper {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #0000000f;
+  border-radius: 8px;
+  height: 38px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+  width: 254px;
+}
+
+.screen .overlay-wrapper::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.screen .overlay-3 {
+  background-color: #56698f0f;
+  border-radius: 8px;
+  height: 36px;
+  left: 1px;
+  position: relative;
+  top: 1px;
+  width: 252px;
+}
+
+.screen .frame-69 {
+  align-items: center;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.screen .search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+	width: 25px;
+	padding : 10px;
+}
+
+
+.screen .search-icon {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  object-fit: contain;
+}
+
+
+.screen .container-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.screen .container-21 {
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  color: #8b97aa;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: -0.60px;
+  line-height: normal;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.screen .background-border-4 {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #18253d14;
+  border-radius: 8px;
+  display: block;
+  height: 36px;
+  position: relative;
+  width: 60.48px;
+}
+
+.screen .frame-70 {
+  align-items: center;
+  display: inline-flex;
+  gap: 2px;
+  left: 11px;
+  position: absolute;
+  top: 9px;
+}
+
+
+.screen .text-wrapper-95 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: 14px;
+  position: relative;
+  text-align: center;
+  width: 24.68px;
+}
+
+.screen .mask-group-7 {
+  height: 16px;
+  position: relative;
+  width: 16px;
+}
+
+.screen .background-border-5 {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #18253d14;
+  border-radius: 8px;
+  display: block;
+  height: 36px;
+  left: 411px;
+  position: absolute;
+  top: 1px;
+  width: 90px;
+}
+
+.screen .frame-71 {
+  align-items: center;
+  display: inline-flex;
+  gap: 3px;
+  position: relative;
+  padding: 0 11px;
+  height: 36px;
+}
+
+.screen .text-wrapper-96 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: 14px;
+  position: relative;
+  text-align: center;
+  width: 50px;
+}
+
+.screen .view-4 {
+  background-color: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0px 0px 32px #00000014;
+  display: block;
+  height: 50px;
+  width: 224px;
+	position: absolute;
+  left: 90%;
+  transform: translateX(-50%);
+	margin-top: 50px;
+}
+
+
+.screen .frame-72 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.screen .mask-group-wrapper {
+  flex-shrink: 0;
+}
+
+.screen .frame-73 {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.screen .text-wrapper-97 {
+  margin: 0;
+}
+
+.screen .mask-group-wrapper {
+  background-color: #56698f0f;
+  border-radius: 999px;
+  height: 32px;
+  position: relative;
+  width: 32px;
+}
+
+.screen .mask-group-8 {
+  height: 20px;
+  left: 6px;
+  position: absolute;
+  top: 6px;
+  width: 20px;
+}
+
+.screen .frame-73 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 3px;
+  position: relative;
+}
+
+.screen .text-wrapper-97 {
+  color: #2a2f37;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 15.8px;
+  font-weight: 100;
+  letter-spacing: -0.60px;
+  line-height: 16px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.screen .background-5 {
+  height: 12px;
+  position: relative;
+  transform: rotate(180deg);
+  width: 12px;
+}
+
+.screen .div-6 {
+  height: 12px;
+  position: relative;
+}
+
+.screen .front-svg-fill {
+  height: 12px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 12px;
+}
+
+.screen .mask-group-9 {
+  height: 12px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(-180deg);
+  width: 12px;
+}
+
+/* [추가된 CSS - 시작] */
+.screen .frame-74 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+	padding: 0 20px;   
+	height: 56px;   
+}
+
+
+.screen .text-wrapper-98 {
+  color: #000000;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 14px;
+  font-weight: 100;
+  height: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: 24.68px;
+}
+
+.screen .background-6 {
+  height: 24px;
+  position: relative;
+  transform: rotate(180deg);
+  width: 24px;
+}
+
+.screen .close-svg-wrapper {
+  height: 24px;
+}
+
+.screen .close-svg-2 {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.screen .mask-group-10 {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: rotate(-180deg);
+  width: 24px;
+}
+/* [추가된 CSS - 끝] */
+
+.screen .text-wrapper-98 {
+  color: #2a2f37;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 17.9px;
+  font-weight: 100;
+  letter-spacing: -0.6px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.screen .background-6 {
+  width: 24px;
+  height: 24px;
+  transform: none; /* 아이콘 회전 제거 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.screen .close-svg-wrapper,
+.screen .close-svg-2 {
+  width: 24px;
+  height: 24px;
+
+}
+
+.screen .mask-group-10 {
+  width: 24px;
+  height: 24px;
+  transform: none; /* 회전 제거 */
+}
+
+.screen .screenscreen-overlay[data-type="favorite"] .screenscreen-content {
+  width: 450px;
+  height: 349px;
+  max-width: unset;
+  max-height: unset;
+}
+
+
+.screen .screen9-content .close-button img {
+  width: 24px;
+  height: 24px;
+}
+
+
+
+.screen .screen8-overlay {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.00);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.16);
+  width: 363px;
+  height: 444px;
+  background-color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+.screen8-overlay,
+.screen-8 {
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+.screen-8 .overlap-group-5,
+.screen-8 .background-14 {
+  left: 0 !important;
+  width: 100% !important;
+}

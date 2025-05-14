@@ -1,0 +1,227 @@
+.background-1 {
+  align-items: center;
+  align-self: stretch;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 200px;
+  padding: 11px 18px 12px;
+  position: relative;
+  width: 100%;
+}
+
+.background-1 .frame-39 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 80px;
+  position: relative;
+  width: 100%;
+}
+
+.background-1 .frame-40 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  position: relative;
+	margin-bottom: 7px;	
+}
+
+.background-1 .image-wrapper {
+  background-image: url(https://c.animaapp.com/JuAZje8Q/img/owl-0c7003d3-svg@2x.png);
+  background-size: 100% 100%;
+  height: 52px;
+  overflow: hidden;
+  position: relative;
+  width: 52px;
+}
+
+.background-1 .image-8 {
+  height: 122px;
+  left: -63px;
+  object-fit: cover;
+  position: absolute;
+  top: -8px;
+  width: 122px;
+}
+
+.background-1 .frame-41 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 147.43px;
+}
+
+.background-1 .text-wrapper-62 {
+  color: #2a2f37;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 15.9px;
+  font-weight: 100;
+  letter-spacing: -0.60px;
+  line-height: 32px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.background-1 .text-wrapper-63 {
+  color: #8b97aa;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13.9px;
+  font-weight: 100;
+  letter-spacing: -0.40px;
+  line-height: 22px;
+	margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.background-1 .mask-group-5 {
+  height: 24px;
+  position: relative;
+  width: 25px;
+}
+
+.background-1 .background-3 {
+  align-items: center;
+  align-self: stretch;
+  background-color: #f3f7fe;
+  border-radius: 12px;
+  display: flex;
+  gap: 15px;
+  height: 112px;
+  justify-content: center;
+  padding: 1px 30px;
+  position: relative;
+  width: 100%;
+}
+
+.background-1 .frame-42 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 11px;
+  justify-content: center;
+  position: relative;
+}
+
+.background-1 .money {
+  height: 23px;
+  object-fit: cover;
+  position: relative;
+  width: 23px;
+}
+
+.background-1 .property {
+  height: 21px;
+  object-fit: cover;
+  position: relative;
+  width: 21px;
+}
+
+.background-1 .cool {
+  height: 20px;
+  object-fit: cover;
+  position: relative;
+  width: 20px;
+}
+
+.background-1 .frame-43 {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2px;
+  justify-content: center;
+  position: relative;
+}
+
+.background-1 .container-17 {
+  align-self: stretch;
+  height: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.background-1 .text-wrapper-64 {
+  color: #17253c;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 14px;
+  font-weight: 100;
+  height: 20px;
+  left: 0;
+  letter-spacing: -0.28px;
+  line-height: 20px;
+  position: absolute;
+  top: 4px;
+  white-space: nowrap;
+}
+
+.background-1 .frame-44 {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 3px;
+  justify-content: center;
+  position: relative;
+}
+
+.background-1 .container-18 {
+  align-self: stretch;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.background-1 .text-wrapper-65 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 12px;
+  font-weight: 100;
+  left: 42px;
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  position: absolute;
+  text-align: right;
+  top: 6px;
+  white-space: nowrap;
+}
+
+.background-1 .text-wrapper-66 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 12px;
+  font-weight: 100;
+  left: 46px;
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  position: absolute;
+  text-align: right;
+  top: 6px;
+  white-space: nowrap;
+}
+
+.background-1 .text-wrapper-67 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 12px;
+  font-weight: 100;
+  left: 45px;
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  position: absolute;
+  text-align: right;
+  top: 6px;
+  white-space: nowrap;
+}

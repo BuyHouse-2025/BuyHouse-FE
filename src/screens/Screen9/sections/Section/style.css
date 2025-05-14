@@ -1,0 +1,418 @@
+.section {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffff;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 26px;
+  padding: 9px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.section .frame-47 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  width: 317px;
+}
+
+.section .container-20 {
+  height: 20px;
+  position: relative;
+  width: 80px;
+}
+
+.section .text-wrapper-71 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13.9px;
+  font-weight: 100;
+  height: 20px;
+  left: 0;
+  letter-spacing: -0.28px;
+  line-height: 20px;
+  position: absolute;
+  top: -2px;
+  white-space: nowrap;
+}
+
+.section .frame-48 {
+  align-items: flex-end;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.section .rank {
+  height: 55px;
+  object-fit: cover;
+  position: relative;
+  width: 55px;
+}
+
+.section .element {
+  color: #17253c;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: -0.28px;
+  line-height: 20px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.section .span {
+  letter-spacing: -0.03px;
+}
+
+.section .text-wrapper-72 {
+  font-size: 13.9px;
+  letter-spacing: -0.04px;
+}
+
+.section .text-wrapper-73 {
+  font-size: 15px;
+  letter-spacing: -0.04px;
+}
+
+.section .text-wrapper-74 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13.9px;
+  font-weight: 100;
+  letter-spacing: -0.28px;
+  line-height: 20px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.section .view-2 {
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: #ffffffd9;
+  border: 1px solid;
+  border-color: #eeeeee;
+  border-radius: 22px;
+  box-shadow: 0px 0px 10px #00000029;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 2px;
+  position: relative;
+  width: 100%;
+}
+
+.section .frame-49 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 23px;
+  padding: 0px 15px;
+  position: relative;
+  width: 100%;
+}
+
+.section .frame-50 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  position: relative;
+  width: 28.85px;
+}
+
+.section .text-wrapper-75 {
+  color: #333333;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  height: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-left: -7.86px;
+  margin-right: -7.86px;
+  margin-top: -1.00px;
+  position: relative;
+  width: 44.57px;
+}
+
+.section .rank-svg {
+  align-self: stretch;
+  height: 21px;
+  position: relative;
+  width: 100%;
+}
+
+.section .rank-svg-fill {
+  background-image: url(https://c.animaapp.com/JuAZje8Q/img/rank-1-svg@2x.png);
+  background-size: 100% 100%;
+  height: 21px;
+  left: 4px;
+  position: relative;
+  width: 21px;
+}
+
+.section .rank-svg-fill-2 {
+  background-image: url(https://c.animaapp.com/JuAZje8Q/img/rank-2-svg@2x.png);
+  background-size: 100% 100%;
+  height: 21px;
+  left: 4px;
+  position: relative;
+  width: 21px;
+}
+
+.section .rank-svg-fill-3 {
+  background-image: url(https://c.animaapp.com/JuAZje8Q/img/rank-3-svg@2x.png);
+  background-size: 100% 100%;
+  height: 21px;
+  left: 4px;
+  position: relative;
+  width: 21px;
+}
+
+.section .text-wrapper-76 {
+  color: #999999;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 11px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.section .frame-51 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  position: relative;
+}
+
+.section .frame-52 {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  position: relative;
+  width: 35px;
+}
+
+.section .text-wrapper-77 {
+  color: #333333;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  width: fit-content;
+}
+
+.section .text-wrapper-78 {
+  color: #333333;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+
+.section .frame-53 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.section .text-wrapper-79 {
+  color: #999999;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.section .text-wrapper-80 {
+  color: #999999;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: fit-content;
+}
+
+.section .frame-54 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 52.57px;
+}
+
+.section .frame-55 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  width: 100%;
+}
+
+.section .text-wrapper-81 {
+  align-self: stretch;
+  color: #fc3059;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+}
+
+.section .frame-56 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 2px;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+}
+
+.section .markerratearrowup {
+  background-image: url(https://c.animaapp.com/JuAZje8Q/img/markerratearrowup-svg-6@2x.png);
+  background-size: 100% 100%;
+  height: 4px;
+  position: relative;
+  width: 6px;
+}
+
+.section .text-wrapper-82 {
+  color: #fc3059;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  width: fit-content;
+}
+
+.section .frame-57 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.section .frame-58 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  width: 95px;
+}
+
+.section .frame-59 {
+  align-items: flex-end;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  width: 100%;
+}
+
+.section .text-wrapper-83 {
+  align-self: stretch;
+  color: #333333;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+}
+
+.section .text-wrapper-84 {
+  color: #333333;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: right;
+  width: fit-content;
+}
+
+.section .text-wrapper-85 {
+  color: #999999;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: right;
+  width: fit-content;
+}
+
+.section .text-wrapper-86 {
+  color: #999999;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13px;
+  font-weight: 100;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: right;
+  width: fit-content;
+}

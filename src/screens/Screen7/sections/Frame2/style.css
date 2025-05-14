@@ -1,0 +1,213 @@
+.frame-2 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  width: 326px;
+}
+
+.frame-2 .container {
+  align-self: stretch;
+  height: 27px;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .text-wrapper-34 {
+  color: #000000;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 17.9px;
+  font-weight: 100;
+  left: 0;
+  letter-spacing: -0.54px;
+  line-height: 26px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.frame-2 .frame-21 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .container-2 {
+  align-self: stretch;
+  height: 19px;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .text-wrapper-35 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 11.8px;
+  font-weight: 100;
+  left: 0;
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.frame-2 .container-3 {
+  align-self: stretch;
+  height: 26px;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .text-wrapper-36 {
+  color: #17253c;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 14px;
+  font-weight: 100;
+  left: 0;
+  letter-spacing: -0.28px;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.frame-2 .frame-22 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .frame-23 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 48px;
+}
+
+.frame-2 .container-4 {
+  align-self: stretch;
+  height: 17px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .container-5 {
+  align-self: stretch;
+  height: 24px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .frame-24 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 151px;
+}
+
+.frame-2 .text-wrapper-37 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 12px;
+  font-weight: 100;
+  left: 0;
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.frame-2 .container-6 {
+  align-self: stretch;
+  height: 21px;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .frame-25 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 140px;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .frame-26 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+  width: 34px;
+}
+
+.frame-2 .container-7 {
+  align-self: stretch;
+  height: 14px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .text-wrapper-38 {
+  color: #18253d99;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 11.8px;
+  font-weight: 100;
+  left: 0;
+  letter-spacing: -0.24px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+  width: 31px;
+}
+
+.frame-2 .container-8 {
+  align-self: stretch;
+  height: 23px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .frame-27 {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+
+.frame-2 .container-9 {
+  align-self: stretch;
+  height: 18px;
+  position: relative;
+  width: 100%;
+}
+
+.frame-2 .container-10 {
+  align-self: stretch;
+  height: 23px;
+  position: relative;
+  width: 100%;
+}

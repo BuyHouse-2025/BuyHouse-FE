@@ -1,0 +1,62 @@
+.screen-7 {
+  border-color: #eeeeee;
+  border-left-style: solid;
+  border-left-width: 0px;
+  height: 1090px;
+  position: relative;
+  width: 388px;
+}
+
+.screen-7 .background-shadow {
+  background-color: #ffffff;
+  border-radius: 0px 12px 12px 0px;
+  box-shadow: 0px 0px 12px #65677629;
+  height: 1092px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.screen-7 .background-shadow::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.screen-7 .background-13 {
+  background-color: #ffffff;
+  height: 1091px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+  top: 1px;
+  width: 388px;
+}
+
+.screen-7 .background-13::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.screen-7 .frame-117 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  left: 0;
+  position: absolute;
+  top: 56px;
+  width: 388px;
+}
+
+.screen-7 .image-11 {
+  align-self: stretch;
+  height: 291px;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
+	overflow: hidden;
+  border-radius: inherit; /* 부모 radius 유지 */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

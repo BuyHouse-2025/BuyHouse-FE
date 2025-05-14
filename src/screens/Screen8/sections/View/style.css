@@ -1,0 +1,106 @@
+.view {
+  align-items: flex-end;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #8b97aa33;
+  border-top-style: solid;
+  border-top-width: 1px;
+  display: inline-flex;
+  left: 0;
+  position: absolute;
+  top: 40px;
+	width: 363px
+}
+
+.view .vertical-border {
+  border-color: #8b97aa80;
+  border-right-style: solid;
+  border-right-width: 1px;
+  height: 276px;
+  overflow-y: scroll;
+  position: relative;
+  width: 120.33px;
+}
+
+.view .vertical-border::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.view .background-2 {
+  background-color: #ebf3fe;
+  height: 32px;
+  position: relative;
+  width: 112px;
+}
+
+.view .text-wrapper-58 {
+  color: #3b81f5;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 13.7px;
+  font-weight: 100;
+  height: 14px;
+  left: 44px;
+  letter-spacing: -0.60px;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+  top: 8px;
+  white-space: nowrap;
+}
+
+.view .vertical-border-2 {
+  border-color: #8b97aa80;
+  border-right-style: solid;
+  border-right-width: 1px;
+  height: 277px;
+  overflow: hidden;
+  overflow-y: scroll;
+  position: relative;
+  width: 120px;
+}
+
+.view .vertical-border-2::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.view .frame-35 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  overflow-y: scroll;
+  position: relative;
+  width: 112px;
+}
+
+.view .frame-35::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+.view .background-instance {
+  align-self: stretch !important;
+  width: 100% !important;
+}
+
+.view .design-component-instance-node {
+  margin-right: -0.33px !important;
+  width: 112.33px !important;
+}
+
+.view .frame-36 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  position: relative;
+  top: -1px;
+  width: 112px;
+}
+
+.view .frame-36::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}

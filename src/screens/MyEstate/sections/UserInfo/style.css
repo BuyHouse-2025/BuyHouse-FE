@@ -1,0 +1,57 @@
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;      /* ← 중요: 오른쪽 텍스트를 아래에 맞춤 */
+  padding: 0px 20px;
+  width: 100%;
+  gap: 10px;
+}
+
+
+.user-info .userframe {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  width: 170.5px;
+}
+
+.user-info .usertext-wrapper {
+  color: #ffffff;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 19.8px;
+  font-weight: 100;
+  letter-spacing: -0.60px;
+  line-height: 32px;
+  margin-top: -1.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.user-info .userdiv {
+  color: #ffffff;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 20px;
+  font-weight: 100;
+  letter-spacing: -0.60px;
+  line-height: 32px;
+  margin-right: -0.50px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.user-info .usertext-wrapper-2 {
+  color: #ffffff;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 24px;
+  font-weight: 100;
+  letter-spacing: -0.60px;
+  line-height: 36px;
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
+  width: fit-content;
+}

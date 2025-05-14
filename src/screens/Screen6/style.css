@@ -1,0 +1,543 @@
+.screen-6 {
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 43px;
+  height: 1080px;
+  padding: 73px 598px;
+  position: relative;
+  width: 1920px;
+}
+
+.screen-6 .frame-107 {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 106px;
+	gap: 10px;
+}
+
+.screen-6 .v-3 {
+  height: 90px;
+  object-fit: cover;
+  position: relative;
+  width: 90px;
+}
+
+
+
+.screen-6 .text-wrapper-116 {
+  align-self: stretch;
+  color: #3182f6;
+  font-family: "Bnviit Lasik OTF-Black", Helvetica;
+  font-size: 48px;
+  font-weight: 900;
+  height: 48px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  position: relative;
+  text-align: center;
+}
+
+.screen-6 .form-list-item {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #e1e3e5;
+  border-radius: 12px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 24px 14px;
+  position: relative;
+}
+
+.screen-6 .frame-108 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  position: relative;
+  width: 420px;
+}
+
+.screen-6 .frame-109 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 410px;
+}
+
+.screen-6 .border-2 {
+  align-self: stretch;
+  border: 1px solid;
+  border-color: #c5ccd2;
+  border-radius: 8px 8px 0px 0px;
+  height: 60px;
+  position: relative;
+  width: 100%;
+	boxShadow: 0px 0px 0px 1000px white inset;
+	overflow: hidden;	
+}
+
+
+.screen-6 .text {
+  background-color: #e8f0fe;
+  border: 0;
+  box-shadow: inset 0px 0px 0px 1000px #ffffff;
+  color: #000000;
+  font-family: "SUIT-Thin", Helvetica;
+  font-size: 15px;
+  font-weight: 100;
+  height: 22px;
+  left: 16px;
+  letter-spacing: -0.32px;
+  line-height: 24px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 29px;
+  white-space: nowrap;
+  width: 378px;
+	
+}
+
+.screen-6 .label {
+  color: #00000061;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 12px;
+  font-weight: 300;
+  left: 16px;
+  letter-spacing: -0.80px;
+  line-height: 22px;
+  position: absolute;
+  top: 6px;
+  white-space: nowrap;
+}
+
+.screen-6 .border-3 {
+  align-self: stretch;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #c5ccd2;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-radius: 0px 0px 8px 8px;
+  border-right-style: solid;
+  border-right-width: 1px;
+  height: 59px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-6 .label-2 {
+  color: #00000061;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  left: 16px;
+  letter-spacing: -0.80px;
+  line-height: 22px;
+  position: absolute;
+  top: 5px;
+  white-space: nowrap;
+}
+
+.screen-6 .frame-110 {
+  height: 37px;
+  position: relative;
+  width: 410px;
+}
+
+.screen-6 .label-3 {
+  color: #767678;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+  left: 30px;
+  letter-spacing: -0.50px;
+  line-height: 20px;
+  position: absolute;
+  top: 11px;
+  white-space: nowrap;
+}
+
+.screen-6 .image-background {
+  height: 20px;
+  left: 4px;
+  position: absolute;
+  top: 12px;
+  width: 20px;
+}
+
+.screen-6 .frame-111 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  width: 410px;
+}
+
+.screen-6 .view-7 {
+  align-self: stretch;
+  background-color: #3182f6;
+  border-radius: 8px;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-6 .text-wrapper-117 {
+  color: #ffffff;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 17px;
+  font-weight: 500;
+  left: 182px;
+  letter-spacing: -0.40px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+  white-space: nowrap;
+}
+
+.screen-6 .view-8 {
+  align-self: stretch;
+  background-color: #fee500;
+  border-radius: 8px;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-6 .text-wrapper-118 {
+  color: #47292b;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 15px;
+  font-weight: 500;
+  left: 163px;
+  letter-spacing: -0.40px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+  white-space: nowrap;
+}
+
+.screen-6 .image-10 {
+  height: 24px;
+  left: 12px;
+  position: absolute;
+  top: 13px;
+  width: 28px;
+}
+
+.screen-6 .view-9 {
+  align-self: stretch;
+  background-color: #03c75a;
+  border-radius: 8px;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-6 .text-wrapper-119 {
+  color: #ffffff;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 15px;
+  font-weight: 500;
+  left: 163px;
+  letter-spacing: -0.40px;
+  line-height: 24px;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+  white-space: nowrap;
+}
+
+.screen-6 .element-3 {
+  height: 36px;
+  left: 5px;
+  position: absolute;
+  top: 7px;
+  width: 34px;
+}
+
+.screen-6 .frame-112 {
+  align-self: stretch;
+  height: 42px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-6 .overlap-group-4 {
+  height: 18px;
+  left: 10px;
+  position: relative;
+  top: 14px;
+  width: 410px;
+}
+
+.screen-6 .horizontal-divider {
+  background-color: #efeff0;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  top: 9px;
+  width: 410px;
+}
+
+.screen-6 .background-12 {
+  background-color: #ffffff;
+  height: 18px;
+  left: 95px;
+  position: absolute;
+  top: 0;
+  width: 211px;
+}
+
+.screen-6 .text-wrapper-120 {
+  color: #767678;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 14px;
+  font-weight: 300;
+  left: 53px;
+  letter-spacing: -0.40px;
+  line-height: 18px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  white-space: nowrap;
+}
+
+.screen-6 .button-3 {
+  all: unset;
+  align-items: center;
+  align-self: stretch;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #3182f6;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 15px 157px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-6 .text-wrapper-121 {
+  color: #3182f6;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.40px;
+  line-height: 24px;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.screen-6 .frame-113 {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  position: relative;
+  width: 247.94px;
+}
+
+.screen-6 .text-wrapper-122 {
+  color: #888888;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.50px;
+  line-height: 17px;
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.screen-6 .vertical-divider-3 {
+  background-color: #dadada;
+  border-radius: 0.5px;
+  height: 12px;
+  position: relative;
+  width: 1px;
+}
+
+.screen-6 .frame-114 {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 390.25px;
+}
+
+.screen-6 .frame-115 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 11px;
+  position: relative;
+  width: 100%;
+}
+
+.screen-6 .item-link-2 {
+  color: #888888;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.50px;
+  line-height: 15px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.screen-6 .item-10 {
+  height: 17px;
+  position: relative;
+  width: 97.33px;
+}
+
+.screen-6 .link-strong-2 {
+  color: #888888;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 12px;
+  font-weight: 700;
+  left: 25px;
+  letter-spacing: -0.50px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.screen-6 .vertical-divider-4 {
+  background-color: #dadada;
+  height: 11px;
+  left: 4px;
+  position: absolute;
+  top: 4px;
+  width: 1px;
+}
+
+.screen-6 .item-11 {
+  height: 17px;
+  position: relative;
+  width: 100.16px;
+}
+
+.screen-6 .link-3 {
+  color: #888888;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  left: 23px;
+  letter-spacing: -0.50px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.screen-6 .item-12 {
+  height: 17px;
+  position: relative;
+  width: 117px;
+}
+
+.screen-6 .link-4 {
+  color: #888888;
+  font-family: "Arial-Narrow", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  left: 31px;
+  letter-spacing: -0.50px;
+  line-height: 15px;
+  position: absolute;
+  text-align: center;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.screen-6 .vertical-divider-5 {
+  height: 11px;
+  left: 11px;
+  position: absolute;
+  top: 3px;
+  width: 1px;
+}
+
+.screen-6 .frame-116 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 6px;
+  position: relative;
+  height: 40px;
+}
+
+.screen-6 .text-wrapper-123 {
+  color: #3182f6;
+  font-family: "Bnviit Lasik OTF-Black", Helvetica;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.32px;
+  line-height: 22px; /* ✅ 폰트 크기와 동일하게 */
+  margin: 0; /* ✅ 마진 제거 */
+  position: relative;
+  width: 55px;
+}
+
+.screen-6 .text-wrapper-124 {
+  color: #888888;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: -0.50px;
+  line-height: 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.screen-6 .text-wrapper-125 {
+  color: #000000;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.50px;
+  line-height: 16px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
