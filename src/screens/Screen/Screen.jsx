@@ -82,7 +82,8 @@ export const Screen = ({}) => {
       e.target.classList.contains("overlay") ||
       e.target.classList.contains("screenscreen-overlay") ||
       isScreen7 ||
-      e.target.classList.contains("screen9-full-overlay") || e.target.classList.contains("screen9-overlay-content")
+      e.target.classList.contains("screen9-full-overlay") ||
+      e.target.classList.contains("screen9-overlay-content")
     ) {
       closeFn();
     }
@@ -104,9 +105,7 @@ export const Screen = ({}) => {
 
       {screen9Visible && (
         <div className="screen9-full-overlay" onClick={(e) => handleClickOutside(e, closeScreen9)}>
-          <div 
-              className={`screen9-overlay ${screen9Active ? "active" : ""}`} 
-              onClick={(e) => e.stopPropagation()}>
+          <div className={`screen9-overlay ${screen9Active ? "active" : ""}`} onClick={(e) => e.stopPropagation()}>
             <div className="screen9-content">
               <div className="close-button" onClick={closeScreen9}>
                 <img alt="Close" src="https://c.animaapp.com/JuAZje8Q/img/mask-group-27@2x.png" />
