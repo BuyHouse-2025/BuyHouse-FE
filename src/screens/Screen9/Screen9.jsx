@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Background1 } from "./sections/Background1";
-import { Screen } from "../Screen";
 import { Nav } from "./sections/Nav";
 import { Section } from "./sections/Section";
-import { MyEstateOverlayPortal } from "./sections/portals/MyEstateOverlayPortal";
 import { FavoriteOverlayPortal } from "./sections/portals/FavoriteOverlayPortal";
+import { MyEstateOverlayPortal } from "./sections/portals/MyEstateOverlayPortal";
 
 import { UpdateMemberInfoOverlayPortal } from "./sections/portals/UpdateMemberInfoOverlayPortal";
 import { UpdatePwdOverlayPortal } from "./sections/portals/UpdatePwdOverlayPortal";
