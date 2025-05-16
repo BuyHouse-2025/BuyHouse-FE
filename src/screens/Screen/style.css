@@ -8,9 +8,10 @@
 .screen .overlap {
   height: 1139px;
   left: 0;
-  position: absolute;
+  position: relative;
   top: 83px;
   width: 1956px;
+  z-index: 0;
 }
 
 .screen .element-wrapper {
@@ -18,7 +19,6 @@
   background-image: url(https://c.animaapp.com/JuAZje8Q/img/--@2x.png);
   background-position: 50% 50%;
   background-size: cover;
-  box-shadow: 3px 4px 4px #00000059;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -29,6 +29,7 @@
   position: relative;
   top: 287px;
   width: 60px;
+  z-index: 10;
 }
 
 .screen .element-2 {
@@ -53,7 +54,6 @@
   font-size: 13px;
 }
 
-
 .screen .overlay-shadow {
   background-color: #e9939301;
   box-shadow: inset 0px 0px 60px #00000059;
@@ -74,7 +74,6 @@
   opacity: 1;
 }
 
-
 .screen .overlay-shadow::-webkit-scrollbar {
   display: none;
   width: 0;
@@ -84,9 +83,8 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   z-index: 0;
-	pointer-events: none;
+  pointer-events: none;
 }
-
 
 .screen .view-3 {
   background-color: #ffffff;
@@ -247,14 +245,13 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-	border-radius: 10px;
+  border-radius: 10px;
 }
-
 
 .screen .overlay-content {
   background-color: white;
@@ -287,7 +284,6 @@
   padding-top: 0;
 }
 
-
 .screen .frame-105 {
   align-items: center;
   display: flex;
@@ -319,7 +315,7 @@
   font-family: "SUIT-Thin", Helvetica;
   font-size: 17.9px;
   font-weight: 100;
-  letter-spacing: -0.60px;
+  letter-spacing: -0.6px;
   line-height: 24px;
   white-space: nowrap;
 }
@@ -362,9 +358,8 @@
 }
 
 .screen .screen9-overlay.active {
-  transform: translateX(0); 
+  transform: translateX(0);
   pointer-events: auto;
-
 }
 
 .screen .screen7-overlay-content {
@@ -379,7 +374,7 @@
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
   border-radius: 10px;
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .screen7-overlay-content {
@@ -406,10 +401,9 @@
   z-index: 2000;
 }
 
-
 .screen .screen7-overlay-content.active {
   transform: translateX(0); /* 슬라이드 인 */
-	border-radius: 10px;
+  border-radius: 10px;
 }
 
 .screen .screen9-content {
@@ -428,7 +422,6 @@
   scrollbar-width: none;
 }
 
-
 .screen9-full-overlay {
   position: fixed;
   top: 0;
@@ -436,13 +429,11 @@
   width: 100vw;
   height: 100vh;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: flex-end;
   align-items: stretch;
 }
-
-
 
 .screen .close-button {
   display: flex;
@@ -458,7 +449,6 @@
   z-index: 1000;
 }
 
-
 .screen .screenscreen-overlay {
   position: fixed;
   top: 0;
@@ -472,23 +462,19 @@
   z-index: 1000;
 }
 
-
-
 .screen .screenscreen-content {
   background-color: white;
   border-radius: 10px;
   width: 90%;
   max-width: 653px;
   height: 15vh;
-	box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.16);
   max-height: 444px;
   position: relative;
   overflow: hidden;
-	display: flex;
+  display: flex;
   flex-direction: column;
-
 }
-
 
 .screen .screenscreen-content .close-button {
   position: absolute;
@@ -677,6 +663,7 @@
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 10;
 }
 
 .screen .search-button {
@@ -686,10 +673,9 @@
   margin-right: 10px;
   display: flex;
   align-items: center;
-	width: 25px;
-	padding : 10px;
+  width: 25px;
+  padding: 10px;
 }
-
 
 .screen .search-icon {
   width: 16px;
@@ -697,7 +683,6 @@
   padding: 0;
   object-fit: contain;
 }
-
 
 .screen .container-wrapper {
   flex-grow: 1;
@@ -713,7 +698,7 @@
   font-family: "SUIT-Thin", Helvetica;
   font-size: 14px;
   font-weight: 100;
-  letter-spacing: -0.60px;
+  letter-spacing: -0.6px;
   line-height: normal;
   overflow: hidden;
   padding: 0;
@@ -739,7 +724,6 @@
   position: absolute;
   top: 9px;
 }
-
 
 .screen .text-wrapper-95 {
   color: #18253d99;
@@ -800,12 +784,11 @@
   display: block;
   height: 50px;
   width: 224px;
-	position: absolute;
+  position: absolute;
   left: 90%;
   transform: translateX(-50%);
-	margin-top: 50px;
+  margin-top: 50px;
 }
-
 
 .screen .frame-72 {
   display: flex;
@@ -862,9 +845,9 @@
   font-family: "SUIT-Thin", Helvetica;
   font-size: 15.8px;
   font-weight: 100;
-  letter-spacing: -0.60px;
+  letter-spacing: -0.6px;
   line-height: 16px;
-  margin-top: -1.00px;
+  margin-top: -1px;
   position: relative;
   white-space: nowrap;
   width: fit-content;
@@ -908,10 +891,9 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-	padding: 0 20px;   
-	height: 56px;   
+  padding: 0 20px;
+  height: 56px;
 }
-
 
 .screen .text-wrapper-98 {
   color: #000000;
@@ -976,7 +958,6 @@
 .screen .close-svg-2 {
   width: 24px;
   height: 24px;
-
 }
 
 .screen .mask-group-10 {
@@ -992,17 +973,14 @@
   max-height: unset;
 }
 
-
 .screen .screen9-content .close-button img {
   width: 24px;
   height: 24px;
 }
 
-
-
 .screen .screen8-overlay {
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.00);
+  background: rgba(255, 255, 255, 0);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.16);
   width: 363px;
   height: 444px;

@@ -12,6 +12,19 @@ import { ScreenWrapper } from "../ScreenWrapper";
 import "./style.css";
 
 export const Screen = ({}) => {
+  // map
+  useEffect(() => {
+    if (window.kakao && window.kakao.maps) {
+      const container = document.getElementById("map");
+      const options = {
+        center: new window.kakao.maps.LatLng(37.5665, 126.978), // 서울 좌표
+        level: 3,
+      };
+      // eslint-disable-next-line no-unused-vars
+      const map = new window.kakao.maps.Map(container, options);
+    }
+  }, []);
+
   const [showOverlay, setShowOverlay] = useState(false);
   const [screen9Visible, setScreen9Visible] = useState(false);
   const [screen9Active, setScreen9Active] = useState(false);
@@ -78,7 +91,8 @@ export const Screen = ({}) => {
       e.target.classList.contains("overlay") ||
       e.target.classList.contains("screenscreen-overlay") ||
       isScreen7 ||
-      e.target.classList.contains("screen9-full-overlay") || e.target.classList.contains("screen9-overlay-content")
+      e.target.classList.contains("screen9-full-overlay") ||
+      e.target.classList.contains("screen9-overlay-content")
     ) {
       closeFn();
     }
@@ -100,9 +114,7 @@ export const Screen = ({}) => {
 
       {screen9Visible && (
         <div className="screen9-full-overlay" onClick={(e) => handleClickOutside(e, closeScreen9)}>
-          <div 
-              className={`screen9-overlay ${screen9Active ? "active" : ""}`} 
-              onClick={(e) => e.stopPropagation()}>
+          <div className={`screen9-overlay ${screen9Active ? "active" : ""}`} onClick={(e) => e.stopPropagation()}>
             <div className="screen9-content">
               <div className="close-button" onClick={closeScreen9}>
                 <img alt="Close" src="https://c.animaapp.com/JuAZje8Q/img/mask-group-27@2x.png" />
@@ -242,7 +254,7 @@ export const Screen = ({}) => {
         </div>
       )}
 
-      <div className="overlap">
+      <div className="overlap" id="map" style={{ width: "1956px", height: "1139px" }}>
         <div className="element-wrapper" onClick={openScreen7} style={{ cursor: "pointer" }}>
           <p className="element-2">
             <span className="text-wrapper-87">
