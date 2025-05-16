@@ -66,6 +66,13 @@
   z-index: 900; /* 필요한 경우 다른 요소보다 위에 오도록 조정 */
 }
 
+.fade-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.fade-overlay.active {
+  opacity: 1;
+}
 
 
 .screen .overlay-shadow::-webkit-scrollbar {
@@ -342,33 +349,23 @@
   scrollbar-width: none;
 }
 
-.screen .screen9-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
+.screen9-overlay {
   width: 360px;
   height: 100%;
   background-color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-	border-radius: 10px;
-  transform: translateX(100%); /* 숨긴 상태 */
-  transition: transform 0.3s ease-in-out;
-  pointer-events: none; /* 안 보일 땐 클릭 막기 */
-  opacity: 0;
+  border-radius: 10px 0 0 10px;
+  z-index: 2000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out, 0.3s ease-in-out;
+  pointer-events: none;
 }
 
 .screen .screen9-overlay.active {
-  transform: translateX(0); /* 등장 */
+  transform: translateX(0); 
   pointer-events: auto;
-  opacity: 1;
+
 }
-
-.screen .screen9-overlay.active {
-  transform: translateX(0);
-}
-
-
 
 .screen .screen7-overlay-content {
   position: fixed;
@@ -431,15 +428,20 @@
   scrollbar-width: none;
 }
 
+
 .screen9-full-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* 💡 전체 가로 */
-  height: 100vh; /* 💡 전체 세로 */
+  width: 100vw;
+  height: 100vh;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0); /* 💡 클릭 감지용 투명 배경 */
+  background-color: rgba(0, 0, 0, 0); 
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
 }
+
 
 
 .screen .close-button {
