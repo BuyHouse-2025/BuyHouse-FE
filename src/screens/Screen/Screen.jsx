@@ -9,7 +9,9 @@ import { Frame4 } from "../Screen8/sections/Frame4";
 import { Screen9 } from "../Screen9";
 import { ScreenScreen } from "../ScreenScreen";
 import { ScreenWrapper } from "../ScreenWrapper";
-import "./style.css";
+
+import "./style.css"; 
+import KakaoMap from "./KakaoMap/KakaoMap";
 
 export const Screen = ({}) => {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -21,6 +23,8 @@ export const Screen = ({}) => {
   const [showScreen8Overlay, setShowScreen8Overlay] = useState(false);
   const [screen7Visible, setScreen7Visible] = useState(false);
   const [screen7Active, setScreen7Active] = useState(false);
+  const [selectedDistrict, setSelectedDistrict] = useState("강남구");
+  const [selectedNeighborhood, setSelectedNeighborhood] = useState("삼성동");
 
   const openScreen9 = () => {
     setScreen9Visible(true);
@@ -237,12 +241,19 @@ export const Screen = ({}) => {
           >
             <Frame4 onClose={() => setShowScreen8Overlay(false)} />
 
-            <Screen8 />
+            <Screen8
+              selectedDistrict={selectedDistrict}
+              setSelectedDistrict={setSelectedDistrict}
+              selectedNeighborhood={selectedNeighborhood}
+              setSelectedNeighborhood={setSelectedNeighborhood}
+            />
+
           </div>
         </div>
       )}
 
       <div className="overlap">
+        <KakaoMap/>
         <div className="element-wrapper" onClick={openScreen7} style={{ cursor: "pointer" }}>
           <p className="element-2">
             <span className="text-wrapper-87">
@@ -255,7 +266,6 @@ export const Screen = ({}) => {
       </div>
 
       <div className="overlay-shadow" />
-
       <div className="view-3" />
 
       <div className="frame-60">
@@ -384,51 +394,33 @@ export const Screen = ({}) => {
               </div>
               <div className="frame-73">
                 <div className="text-wrapper-97">서울</div>
-
                 <div className="background-5">
-                  <div className="div-6">
                     <div className="front-svg-fill">
                       <div className="div-6">
                         <img
-                          className="mask-group-9"
-                          alt="Mask group"
-                          src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
+                            className="mask-group-9"
+                            alt="Mask group"
+                            src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
                         />
                       </div>
                     </div>
-
-                    <img
-                      className="mask-group-9"
-                      alt="Mask group"
-                      src="https://c.animaapp.com/JuAZje8Q/img/mask-group-8@2x.png"
-                    />
                   </div>
-                </div>
-
-                <div className="text-wrapper-97">강남구</div>
-
-                <div className="background-5">
-                  <div className="div-6">
+                <div className="text-wrapper-97">{selectedDistrict}</div>
+                                <div className="background-5">
                     <div className="front-svg-fill">
                       <div className="div-6">
                         <img
-                          className="mask-group-9"
-                          alt="Mask group"
-                          src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
+                            className="mask-group-9"
+                            alt="Mask group"
+                            src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
                         />
                       </div>
                     </div>
-
-                    <img
-                      className="mask-group-9"
-                      alt="Mask group"
-                      src="https://c.animaapp.com/JuAZje8Q/img/mask-group-8@2x.png"
-                    />
                   </div>
-                </div>
-
-                <div className="text-wrapper-97">삼성동</div>
+                <div className="text-wrapper-97">{selectedNeighborhood}</div>
               </div>
+
+          
             </div>
           </div>
         </div>
