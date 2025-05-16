@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { PropertyDefaultWrapper } from "../../../../components/PropertyDefaultWrapper";
 import "./style.css";
+import dongData from "../../../../assets/dong_coords.json"; // 경로에 맞게 수정
 
-export const View = () => {
-  const [selectedDistrict, setSelectedDistrict] = useState("강남구");
-  const [selectedNeighborhood, setSelectedNeighborhood] = useState("개포동");
 
-  const districts = [
-    "강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구", "노원구",
-    "도봉구", "동대문구", "동작구", "마포구", "서대문구", "서초구", "성동구", "성북구", "송파구",
-    "양천구", "영등포구", "용산구", "은평구", "종로구", "중구", "중랑구"
-  ];
+export const View = ({
+  selectedDistrict,
+  setSelectedDistrict,
+  selectedNeighborhood,
+  setSelectedNeighborhood,
+}) => {
 
-  const neighborhoods = [
-    "개포동", "논현동", "대치동", "도곡동", "삼성동", "세곡동", "수서동",
-    "신사동", "압구정동", "역삼동", "율현동", "일원동", "자곡동", "청담동"
-  ];
+  const districts = [...new Set(dongData.map((d) => d.gu))]; // 모든 구 추출
+  const neighborhoods = dongData
+    .filter((d) => d.gu === selectedDistrict)
+    .map((d) => d.dong);
 
   return (
     <div className="view">
@@ -25,7 +24,6 @@ export const View = () => {
         </div>
       </div>
 
-      {/* 1단계: 구 선택 */}
       <div className="vertical-border-2">
         <div className="frame-35">
           {districts.map((district) => (
@@ -34,13 +32,11 @@ export const View = () => {
               buttontext={district}
               isSelected={selectedDistrict === district}
               onClick={() => setSelectedDistrict(district)}
-              className="background-instance"
             />
           ))}
         </div>
       </div>
 
-      {/* 2단계: 동 선택 */}
       <div className="vertical-border-2">
         <div className="frame-36">
           {neighborhoods.map((neighborhood) => (
@@ -49,7 +45,6 @@ export const View = () => {
               buttontext={neighborhood}
               isSelected={selectedNeighborhood === neighborhood}
               onClick={() => setSelectedNeighborhood(neighborhood)}
-              className="background-instance"
             />
           ))}
         </div>

@@ -1,16 +1,26 @@
-import React from "react";
-import { Frame4 } from "./sections/Frame4";
 import { View } from "./sections/View";
 import "./style.css";
 
-export const Screen8 = () => {
+export const Screen8 = ({
+  selectedDistrict,
+  setSelectedDistrict,
+  selectedNeighborhood,
+  setSelectedNeighborhood,
+}) => {
   return (
-    <div className="screen-8" data-model-id="1:923">
+    <div className="screen-8">
       <div className="overlap-group-5">
         <div className="background-14">
-          <View />
+          <View
+            selectedDistrict={selectedDistrict}
+            setSelectedDistrict={setSelectedDistrict}
+            selectedNeighborhood={selectedNeighborhood}
+            setSelectedNeighborhood={setSelectedNeighborhood}
+          />
           <div className="view-10">
-            <div className="text-wrapper-126">삼성동으로 이동</div>
+            <div className="text-wrapper-126">
+              {selectedNeighborhood}으로 이동
+            </div>
           </div>
         </div>
       </div>
