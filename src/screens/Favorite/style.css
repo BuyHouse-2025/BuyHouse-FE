@@ -80,7 +80,7 @@
 
 .favscreen .favtext-wrapper {
   color: #8b97aa;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 13.9px;
   font-weight: 100;
   height: 23px;
@@ -102,7 +102,7 @@
 
 .favscreen .favdiv {
   color: #8b97aa;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 10.7px;
   font-weight: 100;
   height: 11px;
@@ -129,7 +129,7 @@
 .favscreen .favtext-wrapper-2 {
   align-self: stretch;
   color: #2a2f37;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
   font-weight: 100;
   height: 20px;
@@ -143,7 +143,7 @@
 
 .favscreen .favtext-wrapper-3 {
   color: #6d7787;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 11.8px;
   font-weight: 100;
   height: 15px;
@@ -156,7 +156,7 @@
 
 .favscreen .favtext-wrapper-4 {
   color: #2a2f37;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
   font-weight: 100;
   height: 18px;
@@ -190,7 +190,7 @@
 
 .favscreen .favtext-wrapper-5 {
   color: #3182f6;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
   font-weight: 100;
   left: 12px;
@@ -199,4 +199,22 @@
   position: absolute;
   top: 6px;
   white-space: nowrap;
+}
+
+.favbasic-info {
+  display: flex;           /* ✅ 수평 정렬 핵심 */
+  align-items: center;     /* ✅ 세로 가운데 정렬 (선택) */
+  gap: 8px;                /* ✅ 요소 간 간격 (원하면 조절 가능) */
+}
+
+.favprice {
+  gap: 8px;    
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;        
+}
+
+.wish{
+  width : 228px;
 }

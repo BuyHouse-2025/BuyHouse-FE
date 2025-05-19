@@ -10,10 +10,10 @@ import { Screen9 } from "../Screen9";
 import { ScreenScreen } from "../ScreenScreen";
 import { ScreenWrapper } from "../ScreenWrapper";
 
-import "./style.css"; 
+import "./style.css";
 import KakaoMap from "./KakaoMap/KakaoMap";
 
-export const Screen = ({}) => {
+export const Screen = ({ }) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [screen9Visible, setScreen9Visible] = useState(false);
   const [screen9Active, setScreen9Active] = useState(false);
@@ -238,7 +238,11 @@ export const Screen = ({}) => {
               position: "fixed",
             }}
           >
-            <Frame4 onClose={() => setShowScreen8Overlay(false)} />
+            <Frame4
+              onClose={() => setShowScreen8Overlay(false)}
+              selectedDistrict={selectedDistrict}
+              selectedNeighborhood={selectedNeighborhood}
+            />
 
             <Screen8
               selectedDistrict={selectedDistrict}
@@ -251,17 +255,8 @@ export const Screen = ({}) => {
         </div>
       )}
 
-      <div className="overlap">
-        <KakaoMap/>
-        <div className="element-wrapper" onClick={openScreen7} style={{ cursor: "pointer" }}>
-          <p className="element-2">
-            <span className="text-wrapper-87">
-              26평
-              <br />
-            </span>
-            <span className="text-wrapper-88">6.6억</span>
-          </p>
-        </div>
+      <div className="overlap" >
+        <KakaoMap />
       </div>
 
       <div className="overlay-shadow" />
@@ -394,32 +389,32 @@ export const Screen = ({}) => {
               <div className="frame-73">
                 <div className="text-wrapper-97">서울</div>
                 <div className="background-5">
-                    <div className="front-svg-fill">
-                      <div className="div-6">
-                        <img
-                            className="mask-group-9"
-                            alt="Mask group"
-                            src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
-                        />
-                      </div>
+                  <div className="front-svg-fill">
+                    <div className="div-6">
+                      <img
+                        className="mask-group-9"
+                        alt="Mask group"
+                        src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
+                      />
                     </div>
                   </div>
+                </div>
                 <div className="text-wrapper-97">{selectedDistrict}</div>
-                                <div className="background-5">
-                    <div className="front-svg-fill">
-                      <div className="div-6">
-                        <img
-                            className="mask-group-9"
-                            alt="Mask group"
-                            src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
-                        />
-                      </div>
+                <div className="background-5">
+                  <div className="front-svg-fill">
+                    <div className="div-6">
+                      <img
+                        className="mask-group-9"
+                        alt="Mask group"
+                        src="https://c.animaapp.com/JuAZje8Q/img/mask-group-7@2x.png"
+                      />
                     </div>
                   </div>
+                </div>
                 <div className="text-wrapper-97">{selectedNeighborhood}</div>
               </div>
 
-          
+
             </div>
           </div>
         </div>

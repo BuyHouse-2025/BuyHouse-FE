@@ -2,7 +2,7 @@ import React from "react";
 import { MaskGroup } from "../../../../components/MaskGroup";
 import "./style.css";
 
-export const Frame4 = ({ onClose }) => {
+export const Frame4 = ({ onClose, selectedDistrict, selectedNeighborhood }) => {
   return (
     <div className="frame-4">
       <div className="frame-37">
@@ -13,13 +13,13 @@ export const Frame4 = ({ onClose }) => {
             alt="Mask group"
             src="https://c.animaapp.com/JuAZje8Q/img/mask-group-26@2x.png"
           />
-          <div className="text-wrapper-60">강남구</div>
+          <div className="text-wrapper-60">{selectedDistrict}</div>
           <img
             className="mask-group-3"
             alt="Mask group"
             src="https://c.animaapp.com/JuAZje8Q/img/mask-group-26@2x.png"
           />
-          <div className="text-wrapper-61">삼성동</div>
+          <div className="text-wrapper-61">{selectedNeighborhood}</div>
         </div>
 
         <MaskGroup
