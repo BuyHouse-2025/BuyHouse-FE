@@ -1,16 +1,16 @@
 .screen {
   background-color: #ffffff;
-  height: 1080px;
+  height: 100%;
   position: relative;
-  width: 1920px;
+  width: 100%;
 }
 
 .screen .overlap {
-  height: 1139px;
+  height: calc(100vh - 70px);
   left: 0;
   position: relative;
-  top: 83px;
-  width: 1956px;
+  top: 70px;
+  width: 100%;
   z-index: 0;
 }
 
@@ -58,10 +58,10 @@
   background-color: #e9939301;
   box-shadow: inset 0px 0px 60px #00000059;
   position: fixed;
-  top: 83px;
+  top: 70px;
   left: 0;
   width: 100%;
-  height: calc(100% - 83px); /* 💡 이 부분이 핵심 */
+  height: calc(100% - 70px); /* 💡 이 부분이 핵심 */
   overflow-y: auto;
   z-index: 900; /* 필요한 경우 다른 요소보다 위에 오도록 조정 */
 }
@@ -91,7 +91,7 @@
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: #eeeeee;
-  height: 83px;
+  height: 70px;
   left: 1px;
   position: fixed;
   top: 0;
@@ -102,7 +102,7 @@
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   left: 1px;
   position: fixed;
   top: 2px;
@@ -117,6 +117,7 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
+  height: 70px;
 }
 
 .screen .frame-62 {
@@ -201,9 +202,9 @@
 
 .screen .text-wrapper-90 {
   color: #ffffff;
-  font-family: "SUIT-Bold", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 200;
   letter-spacing: 0;
   line-height: 14px;
   position: absolute;
@@ -312,7 +313,7 @@
 
 .screen .text-wrapper-115 {
   color: #2a2f37;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 17.9px;
   font-weight: 100;
   letter-spacing: -0.6px;
@@ -492,9 +493,9 @@
 
 .screen .text-wrapper-91 {
   color: #ffffff;
-  font-family: "SUIT-Bold", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 200;
   letter-spacing: 0;
   line-height: 14px;
   position: absolute;
@@ -541,9 +542,9 @@
 
 .screen .text-wrapper-92 {
   color: #ffffff;
-  font-family: "SUIT-Bold", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 200;
   left: 12px;
   letter-spacing: 0;
   line-height: normal;
@@ -573,9 +574,9 @@
 
 .screen .text-wrapper-93 {
   color: #ffffff;
-  font-family: "SUIT-Bold", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 200;
   left: 7px;
   letter-spacing: 0;
   line-height: normal;
@@ -598,9 +599,9 @@
 
 .screen .text-wrapper-94 {
   color: #ffffff;
-  font-family: "SUIT-Bold", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 200;
   height: 15px;
   left: 11px;
   letter-spacing: 0;
@@ -695,7 +696,7 @@
   border: 0;
   border-radius: 8px;
   color: #8b97aa;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
   font-weight: 100;
   letter-spacing: -0.6px;
@@ -727,7 +728,7 @@
 
 .screen .text-wrapper-95 {
   color: #18253d99;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
   font-weight: 100;
   letter-spacing: 0;
@@ -767,7 +768,7 @@
 
 .screen .text-wrapper-96 {
   color: #18253d99;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
   font-weight: 100;
   letter-spacing: 0;
@@ -842,7 +843,7 @@
 
 .screen .text-wrapper-97 {
   color: #2a2f37;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 15.8px;
   font-weight: 100;
   letter-spacing: -0.6px;
@@ -857,7 +858,10 @@
   height: 12px;
   position: relative;
   transform: rotate(180deg);
-  width: 12px;
+  width: 18px;
+  display: flex;                
+  justify-content: center;      
+  align-items: center;  
 }
 
 .screen .div-6 {
@@ -868,7 +872,6 @@
 .screen .front-svg-fill {
   height: 12px;
   left: 0;
-  position: absolute;
   top: 0;
   width: 12px;
 }
@@ -897,7 +900,7 @@
 
 .screen .text-wrapper-98 {
   color: #000000;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 14px;
   font-weight: 100;
   height: 18px;
@@ -936,7 +939,7 @@
 
 .screen .text-wrapper-98 {
   color: #2a2f37;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 17.9px;
   font-weight: 100;
   letter-spacing: -0.6px;

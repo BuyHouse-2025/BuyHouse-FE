@@ -13,7 +13,7 @@ const KakaoMap = () => {
   return (
     <div style={{
         width: "100%",
-        height: "calc(100vh - 83px)",
+        height: "calc(100vh - 70px)",
         position: "relative", // 중요!
         zIndex: 0, // 낮은 값으로 버튼 안 가리게!
         }}>

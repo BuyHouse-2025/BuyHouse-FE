@@ -29,7 +29,7 @@
 
 .updatePwd .input {
   color: #2a2f37;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 17.9px;
   font-weight: 100;
   height: 23px;
@@ -44,7 +44,7 @@
 .updatePwd .inputbox {
   /* 기존 스타일 유지 */
   color: #3b81f5;
-  font-family: "SUIT-Bold", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 15.8px;
   font-weight: 700;
   letter-spacing: -0.6px;
@@ -88,7 +88,7 @@
 .updatePwd .input2 {
   align-self: stretch;
   color: #2a2f37;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 16px;
   font-weight: 100;
   height: 22px;
@@ -107,7 +107,7 @@
   color: #8b97aa;
   flex: 1;
   flex-grow: 1;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 16px;
   font-weight: 100;
   height: 20px;
@@ -139,7 +139,7 @@
   color: #8b97aa;
   flex: 1;
   flex-grow: 1;
-  font-family: "SUIT-Thin", Helvetica;
+  font-family: "SUIT-Regular", Helvetica;
   font-size: 16px;
   font-weight: 100;
   height: 20px;
