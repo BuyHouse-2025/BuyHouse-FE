@@ -38,6 +38,7 @@ const router = createBrowserRouter([
   { path: "/updatePwd", element: <UpdatePwd /> },
   { path: "/updateMemberInfo", element: <UpdateMemberInfo /> },
   { path: "*", element: <Screen /> },
+  { path: "/findpwd", element: <FindPwd /> },
 ]);
 
 export const App = () => {

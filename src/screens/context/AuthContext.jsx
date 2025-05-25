@@ -1,22 +1,20 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [user, setUser] = useState(null); // ✅ 사용자 정보 상태 추가
+  const [user, setUser] = useState(null);
 
   const login = async (token) => {
     localStorage.setItem("authToken", token);
     setIsLoggedIn(true);
-
-    // ✅ 로그인 직후 사용자 정보 요청
     try {
       const res = await fetch("http://localhost:8080/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
-      setUser(data);
+      setUser(data); // 여기서 설정됨
     } catch (e) {
       console.error("사용자 정보 가져오기 실패", e);
     }
@@ -25,18 +23,16 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("authToken");
     setIsLoggedIn(false);
-    setUser(null); // 사용자 정보 초기화
+    setUser(null);
   };
 
   useEffect(() => {
     const token = localStorage.getItem("authToken");
-    if (token) {
-      login(token); // 앱 시작 시 자동 로그인
-    }
+    if (token) login(token);
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, logout, user }}>
+    <AuthContext.Provider value={{ isLoggedIn, user, setUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
