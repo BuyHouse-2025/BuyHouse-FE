@@ -15,6 +15,9 @@ import KakaoMap from "./KakaoMap/KakaoMap";
 
 import { useAuth } from "../context/AuthContext";
 
+
+
+
 export const Screen = ({ }) => {
   const navigate = useNavigate();
   const location = useLocation();

@@ -66,6 +66,28 @@ export const Screen9 = () => {
     }
   };
 
+  const handleDeleteAccount = async () => {
+    if (!window.confirm("정말 탈퇴하시겠습니까?")) return;
+
+    try {
+      const token = localStorage.getItem("authToken");
+
+      await axios.delete("http://localhost:8080/api/users", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      // 토큰 제거 및 로그아웃 처리
+      logout();         // useAuth 훅에서 가져온 로그아웃 함수
+      navigate("/");    // 홈으로 이동
+    } catch (err) {
+      console.error("❌ 회원탈퇴 실패", err.response || err);
+      alert("회원탈퇴에 실패했습니다.");
+    }
+  };
+
+
   return (
     <div className="screen-9" data-model-id="1:1009">
       <div className="view-11">
@@ -81,7 +103,10 @@ export const Screen9 = () => {
 
         <Section />
 
-        <div className="text-wrapper-127">회원탈퇴</div>
+        <div className="text-wrapper-127" onClick={handleDeleteAccount}>
+          회원탈퇴
+        </div>
+
       </div>
 
       {showMyEstateOverlay && (
