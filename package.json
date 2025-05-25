@@ -21,6 +21,6 @@
     "globals": "15.12.0",
     "react-app-rewired": "^2.2.1",
     "terser-brunch": "^4.1.0",
-    "vite": "6.0.4"
+    "vite": "^6.0.4"
   }
 }
