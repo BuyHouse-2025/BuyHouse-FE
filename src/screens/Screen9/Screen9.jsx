@@ -8,10 +8,18 @@ import { MyEstateOverlayPortal } from "./sections/portals/MyEstateOverlayPortal"
 import { UpdateMemberInfoOverlayPortal } from "./sections/portals/UpdateMemberInfoOverlayPortal";
 import { UpdatePwdOverlayPortal } from "./sections/portals/UpdatePwdOverlayPortal";
 
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // 경로는 실제 구조에 맞게 조정
+
+
 import "./style.css";
 
 export const Screen9 = () => {
   // MyEstate Overlay
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+
   const [showMyEstateOverlay, setShowMyEstateOverlay] = useState(false);
   const [myEstateActive, setMyEstateActive] = useState(false);
   const openMyEstate = () => {
