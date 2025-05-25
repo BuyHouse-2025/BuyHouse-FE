@@ -131,33 +131,49 @@
   ],
   "edges": [
     {
-      "id": "src/screens/Screen/Screen.jsx:314:12-to-src/screens/Screen6/Screen6.jsx",
+      "id": "src/screens/Screen/Screen.jsx:158:4-to-src/screens/Screen/Screen.jsx",
       "source": "src/screens/Screen/Screen.jsx",
-      "target": "src/screens/Screen6/Screen6.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
-        "viaRoute": "/login",
+        "viaRoute": "/",
         "trigger": {
-          "element": "<Link className=\"background-4\" to=\"/login\">\n              <div className=\"text-wrapper-93\">로그인하기</div>\n            </Link>",
-          "line": 314,
-          "endLine": 316,
-          "column": 12,
-          "endColumn": 19,
+          "element": "navigate(\"/\")",
+          "line": 158,
+          "endLine": 158,
+          "column": 4,
+          "endColumn": 17,
           "sourceFile": "src/screens/Screen/Screen.jsx"
         }
       }
     },
     {
-      "id": "src/screens/Screen/Screen.jsx:318:12-to-src/screens/Screen3/Screen3.jsx",
+      "id": "src/screens/Screen/Screen.jsx:427:14-to-src/screens/Screen6/Screen6.jsx",
+      "source": "src/screens/Screen/Screen.jsx",
+      "target": "src/screens/Screen6/Screen6.jsx",
+      "data": {
+        "viaRoute": "/login",
+        "trigger": {
+          "element": "<Link className=\"background-4\" to=\"/login\">\n                <div className=\"text-wrapper-93\">로그인하기</div>\n              </Link>",
+          "line": 427,
+          "endLine": 429,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Screen/Screen.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Screen/Screen.jsx:430:14-to-src/screens/Screen3/Screen3.jsx",
       "source": "src/screens/Screen/Screen.jsx",
       "target": "src/screens/Screen3/Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
-          "element": "<Link to=\"/join\">\n              <button className=\"button-2\">\n                <div className=\"text-wrapper-94\">회원가입</div>\n              </button>\n            </Link>",
-          "line": 318,
-          "endLine": 322,
-          "column": 12,
-          "endColumn": 19,
+          "element": "<Link to=\"/join\">\n                <button className=\"button-2\">\n                  <div className=\"text-wrapper-94\">회원가입</div>\n                </button>\n              </Link>",
+          "line": 430,
+          "endLine": 434,
+          "column": 14,
+          "endColumn": 21,
           "sourceFile": "src/screens/Screen/Screen.jsx"
         }
       }
@@ -179,15 +195,15 @@
       }
     },
     {
-      "id": "src/screens/Screen6/Screen6.jsx:34:6-to-src/screens/Screen/Screen.jsx",
+      "id": "src/screens/Screen6/Screen6.jsx:49:6-to-src/screens/Screen/Screen.jsx",
       "source": "src/screens/Screen6/Screen6.jsx",
       "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link className=\"frame-107\" to=\"/\">\n        <img className=\"v-3\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\" />\n        <div className=\"text-wrapper-116\">집사</div>\n      </Link>",
-          "line": 34,
-          "endLine": 37,
+          "element": "<Link className=\"frame-107\" to=\"/\">\n        <img\n          className=\"v-3\"\n          alt=\"V\"\n          src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\"\n        />\n        <div className=\"text-wrapper-116\">집사</div>\n      </Link>",
+          "line": 49,
+          "endLine": 56,
           "column": 6,
           "endColumn": 13,
           "sourceFile": "src/screens/Screen6/Screen6.jsx"
@@ -195,15 +211,15 @@
       }
     },
     {
-      "id": "src/screens/Screen6/Screen6.jsx:92:10-to-src/screens/Screen3/Screen3.jsx",
+      "id": "src/screens/Screen6/Screen6.jsx:141:10-to-src/screens/Screen3/Screen3.jsx",
       "source": "src/screens/Screen6/Screen6.jsx",
       "target": "src/screens/Screen3/Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
           "element": "<Link to=\"/join\">\n            <button type=\"button\" className=\"button-3\">\n              <div className=\"text-wrapper-121\">회원가입</div>\n            </button>\n          </Link>",
-          "line": 92,
-          "endLine": 96,
+          "line": 141,
+          "endLine": 145,
           "column": 10,
           "endColumn": 17,
           "sourceFile": "src/screens/Screen6/Screen6.jsx"

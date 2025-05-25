@@ -1,7 +1,11 @@
 import React from "react";
 import "./style.css";
+import { useAuth } from "../../../context/AuthContext";
 
 export const Section = () => {
+  const { user } = useAuth(); // ✅ Context에서 가져오기
+  const userName = user?.name || "사용자";
+  
   return (
     <div className="section">
       <div className="frame-47">
@@ -15,14 +19,10 @@ export const Section = () => {
             alt="Rank"
             src="https://c.animaapp.com/JuAZje8Q/img/rank-1@2x.png"
           />
-
           <p className="element">
-            <span className="span">현재 장종원님의 자산은</span>
-
+            <span className="span">현재 {userName}님의 자산은</span>
             <span className="text-wrapper-72">&nbsp;</span>
-
-            <span className="text-wrapper-73">상위 30.6% </span>
-
+            <span className="text-wrapper-73">상위 30.6%</span>
             <span className="span">입니다.</span>
           </p>
         </div>
