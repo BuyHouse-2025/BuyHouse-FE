@@ -210,7 +210,7 @@ useEffect(() => {
               </div>
 
               {/* Screen9 컴포넌트에 user/userError props 전달 */}
-              <Screen9 userInfo={user} error={userError} />
+              <Screen9 userInfo={user} error={userError} onClose={closeScreen9} />
             </div>
           </div>
         </div>
