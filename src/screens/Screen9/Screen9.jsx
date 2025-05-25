@@ -84,6 +84,7 @@ export const Screen9 = () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
+        withCredentials: true,
       });
 
       // 토큰 제거 및 로그아웃 처리
