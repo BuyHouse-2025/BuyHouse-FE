@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Screen4 } from "../Screen4";
 import { Screen5 } from "../Screen5";
 import { Screen7 } from "../Screen7";
@@ -9,11 +9,16 @@ import { Frame4 } from "../Screen8/sections/Frame4";
 import { Screen9 } from "../Screen9";
 import { ScreenScreen } from "../ScreenScreen";
 import { ScreenWrapper } from "../ScreenWrapper";
-
+import axios from "axios";       
 import "./style.css";
 import KakaoMap from "./KakaoMap/KakaoMap";
 
+import { useAuth } from "../context/AuthContext";
+
 export const Screen = ({ }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { isLoggedIn, logout } = useAuth();
   const [showOverlay, setShowOverlay] = useState(false);
   const [screen9Visible, setScreen9Visible] = useState(false);
   const [screen9Active, setScreen9Active] = useState(false);
@@ -25,6 +30,31 @@ export const Screen = ({ }) => {
   const [screen7Active, setScreen7Active] = useState(false);
   const [selectedDistrict, setSelectedDistrict] = useState("강남구");
   const [selectedNeighborhood, setSelectedNeighborhood] = useState("삼성동");
+
+  const [user, setUser] = useState(null);
+  const [userError, setUserError] = useState("");
+
+  const [mapCenter, setMapCenter] = useState({
+    lat: 37.566826,
+    lng: 126.9786567,
+  });
+
+  // ✨ 추가: 선택된 위치 정보(지도 마커 라벨용)
+  const [locationInfo, setLocationInfo] = useState({
+    district: selectedDistrict,
+    neighborhood: selectedNeighborhood,
+  });
+
+  const handleMoveToLocation = (locationData) => {
+      setMapCenter({
+        lat: locationData.lat,
+        lng: locationData.lng,
+      })
+      setLocationInfo({
+        district: locationData.district,
+        neighborhood: locationData.neighborhood,
+      })
+    }
 
   const openScreen9 = () => {
     setScreen9Visible(true);
@@ -45,6 +75,54 @@ export const Screen = ({ }) => {
     setScreen7Active(false);
     setTimeout(() => setScreen7Visible(false), 300);
   };
+
+  useEffect(() => {
+  if (!screen9Visible) return;
+
+  const fetchUserData = async () => {
+    try {
+      const token = localStorage.getItem("authToken");
+      console.log("▶️ /api/users 요청 보냄…", token);
+
+      // 풀 URL을 사용합니다
+      const res = await axios.get("http://localhost:8080/api/users", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        // 만약 cookie 기반 인증이라면 withCredentials:true 도 추가
+        // withCredentials: true,
+      });
+
+      console.log("✅ 응답 수신:", res.data);
+      const { name, cash, estateAsset, totalAsset } = res.data;
+      setUser({ name, cash, estateAsset, totalAsset });
+      setUserError("");
+    } catch (err) {
+      console.error("❌ 사용자 정보 요청 실패", err);
+      setUserError("유저 정보를 불러오지 못했습니다.");
+    }
+  };
+
+  fetchUserData();
+}, [screen9Visible]);
+
+  
+ // Screen.jsx에서 토큰 저장 부분 수정
+useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  if (!params.toString()) return;
+
+  // 쿼리 파라미터 중 첫 번째 key/value를 토큰으로 사용
+  const [[key, value]] = Array.from(params.entries());
+  console.log("🕵️‍♀️ URL param key:", key, "value:", value);
+
+  if (value) {
+    localStorage.setItem("authToken", value);
+    // 쿼리 제거
+    navigate(location.pathname, { replace: true });
+  }
+}, [location.search, location.pathname, navigate]);
+
 
   useEffect(() => {
     const anyOverlayOpen =
@@ -75,6 +153,14 @@ export const Screen = ({ }) => {
     screen7Visible,
   ]);
 
+  const handleLogout = () => {
+    logout();      // ← Context에 정의된 logout() 사용
+    navigate("/");
+  };
+
+
+
+
   const handleClickOutside = (e, closeFn) => {
     const isScreen7 =
       e.target.classList.contains("screen7-full-overlay") || e.target.classList.contains("screen7-overlay-content");
@@ -104,13 +190,24 @@ export const Screen = ({ }) => {
       )}
 
       {screen9Visible && (
-        <div className="screen9-full-overlay" onClick={(e) => handleClickOutside(e, closeScreen9)}>
-          <div className={`screen9-overlay ${screen9Active ? "active" : ""}`} onClick={(e) => e.stopPropagation()}>
+        <div
+          className="screen9-full-overlay"
+          onClick={(e) => handleClickOutside(e, closeScreen9)}
+        >
+          <div
+            className={`screen9-overlay ${screen9Active ? "active" : ""}`}
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="screen9-content">
               <div className="close-button" onClick={closeScreen9}>
-                <img alt="Close" src="https://c.animaapp.com/JuAZje8Q/img/mask-group-27@2x.png" />
+                <img
+                  alt="Close"
+                  src="https://c.animaapp.com/JuAZje8Q/img/mask-group-27@2x.png"
+                />
               </div>
-              <Screen9 />
+
+              {/* Screen9 컴포넌트에 user/userError props 전달 */}
+              <Screen9 userInfo={user} error={userError} />
             </div>
           </div>
         </div>
@@ -249,6 +346,7 @@ export const Screen = ({ }) => {
               setSelectedDistrict={setSelectedDistrict}
               selectedNeighborhood={selectedNeighborhood}
               setSelectedNeighborhood={setSelectedNeighborhood}
+              onMoveToLocation={handleMoveToLocation}
             />
 
           </div>
@@ -256,7 +354,7 @@ export const Screen = ({ }) => {
       )}
 
       <div className="overlap" >
-        <KakaoMap />
+        <KakaoMap center={mapCenter} locationInfo={locationInfo} />
       </div>
 
       <div className="overlay-shadow" />
@@ -303,25 +401,41 @@ export const Screen = ({ }) => {
           </div>
 
           <div className="frame-66">
-            <div className="overlap-group-wrapper" onClick={openScreen9}>
-              <div className="overlap-group">
-                <div className="text-wrapper-92">My</div>
-
-                <img className="user" alt="User" src="https://c.animaapp.com/JuAZje8Q/img/user-1@2x.png" />
+          {isLoggedIn ? (
+            // 로그인된 경우: My 아이콘 + 로그아웃 버튼
+            <>
+              <div className="overlap-group-wrapper" onClick={openScreen9}>
+                <div className="overlap-group">
+                  <div className="text-wrapper-92">My</div>
+                  <img
+                    className="user"
+                    alt="User"
+                    src="https://c.animaapp.com/JuAZje8Q/img/user-1@2x.png"
+                  />
+                </div>
               </div>
-            </div>
-
-            <Link className="background-4" to="/login">
-              <div className="text-wrapper-93">로그인하기</div>
-            </Link>
-
-            <Link to="/join">
-              <button className="button-2">
-                <div className="text-wrapper-94">회원가입</div>
+              <button
+                className="background-4"       // 스타일은 기존 로그인하기 버튼과 동일하게
+                onClick={handleLogout}
+              >
+                <div className="text-wrapper-93">로그아웃</div>
               </button>
-            </Link>
-          </div>
+            </>
+          ) : (
+            // 비로그인 상태: 로그인 / 회원가입
+            <>
+              <Link className="background-4" to="/login">
+                <div className="text-wrapper-93">로그인하기</div>
+              </Link>
+              <Link to="/join">
+                <button className="button-2">
+                  <div className="text-wrapper-94">회원가입</div>
+                </button>
+              </Link>
+            </>
+          )}
         </div>
+      </div>
 
         <div className="frame-67">
           <div className="frame-68">

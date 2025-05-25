@@ -991,7 +991,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 100;
+  pointer-events: auto;
 }
 .screen8-overlay,
 .screen-8 {

@@ -30,6 +30,8 @@
   position: absolute;
   top: 388px;
   width: 329px;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .screen-8 .text-wrapper-126 {
