@@ -90,6 +90,7 @@ export const Screen9 = () => {
       // 토큰 제거 및 로그아웃 처리
       logout();   
       navigate("/");    // 홈으로 이동
+      window.location.reload(); 
     } catch (err) {
       console.error("❌ 회원탈퇴 실패", err.response || err);
       alert("회원탈퇴에 실패했습니다.");
