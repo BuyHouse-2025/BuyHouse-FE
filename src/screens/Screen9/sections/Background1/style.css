@@ -72,7 +72,7 @@
 .background-1 .chg-pwd {
   color: #8b97aa;
   font-family: "SUIT-Regular", Helvetica;
-  font-size: 13.9px;
+  font-size: 13.9px !important;
   font-weight: 100;
   letter-spacing: -0.40px;
   line-height: 22px;
