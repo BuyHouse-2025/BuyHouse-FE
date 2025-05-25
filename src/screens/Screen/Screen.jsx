@@ -92,8 +92,7 @@ export const Screen = ({ }) => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-        // 만약 cookie 기반 인증이라면 withCredentials:true 도 추가
-        // withCredentials: true,
+         withCredentials: true,
       });
 
       console.log("✅ 응답 수신:", res.data);
