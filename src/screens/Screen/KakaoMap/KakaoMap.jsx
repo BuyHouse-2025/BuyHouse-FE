@@ -3,11 +3,24 @@
 import { useEffect, useState } from "react"
 import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk"
 
-const KakaoMap = ({ center, locationInfo }) => {
+const KakaoMap = ({ center, locationInfo, onBoundsChange, apartmentList = [], onMarkerClick }) => {
   const [loading, error] = useKakaoLoader({
     appkey: "bb20f8d7395f8d42ee73644132549797",
     libraries: [],
   })
+
+  const handleBoundsChanged = (map) => {
+    const bounds = map.getBounds();
+    const sw = bounds.getSouthWest(); // min
+    const ne = bounds.getNorthEast(); // max
+
+    onBoundsChange({
+      minLat: sw.getLat(),
+      minLng: sw.getLng(),
+      maxLat: ne.getLat(),
+      maxLng: ne.getLng(),
+    });
+  };
 
   // Default center (Seoul City Hall)
   const [mapCenter, setMapCenter] = useState({
@@ -34,15 +47,41 @@ const KakaoMap = ({ center, locationInfo }) => {
         zIndex: 0,
       }}
     >
-      <Map center={mapCenter} style={{ width: "100%", height: "100%" }} level={3}>
+      <Map
+        center={mapCenter}
+        style={{ width: "100%", height: "100%" }}
+        level={3}
+        onCreate={(map) => {
+          map.addListener("idle", () => {
+            // ✅ 조건문 추가
+            if (onBoundsChange) {
+              handleBoundsChanged(map);
+            }
+          });
+        }}
+      >
+        {/* 중앙 마커 */}
         <MapMarker position={mapCenter}>
           <div style={{ color: "#000", padding: "5px", backgroundColor: "white", borderRadius: "4px" }}>
             {locationInfo ? `${locationInfo.district} ${locationInfo.neighborhood}` : "서울 시청"}
           </div>
         </MapMarker>
+
+        {/* 아파트 리스트 마커들 */}
+        {apartmentList.map((apt, idx) => (
+          <MapMarker
+            key={idx}
+            position={{ lat: apt.lat, lng: apt.lng }}
+            onClick={() => onMarkerClick?.(apt)}
+          >
+            <div style={{ background: "#fff", padding: "2px 5px", borderRadius: "4px", fontSize: "12px" }}>
+              {apt.aptNm}
+            </div>
+          </MapMarker>
+        ))}
       </Map>
     </div>
-  )
-}
+  );
+};
 
 export default KakaoMap
