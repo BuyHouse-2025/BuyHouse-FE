@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export const Frame2 = () => {
+export const Frame2 = ({ aptDetail, onClose }) => {
   return (
     <div className="frame-2">
       <div className="container">

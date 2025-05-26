@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { Map, MapMarker, useKakaoLoader } from "react-kakao-maps-sdk"
 
-const KakaoMap = ({ center, locationInfo, onBoundsChange, apartmentList = [] }) => {
+const KakaoMap = ({ center, locationInfo, onBoundsChange, apartmentList = [], onMarkerClick }) => {
   const [loading, error] = useKakaoLoader({
     appkey: "bb20f8d7395f8d42ee73644132549797",
     libraries: [],
@@ -72,7 +72,7 @@ const KakaoMap = ({ center, locationInfo, onBoundsChange, apartmentList = [] }) 
           <MapMarker
             key={idx}
             position={{ lat: apt.lat, lng: apt.lng }}
-            clickable={true}
+            onClick={() => onMarkerClick?.(apt)}
           >
             <div style={{ background: "#fff", padding: "2px 5px", borderRadius: "4px", fontSize: "12px" }}>
               {apt.aptNm}

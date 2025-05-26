@@ -4,6 +4,9 @@ import { Screen4 } from "../Screen4";
 import { Screen5 } from "../Screen5";
 import { Screen7 } from "../Screen7";
 import { BackgroundWrapper } from "../Screen7/sections/BackgroundWrapper";
+import { Background } from "../Screen7/sections/Background";
+import { Frame2 } from "../Screen7/sections/Frame2";
+import { Frame3 } from "../Screen7/sections/Frame3";
 import { Screen8 } from "../Screen8";
 import { Frame4 } from "../Screen8/sections/Frame4";
 import { Screen9 } from "../Screen9";
@@ -34,7 +37,7 @@ export const Screen = ({ }) => {
   const [bounds, setBounds] = useState(null);
   const [mapBounds, setMapBounds] = useState(null);
   const [apartmentList, setApartmentList] = useState([]);
-  
+  const [selectedAptDetail, setSelectedAptDetail] = useState(null);
 
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
@@ -211,6 +214,20 @@ export const Screen = ({ }) => {
   };
 
 
+  // 클릭된 aptSeq로 상세정보 요청 → 상태에 저장 → 오버레이 열기
+  const handleMarkerClick = async (apt) => {
+    try {
+      // ① apt.aptSeq 를 백엔드로 요청
+      const res = await axios.get(`http://localhost:8080/api/estate/${apt.aptSeq}`);
+      // ② 받은 DTO를 상태에 저장
+      setSelectedAptDetail(res.data);
+      // ③ 오버레이 열기
+      openScreen7();
+    } catch (err) {
+      console.error("❌ 아파트 상세 조회 실패", err);
+    }
+  };
+
   return (
     <div className="screen">
       {screen7Visible && (
@@ -219,8 +236,23 @@ export const Screen = ({ }) => {
             className={`screen7-overlay-content ${screen7Active ? "active" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <BackgroundWrapper onClose={closeScreen7} />
-            <Screen7 />
+            <BackgroundWrapper
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            />
+            {/* <Background
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            />
+            <Frame2
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            />
+            <Frame3
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            /> */}
+            <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7} />
           </div>
         </div>
       )}
@@ -386,6 +418,7 @@ export const Screen = ({ }) => {
           onBoundsChange={(bounds) => {
             setMapBounds(bounds); // 지도 이동 시 bounds만 저장
           }}
+          onMarkerClick={handleMarkerClick}
           apartmentList={apartmentList}
         />
       </div>

@@ -1,18 +1,19 @@
 import React from "react";
 import "./style.css";
 
-export const Background = () => {
+export const Background = ({ aptDetail }) => {
+  console.log("🟢 BackgroundWrapper received aptDetail:", aptDetail);
   return (
     <div className="background">
       <div className="div-4">
         <div className="container-11">
           <div className="overlay-border">
             <div className="container-12">
-              <div className="text-wrapper-49">최근 실거래가</div>
+              <div className="text-wrapper-49">현재 역대 최고가</div>
             </div>
 
             <div className="container-13">
-              <div className="text-wrapper-50">16억 1,000</div>
+              <div className="text-wrapper-50">{1}</div>
 
             </div>
 
@@ -29,7 +30,7 @@ export const Background = () => {
             </div>
 
             <div className="container-15">
-              <div className="text-wrapper-54">17억</div>
+              <div className="text-wrapper-54">{1}</div>
 
               <div className="overlay-2">
                 <div className="text-wrapper-55">중층</div>
