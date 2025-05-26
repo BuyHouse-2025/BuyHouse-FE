@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
-                   // ← axios import
+import Footer from "../../components/footer/footer";
 import "./style.css";
+import Header from "../../components/header/header";
 
 export const Screen6 = () => {
   const { login } = useAuth(); 
@@ -46,14 +47,7 @@ export const Screen6 = () => {
 
   return (
     <div className="screen-6" data-model-id="1:557">
-      <Link className="frame-107" to="/">
-        <img
-          className="v-3"
-          alt="V"
-          src="https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png"
-        />
-        <div className="text-wrapper-116">집사</div>
-      </Link>
+      <Header />
 
       <form className="form-list-item" onSubmit={handleSubmit}>
         <div className="frame-108">
@@ -156,37 +150,7 @@ export const Screen6 = () => {
         </Link>
       </div>
 
-      <div className="frame-114">
-        <div className="frame-115">
-          <div className="item-link-2">SSAFY</div>
-
-          <div className="item-10">
-            <div className="link-strong-2">2025.05.29</div>
-            <div className="vertical-divider-4" />
-          </div>
-
-          <div className="item-11">
-            <div className="link-3">WON YUN SEO</div>
-            <div className="vertical-divider-4" />
-          </div>
-
-          <div className="item-12">
-            <div className="link-4">JANG JONG WON</div>
-            <img
-              className="vertical-divider-5"
-              alt="Vertical divider"
-              src="https://c.animaapp.com/JuAZje8Q/img/vertical-divider@2x.png"
-            />
-          </div>
-        </div>
-
-        <div className="frame-116">
-          <div className="text-wrapper-123">집사</div>
-          <div className="text-wrapper-124">Copyright</div>
-          <div className="text-wrapper-125">© BUYHOME Corp.</div>
-          <div className="text-wrapper-124">All Rights Reserved.</div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };
