@@ -14,16 +14,10 @@ export const Background1 = ({ onOpenUpdateMemberInfo, onOpenUpdatePwd }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        // 1) 로컬 스토리지에서 토큰 꺼내기
         const token = localStorage.getItem("authToken");
-
-        // 2) Authorization 헤더에 'Bearer ' 붙여서 요청
         const res = await axios.get("http://localhost:8080/api/users", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-          // 필요하다면 쿠키 인증용 옵션
-          // withCredentials: true,
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
         });
 
         const { name, cash, estateAsset, totalAsset } = res.data;
@@ -49,7 +43,7 @@ export const Background1 = ({ onOpenUpdateMemberInfo, onOpenUpdatePwd }) => {
           </div>
 
           <div className="frame-41">
-            <div className="mypage-name">{user.name}님</div>
+            <div className="mypage-name">{user.name || "사용자"}님</div>
             <div className="chg-pwd" onClick={onOpenUpdatePwd}>
               비밀번호 변경
             </div>

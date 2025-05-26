@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const FindId = () => {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     name: "",
@@ -26,14 +29,28 @@ export const FindId = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-    } else {
-      console.log("제출된 폼:", form);
+      return;
+    }
+
+    try {
+      const res = await axios.post("http://localhost:8080/api/users/recovery/id", {
+        email: form.email,
+        name: form.name,
+        birthday: form.birth,
+        phoneNumber: form.phone,
+      });
+
       alert("아이디 찾기 요청이 완료되었습니다.");
+      console.log("✅ 서버 응답:", res.data);
+      navigate("/");  
+    } catch (err) {
+      console.error("❌ 아이디 찾기 실패:", err.response || err);
+      alert("정보를 확인해 주세요. 아이디 찾기에 실패했습니다.");
     }
   };
 

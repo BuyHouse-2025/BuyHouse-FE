@@ -1,25 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import "./style.css";
 
 export const Screen3 = () => {
   const navigate = useNavigate();
 
-  // 1) form state와 errors state
   const [form, setForm] = useState({
-    username: "",
+    id: "",
     password: "",
-    confirmPassword: "",
+    passwordConfirm: "",
     email: "",
     name: "",
-    birth: "",
-    phone: "",
-    question: "",
-    answer: "",
+    birthday: "",
+    phoneNumber: "",
+    pwdQuestion: "",
+    pwdAnswer: "",
   });
   const [errors, setErrors] = useState({});
 
-  // 2) handleChange: 값 변경 + 실시간 에러 클리어
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -28,31 +27,61 @@ export const Screen3 = () => {
     }
   };
 
-  // 3) validate: 필수 체크 + 비밀번호 확인일치
   const validate = () => {
     const newErrors = {};
-    if (!form.username) newErrors.username = "아이디를 입력해주세요";
+    if (!form.id) newErrors.id = "아이디를 입력해주세요";
     if (!form.password) newErrors.password = "비밀번호를 입력해주세요";
-    if (form.password !== form.confirmPassword) newErrors.confirmPassword = "비밀번호가 일치하지 않습니다";
-    if (!form.confirmPassword) newErrors.confirmPassword = "비밀번호 확인을 입력해주세요";
+    if (form.password !== form.passwordConfirm) newErrors.passwordConfirm = "비밀번호가 일치하지 않습니다";
+    if (!form.passwordConfirm) newErrors.passwordConfirm = "비밀번호 확인을 입력해주세요";
     if (!form.email) newErrors.email = "이메일을 입력해주세요";
     if (!form.name) newErrors.name = "이름을 입력해주세요";
-    if (!form.birth) newErrors.birth = "생년월일을 입력해주세요";
-    if (!form.phone) newErrors.phone = "전화번호를 입력해주세요";
-    if (!form.question) newErrors.question = "질문을 선택해주세요";
-    if (!form.answer) newErrors.answer = "답변을 입력해주세요";
+    if (!form.birthday) newErrors.birthday = "생년월일을 입력해주세요";
+    if (!form.phoneNumber) newErrors.phoneNumber = "전화번호를 입력해주세요";
+    if (!form.pwdQuestion) newErrors.pwdQuestion = "질문을 선택해주세요";
+    if (!form.pwdAnswer) newErrors.pwdAnswer = "답변을 입력해주세요";
     return newErrors;
   };
 
-  // 4) handleSubmit: validate 후 에러가 없으면 다음 동작
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
-      console.log("폼 데이터:", form);
-      // 예: navigate("/view5", { state: form });
+      try {
+        const payload = {
+          id: form.id,
+          password: form.password,
+          passwordConfirm: form.passwordConfirm, // ✅ 이거 안 보내서 400 떴을 가능성 높음
+          email: form.email,
+          name: form.name,
+          birthday: form.birthday, // 'yyyy-MM-dd' 형식 유지
+          phoneNumber: form.phoneNumber,
+          pwdQuestion: parseInt(form.pwdQuestion), // ❗ 숫자로
+          pwdAnswer: form.pwdAnswer,
+        };
+
+
+        await axios.post("http://localhost:8080/api/users", payload, {
+          headers: { "Content-Type": "application/json" },
+        });
+
+        alert("회원가입이 완료되었습니다.");
+        navigate("/login");
+      } catch (err) {
+          if (err.response?.data) {
+            console.error("❌ 회원가입 실패 - 서버 응답:", err.response.data);
+            alert(
+              Array.isArray(err.response.data)
+                ? err.response.data.map((e) => e.defaultMessage || JSON.stringify(e)).join("\n")
+                : "회원가입 실패"
+            );
+          } else {
+            console.error("❌ 회원가입 실패:", err);
+            alert("알 수 없는 오류 발생");
+          }
+        }
+
     }
   };
 
@@ -64,142 +93,50 @@ export const Screen3 = () => {
             <img className="v-2" alt="V" src="https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png" />
             <div className="text-wrapper-104">집사</div>
           </Link>
-
           <div className="frame-82">
             <div className="frame-83">
-              {/* 아이디 */}
               <div className="frame-84">
-                <img className="image-9" alt="아이디" src="https://c.animaapp.com/JuAZje8Q/img/image-4@2x.png" />
-                <div className="input-3">
-                  <input
-                    className="container-22"
-                    name="username"
-                    placeholder="아이디"
-                    value={form.username}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input className="container-22" name="id" placeholder="아이디" value={form.id} onChange={handleChange} />
               </div>
-              {errors.username && <p className="error">{errors.username}</p>}
-
-              {/* 비밀번호 */}
+              {errors.id && <p className="error">{errors.id}</p>}
               <div className="frame-85">
-                <img className="image-9" alt="비밀번호" src="https://c.animaapp.com/JuAZje8Q/img/image-2@2x.png" />
-                <div className="input-3">
-                  <input
-                    className="container-22"
-                    type="password"
-                    name="password"
-                    placeholder="비밀번호"
-                    value={form.password}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input className="container-22" type="password" name="password" placeholder="비밀번호" value={form.password} onChange={handleChange} />
               </div>
               {errors.password && <p className="error">{errors.password}</p>}
-
-              {/* 비밀번호 확인 */}
               <div className="frame-85">
-                <img className="image-9" alt="비밀번호 확인" src="https://c.animaapp.com/JuAZje8Q/img/image-2@2x.png" />
-                <div className="input-3">
-                  <input
-                    className="container-22"
-                    type="password"
-                    name="confirmPassword"
-                    placeholder="비밀번호 확인"
-                    value={form.confirmPassword}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input className="container-22" type="password" name="passwordConfirm" placeholder="비밀번호 확인" value={form.passwordConfirm} onChange={handleChange} />
               </div>
-              {errors.confirmPassword && <p className="error">{errors.confirmPassword}</p>}
-
-              {/* 이메일 */}
+              {errors.passwordConfirm && <p className="error">{errors.passwordConfirm}</p>}
               <div className="frame-85">
-                <img className="image-9" alt="이메일" src="https://c.animaapp.com/JuAZje8Q/img/image-3@2x.png" />
-                <div className="input-3">
-                  <input
-                    className="container-22"
-                    name="email"
-                    placeholder="이메일주소"
-                    value={form.email}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input className="container-22" name="email" placeholder="이메일주소" value={form.email} onChange={handleChange} />
               </div>
               {errors.email && <p className="error">{errors.email}</p>}
-
-              {/* 이름 */}
               <div className="frame-85">
-                <img className="image-9" alt="이름" src="https://c.animaapp.com/JuAZje8Q/img/image-4@2x.png" />
-                <div className="input-3">
-                  <input
-                    className="container-22"
-                    name="name"
-                    placeholder="이름"
-                    value={form.name}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input className="container-22" name="name" placeholder="이름" value={form.name} onChange={handleChange} />
               </div>
               {errors.name && <p className="error">{errors.name}</p>}
-
-              {/* 생년월일 */}
               <div className="frame-85">
-                <img className="image-9" alt="생년월일" src="https://c.animaapp.com/JuAZje8Q/img/image-5@2x.png" />
-                <div className="input-3">
-                  <input className="container-22" type="date" name="birth" value={form.birth} onChange={handleChange} />
-                </div>
+                <input className="container-22" type="date" name="birthday" value={form.birthday} onChange={handleChange} />
               </div>
-              {errors.birth && <p className="error">{errors.birth}</p>}
-
-              {/* 휴대전화 */}
+              {errors.birthday && <p className="error">{errors.birthday}</p>}
               <div className="frame-86">
-                <img className="image-9" alt="휴대전화" src="https://c.animaapp.com/JuAZje8Q/img/image-6@2x.png" />
-                <div className="input-3">
-                  <input
-                    className="container-23"
-                    type="tel"
-                    name="phone"
-                    placeholder="휴대전화번호"
-                    value={form.phone}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input className="container-23" type="tel" name="phoneNumber" placeholder="휴대전화번호" value={form.phoneNumber} onChange={handleChange} />
               </div>
-              {errors.phone && <p className="error">{errors.phone}</p>}
-
-              {/* 질문 */}
+              {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}
               <div className="frame-84">
-                <div className="input-4">
-                  <select className="container-24" name="question" value={form.question} onChange={handleChange}>
-                    <option value="" disabled>
-                      비밀번호 찾기 질문
-                    </option>
-                    <option value="pet">내가 키우는 애완동물의 이름은?</option>
-                    <option value="school">내가 졸업한 초등학교 이름은?</option>
-                    <option value="city">내가 태어난 도시는?</option>
-                    <option value="food">내가 가장 좋아하는 음식은?</option>
-                  </select>
-                </div>
+                <select className="container-24" name="pwdQuestion" value={form.pwdQuestion} onChange={handleChange}>
+                  <option value="" disabled>비밀번호 찾기 질문</option>
+                  <option value="0">내가 키우는 애완동물의 이름은?</option>
+                  <option value="1">내가 졸업한 초등학교 이름은?</option>
+                  <option value="2">내가 태어난 도시는?</option>
+                  <option value="3">내가 가장 좋아하는 음식은?</option>
+                </select>
               </div>
-              {errors.question && <p className="error">{errors.question}</p>}
-
-              {/* 답변 */}
+              {errors.pwdQuestion && <p className="error">{errors.pwdQuestion}</p>}
               <div className="frame-87">
-                <div className="input-5">
-                  <input
-                    className="container-25"
-                    name="answer"
-                    placeholder="답변"
-                    value={form.answer}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input className="container-25" name="pwdAnswer" placeholder="답변" value={form.pwdAnswer} onChange={handleChange} />
               </div>
-              {errors.answer && <p className="error">{errors.answer}</p>}
-
-              {/* 회원가입 버튼 */}
+              {errors.pwdAnswer && <p className="error">{errors.pwdAnswer}</p>}
               <button type="submit" className="view-5">
                 <div className="text-wrapper-108">회원가입</div>
               </button>
