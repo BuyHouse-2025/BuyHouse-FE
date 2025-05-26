@@ -5,8 +5,7 @@
       "label": "Screen",
       "routes": [
         "/",
-        "/main",
-        "*"
+        "/main"
       ],
       "isRoot": true
     },
@@ -105,6 +104,13 @@
       "dataModelId": "1:611"
     },
     {
+      "id": "src/screens/FindPwd/FindPwd.jsx",
+      "label": "FindPwd",
+      "routes": [
+        "/findpwd"
+      ]
+    },
+    {
       "id": "src/screens/UpdatePwd/UpdatePwd.jsx",
       "label": "UpdatePwd",
       "routes": [
@@ -121,18 +127,33 @@
       "dataModelId": "1:732"
     },
     {
-      "id": "src/screens/FindPwd/FindPwd.jsx",
-      "label": "FindPwd",
+      "id": "src/screens/Community/Community.jsx",
+      "label": "Community",
       "routes": [
-        "/findpwd"
+        "/community"
+      ]
+    },
+    {
+      "id": "src/screens/CommunityPost/CommunityPost.jsx",
+      "label": "CommunityPost",
+      "routes": [
+        "/community/post/:id"
+      ]
+    },
+    {
+      "id": "src/screens/CommunityWrite/CommunityWrite.jsx",
+      "label": "CommunityWrite",
+      "routes": [
+        "/community/write",
+        "/community/edit/:id"
       ]
     }
   ],
   "edges": [
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:160:4-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\Screen\\Screen.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/screens/Screen/Screen.jsx:160:4-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen/Screen.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -141,14 +162,14 @@
           "endLine": 160,
           "column": 4,
           "endColumn": 17,
-          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
+          "sourceFile": "src/screens/Screen/Screen.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:429:14-to-src\\screens\\Screen6\\Screen6.jsx",
-      "source": "src\\screens\\Screen\\Screen.jsx",
-      "target": "src\\screens\\Screen6\\Screen6.jsx",
+      "id": "src/screens/Screen/Screen.jsx:429:14-to-src/screens/Screen6/Screen6.jsx",
+      "source": "src/screens/Screen/Screen.jsx",
+      "target": "src/screens/Screen6/Screen6.jsx",
       "data": {
         "viaRoute": "/login",
         "trigger": {
@@ -157,14 +178,14 @@
           "endLine": 431,
           "column": 14,
           "endColumn": 21,
-          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
+          "sourceFile": "src/screens/Screen/Screen.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:432:14-to-src\\screens\\Screen3\\Screen3.jsx",
-      "source": "src\\screens\\Screen\\Screen.jsx",
-      "target": "src\\screens\\Screen3\\Screen3.jsx",
+      "id": "src/screens/Screen/Screen.jsx:432:14-to-src/screens/Screen3/Screen3.jsx",
+      "source": "src/screens/Screen/Screen.jsx",
+      "target": "src/screens/Screen3/Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
@@ -173,14 +194,14 @@
           "endLine": 436,
           "column": 14,
           "endColumn": 21,
-          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
+          "sourceFile": "src/screens/Screen/Screen.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen9\\Screen9.jsx:92:6-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\Screen\\Screen.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/screens/Screen9/Screen9.jsx:92:6-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen/Screen.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -189,14 +210,14 @@
           "endLine": 92,
           "column": 6,
           "endColumn": 19,
-          "sourceFile": "src\\screens\\Screen9\\Screen9.jsx"
+          "sourceFile": "src/screens/Screen9/Screen9.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen3\\Screen3.jsx:71:8-to-src\\screens\\Screen6\\Screen6.jsx",
-      "source": "src\\screens\\Screen3\\Screen3.jsx",
-      "target": "src\\screens\\Screen6\\Screen6.jsx",
+      "id": "src/screens/Screen3/Screen3.jsx:71:8-to-src/screens/Screen6/Screen6.jsx",
+      "source": "src/screens/Screen3/Screen3.jsx",
+      "target": "src/screens/Screen6/Screen6.jsx",
       "data": {
         "viaRoute": "/login",
         "trigger": {
@@ -205,14 +226,14 @@
           "endLine": 71,
           "column": 8,
           "endColumn": 26,
-          "sourceFile": "src\\screens\\Screen3\\Screen3.jsx"
+          "sourceFile": "src/screens/Screen3/Screen3.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen3\\Screen3.jsx:93:10-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\Screen3\\Screen3.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/screens/Screen3/Screen3.jsx:93:10-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen3/Screen3.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -221,14 +242,14 @@
           "endLine": 96,
           "column": 10,
           "endColumn": 17,
-          "sourceFile": "src\\screens\\Screen3\\Screen3.jsx"
+          "sourceFile": "src/screens/Screen3/Screen3.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen6\\Screen6.jsx:135:10-to-src\\screens\\Screen3\\Screen3.jsx",
-      "source": "src\\screens\\Screen6\\Screen6.jsx",
-      "target": "src\\screens\\Screen3\\Screen3.jsx",
+      "id": "src/screens/Screen6/Screen6.jsx:135:10-to-src/screens/Screen3/Screen3.jsx",
+      "source": "src/screens/Screen6/Screen6.jsx",
+      "target": "src/screens/Screen3/Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
@@ -237,14 +258,14 @@
           "endLine": 139,
           "column": 10,
           "endColumn": 17,
-          "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
+          "sourceFile": "src/screens/Screen6/Screen6.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen6\\Screen6.jsx:148:8-to-src\\screens\\FindPwd\\FindPwd.jsx",
-      "source": "src\\screens\\Screen6\\Screen6.jsx",
-      "target": "src\\screens\\FindPwd\\FindPwd.jsx",
+      "id": "src/screens/Screen6/Screen6.jsx:148:8-to-src/screens/FindPwd/FindPwd.jsx",
+      "source": "src/screens/Screen6/Screen6.jsx",
+      "target": "src/screens/FindPwd/FindPwd.jsx",
       "data": {
         "viaRoute": "/findpwd",
         "trigger": {
@@ -253,14 +274,14 @@
           "endLine": 150,
           "column": 8,
           "endColumn": 15,
-          "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
+          "sourceFile": "src/screens/Screen6/Screen6.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\header\\header.jsx:9:6-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\Screen6\\Screen6.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/components/header/header.jsx:9:6-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen6/Screen6.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -269,14 +290,14 @@
           "endLine": 16,
           "column": 6,
           "endColumn": 13,
-          "sourceFile": "src\\components\\header\\header.jsx"
+          "sourceFile": "src/components/header/header.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen9\\Screen9.jsx:92:6-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\Screen9\\Screen9.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/screens/Screen9/Screen9.jsx:92:6-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen9/Screen9.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -285,14 +306,14 @@
           "endLine": 92,
           "column": 6,
           "endColumn": 19,
-          "sourceFile": "src\\screens\\Screen9\\Screen9.jsx"
+          "sourceFile": "src/screens/Screen9/Screen9.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\FindId\\FindId.jsx:52:6-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\FindId\\FindId.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/screens/FindId/FindId.jsx:52:6-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/FindId/FindId.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -301,14 +322,14 @@
           "endLine": 52,
           "column": 6,
           "endColumn": 19,
-          "sourceFile": "src\\screens\\FindId\\FindId.jsx"
+          "sourceFile": "src/screens/FindId/FindId.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\header\\header.jsx:9:6-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\Screen6\\Screen6.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/components/header/header.jsx:9:6-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen6/Screen6.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -317,14 +338,14 @@
           "endLine": 16,
           "column": 6,
           "endColumn": 13,
-          "sourceFile": "src\\components\\header\\header.jsx"
+          "sourceFile": "src/components/header/header.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\FindPwd\\FindPwd.jsx:68:6-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\FindPwd\\FindPwd.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/screens/FindPwd/FindPwd.jsx:68:6-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/FindPwd/FindPwd.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -333,14 +354,14 @@
           "endLine": 68,
           "column": 6,
           "endColumn": 19,
-          "sourceFile": "src\\screens\\FindPwd\\FindPwd.jsx"
+          "sourceFile": "src/screens/FindPwd/FindPwd.jsx"
         }
       }
     },
     {
-      "id": "src\\components\\header\\header.jsx:9:6-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\Screen6\\Screen6.jsx",
-      "target": "src\\screens\\Screen\\Screen.jsx",
+      "id": "src/components/header/header.jsx:9:6-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen6/Screen6.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -349,7 +370,135 @@
           "endLine": 16,
           "column": 6,
           "endColumn": 13,
-          "sourceFile": "src\\components\\header\\header.jsx"
+          "sourceFile": "src/components/header/header.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Community/Community.jsx:52:4-to-src/screens/CommunityWrite/CommunityWrite.jsx",
+      "source": "src/screens/Community/Community.jsx",
+      "target": "src/screens/CommunityWrite/CommunityWrite.jsx",
+      "data": {
+        "viaRoute": "/community/write",
+        "trigger": {
+          "element": "navigate(\"/community/write\")",
+          "line": 52,
+          "endLine": 52,
+          "column": 4,
+          "endColumn": 32,
+          "sourceFile": "src/screens/Community/Community.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Community/Community.jsx:58:8-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Community/Community.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"logo-container\">\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>집사</div>\n        </Link>",
+          "line": 58,
+          "endLine": 61,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/screens/Community/Community.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CommunityPost/CommunityPost.jsx:71:6-to-src/screens/Community/Community.jsx",
+      "source": "src/screens/CommunityPost/CommunityPost.jsx",
+      "target": "src/screens/Community/Community.jsx",
+      "data": {
+        "viaRoute": "/community",
+        "trigger": {
+          "element": "navigate(\"/community\")",
+          "line": 71,
+          "endLine": 71,
+          "column": 6,
+          "endColumn": 28,
+          "sourceFile": "src/screens/CommunityPost/CommunityPost.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CommunityPost/CommunityPost.jsx:76:4-to-src/screens/Community/Community.jsx",
+      "source": "src/screens/CommunityPost/CommunityPost.jsx",
+      "target": "src/screens/Community/Community.jsx",
+      "data": {
+        "viaRoute": "/community",
+        "trigger": {
+          "element": "navigate(\"/community\")",
+          "line": 76,
+          "endLine": 76,
+          "column": 4,
+          "endColumn": 26,
+          "sourceFile": "src/screens/CommunityPost/CommunityPost.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CommunityPost/CommunityPost.jsx:87:8-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/CommunityPost/CommunityPost.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"logo-container\">\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>집사</div>\n        </Link>",
+          "line": 87,
+          "endLine": 90,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/screens/CommunityPost/CommunityPost.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CommunityWrite/CommunityWrite.jsx:17:6-to-src/screens/Community/Community.jsx",
+      "source": "src/screens/CommunityWrite/CommunityWrite.jsx",
+      "target": "src/screens/Community/Community.jsx",
+      "data": {
+        "viaRoute": "/community",
+        "trigger": {
+          "element": "navigate(\"/community\")",
+          "line": 17,
+          "endLine": 17,
+          "column": 6,
+          "endColumn": 28,
+          "sourceFile": "src/screens/CommunityWrite/CommunityWrite.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CommunityWrite/CommunityWrite.jsx:25:6-to-src/screens/Community/Community.jsx",
+      "source": "src/screens/CommunityWrite/CommunityWrite.jsx",
+      "target": "src/screens/Community/Community.jsx",
+      "data": {
+        "viaRoute": "/community",
+        "trigger": {
+          "element": "navigate(\"/community\")",
+          "line": 25,
+          "endLine": 25,
+          "column": 6,
+          "endColumn": 28,
+          "sourceFile": "src/screens/CommunityWrite/CommunityWrite.jsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/CommunityWrite/CommunityWrite.jsx:33:8-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/CommunityWrite/CommunityWrite.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"logo-container\">\n          <div className=\"logo-icon\">🏠</div>\n          <span className=\"logo-text\">집사</span>\n        </Link>",
+          "line": 33,
+          "endLine": 36,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/screens/CommunityWrite/CommunityWrite.jsx"
         }
       }
     }
