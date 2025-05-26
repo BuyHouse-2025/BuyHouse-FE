@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
+import Footer from "../../components/footer/footer";
 
 export const Screen3 = () => {
   const navigate = useNavigate();
@@ -142,6 +143,7 @@ export const Screen3 = () => {
               </button>
             </div>
           </div>
+          <Footer />
         </div>
       </form>
     </div>

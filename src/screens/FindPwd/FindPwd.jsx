@@ -2,8 +2,9 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import axios from "axios"; 
-
+import axios from "axios";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 
 export const FindPwd = () => {
   const navigate = useNavigate();
@@ -13,7 +14,7 @@ export const FindPwd = () => {
     name: "",
     birthday: "",
     phoneNumber: "",
-    pweQuestion: "",
+    pwdQuestion: "",
     pwdAnswer: "",
   });
 
@@ -22,7 +23,6 @@ export const FindPwd = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-    // 입력 중에 에러가 있으면 실시간으로 지워주려면:
     if (errors[name]) {
       setErrors({ ...errors, [name]: null });
     }
@@ -34,8 +34,8 @@ export const FindPwd = () => {
     if (!form.email) newErrors.email = "이메일을 입력해주세요";
     if (!form.name) newErrors.name = "이름을 입력해주세요";
     if (!form.birthday) newErrors.birthday = "생년월일을 입력해주세요";
-    if (!form.phoneNumber) newErrors.phophoneNumberne = "전화번호를 입력해주세요";
-    if (!form.pwdQuestion) newErrors.pwdQuestionquestion = "질문을 선택해주세요";
+    if (!form.phoneNumber) newErrors.phoneNumber = "전화번호를 입력해주세요";
+    if (!form.pwdQuestion) newErrors.pwdQuestion = "질문을 선택해주세요";
     if (!form.pwdAnswer) newErrors.pwdAnswer = "답변을 입력해주세요";
     return newErrors;
   };
@@ -50,14 +50,14 @@ export const FindPwd = () => {
 
     try {
       const payload = {
-      id: form.id,
-      email: form.email,
-      name: form.name,
-      birthday: form.birthday,
-      phoneNumber: form.phoneNumber,
-      pwdQuestion: parseInt(form.pwdQuestion),
-      pwdAnswer: form.pwdAnswer,
-    };
+        id: form.id,
+        email: form.email,
+        name: form.name,
+        birthday: form.birthday,
+        phoneNumber: form.phoneNumber,
+        pwdQuestion: parseInt(form.pwdQuestion),
+        pwdAnswer: form.pwdAnswer,
+      };
 
       const res = await axios.post("http://localhost:8080/api/users/recovery/password", payload, {
         headers: { "Content-Type": "application/json" },
@@ -65,22 +65,18 @@ export const FindPwd = () => {
 
       alert("비밀번호 찾기 요청이 완료되었습니다.");
       console.log("✅ 서버 응답:", res.data);
-      navigate("/");  
+      navigate("/");
     } catch (err) {
       console.error("❌ 비밀번호 찾기 실패", err.response || err);
       alert("입력 정보를 다시 확인해주세요.");
     }
   };
 
-
   return (
-    <div className="findPwd" data-model-id="1:661">
+    <div className="findPwd">
       <form onSubmit={handleSubmit}>
         <div className="findPwd-form">
-          <Link className="findPwd-frame" to="/">
-            <img className="findPwd-logo" alt="Logo" src="https://c.animaapp.com/DSoZdjN8/img/--------v4-1@2x.png" />
-            <div className="findPwd-jibsa">집사</div>
-          </Link>
+          <Header/>
 
           <div className="findPwd-frame1">
             <div className="findPwd-frame2">
@@ -94,13 +90,13 @@ export const FindPwd = () => {
                         className="inputbox"
                         name="id"
                         placeholder="아이디"
-                        value={form.username}
+                        value={form.id}
                         onChange={handleChange}
                       />
                     </div>
                   </div>
                 </div>
-                {errors.username && <p className="error">{errors.username}</p>}
+                {errors.id && <p className="error">{errors.id}</p>}
 
                 {/* 이메일 */}
                 <div className="findPwd-id-frame2">
@@ -136,10 +132,16 @@ export const FindPwd = () => {
                 <div className="findPwd-id-frame2">
                   <img className="image" alt="생년월일" src="https://c.animaapp.com/DSoZdjN8/img/image-7@2x.png" />
                   <div className="input3">
-                    <input className="inputbox4" name="birthday" type="date" value={form.birth} onChange={handleChange} />
+                    <input
+                      className="inputbox4"
+                      name="birthday"
+                      type="date"
+                      value={form.birthday}
+                      onChange={handleChange}
+                    />
                   </div>
                 </div>
-                {errors.birth && <p className="error">{errors.birth}</p>}
+                {errors.birthday && <p className="error">{errors.birthday}</p>}
 
                 {/* 전화번호 */}
                 <div className="findPwd-id-frame3">
@@ -150,17 +152,22 @@ export const FindPwd = () => {
                       name="phoneNumber"
                       type="tel"
                       placeholder="휴대전화번호"
-                      value={form.phone}
+                      value={form.phoneNumber}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
-                {errors.phone && <p className="error">{errors.phone}</p>}
+                {errors.phoneNumber && <p className="error">{errors.phoneNumber}</p>}
 
                 {/* 질문 */}
                 <div className="findPwd-id-frame2">
                   <div className="input2">
-                    <select name="pwdQuestion" className="inputbox2" value={form.question} onChange={handleChange}>
+                    <select
+                      name="pwdQuestion"
+                      className="inputbox2"
+                      value={form.pwdQuestion}
+                      onChange={handleChange}
+                    >
                       <option value="" disabled>
                         비밀번호 찾기 질문
                       </option>
@@ -171,7 +178,7 @@ export const FindPwd = () => {
                     </select>
                   </div>
                 </div>
-                {errors.question && <p className="error">{errors.question}</p>}
+                {errors.pwdQuestion && <p className="error">{errors.pwdQuestion}</p>}
 
                 {/* 답변 */}
                 <div className="findPwd-id-frame4">
@@ -180,12 +187,12 @@ export const FindPwd = () => {
                       className="inputbox6"
                       name="pwdAnswer"
                       placeholder="답변"
-                      value={form.answer}
+                      value={form.pwdAnswer}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
-                {errors.answer && <p className="error">{errors.answer}</p>}
+                {errors.pwdAnswer && <p className="error">{errors.pwdAnswer}</p>}
 
                 <button type="submit" className="button">
                   <div className="buttonbox">비밀번호 찾기</div>
@@ -195,6 +202,7 @@ export const FindPwd = () => {
           </div>
         </div>
       </form>
+      <Footer />
     </div>
   );
 };
