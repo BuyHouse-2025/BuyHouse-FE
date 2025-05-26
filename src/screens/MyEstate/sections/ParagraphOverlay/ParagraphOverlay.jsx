@@ -1,24 +1,33 @@
 import React from "react";
 import "./style.css";
 
-export const ParagraphOverlay = () => {
+export const ParagraphOverlay = ({ totalOwnedPrice, totalCurrentPrice, totalDiff, diffRate, count }) => {
   return (
     <div className="paragraph-overlay">
       <div className="price-all">
         <div className="text-wrapper-3">총 취득가격</div>
-
-        <div className="text-wrapper-4">30.6억</div>
-
-        <div className="text-wrapper-5">2개보유</div>
+        <div className="text-wrapper-4">{totalOwnedPrice}</div>
+        <div className="text-wrapper-5">{count}개보유</div>
       </div>
-
       <div className="price-now">
         <div className="text-wrapper-3">현재 평가가격</div>
-
-        <div className="text-wrapper-4">37.4억</div>
-
-        <div className="text-wrapper-6">+6.8억/+22.17%</div>
+        <div className="text-wrapper-4">{totalCurrentPrice}</div>
+        <div className="text-wrapper-6">
+          {(totalDiff >= 0 ? "+" : "") +
+            `${formatKoreanCurrency(totalDiff || 0)}/` +
+            `${(diffRate ?? 0).toFixed(2)}%`}
+        </div>
       </div>
     </div>
   );
 };
+
+function formatKoreanCurrency(value) {
+  if (value >= 1_0000_0000) {
+    return `${Math.floor(value / 1_0000_0000)}억 ${(Math.floor(value % 1_0000_0000 / 10000))}만원`;
+  } else if (value >= 10000) {
+    return `${Math.floor(value / 10000)}만원`;
+  } else {
+    return `${value}원`;
+  }
+}
