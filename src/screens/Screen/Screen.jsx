@@ -15,7 +15,7 @@ import KakaoMap from "./KakaoMap/KakaoMap";
 
 import { useAuth } from "../context/AuthContext";
 
-export const Screen = ({}) => {
+export const Screen = ({ }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { isLoggedIn, logout } = useAuth();
@@ -30,6 +30,11 @@ export const Screen = ({}) => {
   const [screen7Active, setScreen7Active] = useState(false);
   const [selectedDistrict, setSelectedDistrict] = useState("강남구");
   const [selectedNeighborhood, setSelectedNeighborhood] = useState("삼성동");
+  const [aptSearch, setAptSearch] = useState("");
+  const [bounds, setBounds] = useState(null);
+  const [mapBounds, setMapBounds] = useState(null);
+  const [apartmentList, setApartmentList] = useState([]);
+  
 
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
@@ -38,6 +43,7 @@ export const Screen = ({}) => {
     lat: 37.566826,
     lng: 126.9786567,
   });
+
 
   // ✨ 추가: 선택된 위치 정보(지도 마커 라벨용)
   const [locationInfo, setLocationInfo] = useState({
@@ -169,6 +175,42 @@ export const Screen = ({}) => {
     }
   };
 
+
+  // 아파트 검색 핸들러
+  const handleNameSearch = async () => {
+    const searchRequestDto = {
+      aptNm: aptSearch ? aptSearch : null,
+      minPrice: null,
+      maxPrice: null,
+      minSquare: null,
+      maxSquare: null,
+    };
+
+    try {
+      const res = await axios.post("http://localhost:8080/api/estate", searchRequestDto);
+      console.log("🗂️ 아파트 이름 검색 결과:", res.data);
+    } catch (err) {
+      console.error("❌ 아파트 이름 검색 오류:", err);
+    }
+  };
+
+  // 지도 아파트 표시 핸들러
+  const handleFetchApartmentsInBounds = async () => {
+    if (!mapBounds) {
+      console.warn("❗ 지도 경계값이 아직 설정되지 않았습니다.");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:8080/api/estate/maker", mapBounds);
+      console.log("📍 버튼 클릭으로 조회된 아파트 리스트:", response.data);
+      setApartmentList(response.data); // 필요시
+    } catch (error) {
+      console.error("❌ 아파트 리스트 조회 실패:", error);
+    }
+  };
+
+
   return (
     <div className="screen">
       {screen7Visible && (
@@ -273,7 +315,7 @@ export const Screen = ({}) => {
                 </div>
               </div>
             </div>
-            <ScreenWrapper />
+            <ScreenWrapper onClose={() => setShowScreenWrapperOverlay(false)} />
           </div>
         </div>
       )}
@@ -338,7 +380,14 @@ export const Screen = ({}) => {
       )}
 
       <div className="overlap">
-        <KakaoMap center={mapCenter} locationInfo={locationInfo} />
+        <KakaoMap
+          center={mapCenter}
+          locationInfo={locationInfo}
+          onBoundsChange={(bounds) => {
+            setMapBounds(bounds); // 지도 이동 시 bounds만 저장
+          }}
+          apartmentList={apartmentList}
+        />
       </div>
 
       <div className="overlay-shadow" />
@@ -358,7 +407,7 @@ export const Screen = ({}) => {
             </div>
 
             <div className="frame-65">
-              <button className="background-border-2">
+              <button className="background-border-2" onClick={handleFetchApartmentsInBounds}>
                 <img
                   className="mask-group-6"
                   alt="Mask group"
@@ -422,7 +471,12 @@ export const Screen = ({}) => {
             <div className="overlay-wrapper">
               <div className="overlay-3">
                 <div className="frame-69">
-                  <button className="search-button" type="submit" aria-label="Search">
+                  <button
+                    className="search-button"
+                    type="button"
+                    aria-label="Search"
+                    onClick={handleNameSearch}
+                  >
                     <img
                       src="https://static-00.iconduck.com/assets.00/system-search-symbolic-icon-256x256-5bb8fl7o.png"
                       alt="Search"
@@ -430,7 +484,12 @@ export const Screen = ({}) => {
                     />
                   </button>
                   <div className="container-wrapper">
-                    <input className="container-21" placeholder="아파트, 지역" />
+                    <input
+                      className="container-21"
+                      placeholder="아파트, 지역"
+                      value={aptSearch}
+                      onChange={(e) => setAptSearch(e.target.value)}
+                    />
                   </div>
                 </div>
               </div>

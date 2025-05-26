@@ -20,7 +20,7 @@ export const ScreenScreen = ({ onClose }) => {
 
     try {
       // proxy가 설정되어 있으면 상대경로로, 아니면 전체 URL
-      const res = await axios.post("/api/estate", searchRequestDto);
+      const res = await axios.post("http://localhost:8080/api/estate", searchRequestDto);
       console.log("검색 결과:", res.data);
       // TODO: res.data를 부모에 전달하거나 화면에 표시
     } catch (err) {
