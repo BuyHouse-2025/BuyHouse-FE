@@ -17,10 +17,26 @@ const KakaoMap = ({ center, locationInfo }) => {
 
   // Update map center when center prop changes
   useEffect(() => {
-    if (center) {
+    console.log("📍 들어온 center 값 확인:", center)
+
+    if (
+      center &&
+      typeof center.lat === "number" &&
+      typeof center.lng === "number"
+    ) {
       setMapCenter(center)
+    } else if (
+      center &&
+      !isNaN(parseFloat(center.lat)) &&
+      !isNaN(parseFloat(center.lng))
+    ) {
+      setMapCenter({
+        lat: parseFloat(center.lat),
+        lng: parseFloat(center.lng),
+      })
     }
   }, [center])
+
 
   if (loading) return <div>지도를 불러오는 중입니다...</div>
   if (error) return <div>지도를 불러오는 데 실패했습니다 🥲</div>
@@ -37,7 +53,7 @@ const KakaoMap = ({ center, locationInfo }) => {
       <Map center={mapCenter} style={{ width: "100%", height: "100%" }} level={3}>
         <MapMarker position={mapCenter}>
           <div style={{ color: "#000", padding: "5px", backgroundColor: "white", borderRadius: "4px" }}>
-            {locationInfo ? `${locationInfo.district} ${locationInfo.neighborhood}` : "서울 시청"}
+            {locationInfo ? `${locationInfo.sido} ${locationInfo.district} ${locationInfo.neighborhood}` : "서울 시청"}
           </div>
         </MapMarker>
       </Map>

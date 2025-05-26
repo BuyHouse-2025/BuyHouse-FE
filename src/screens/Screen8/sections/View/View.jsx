@@ -1,50 +1,68 @@
-import React, { useState } from "react";
+import React from "react";
 import { PropertyDefaultWrapper } from "../../../../components/PropertyDefaultWrapper";
 import "./style.css";
-import dongData from "../../../../assets/dong_coords.json"; // 경로에 맞게 수정
-
 
 export const View = ({
-  selectedDistrict,
-  setSelectedDistrict,
-  selectedNeighborhood,
-  setSelectedNeighborhood,
+  dongData,
+  selectedSido,
+  setSelectedSido,
+  selectedGugun,
+  setSelectedGugun,
+  selectedDong,
+  setSelectedDong,
 }) => {
-
-  const districts = [...new Set(dongData.map((d) => d.gu))]; // 모든 구 추출
-  const neighborhoods = dongData
-    .filter((d) => d.gu === selectedDistrict)
+  const sidoList = [...new Set(dongData.map((d) => d.sido))];
+  const gugunList = [...new Set(dongData.filter((d) => d.sido === selectedSido).map((d) => d.gugun))];
+  const dongList = dongData
+    .filter((d) => d.sido === selectedSido && d.gugun === selectedGugun)
     .map((d) => d.dong);
 
   return (
     <div className="view">
+      {/* 시도 선택 */}
       <div className="vertical-border">
-        <div className="background-2">
-          <div className="text-wrapper-58">서울</div>
-        </div>
-      </div>
-
-      <div className="vertical-border-2">
-        <div className="frame-35">
-          {districts.map((district) => (
+        <div className="frame-34">
+          {sidoList.map((sido) => (
             <PropertyDefaultWrapper
-              key={district}
-              buttontext={district}
-              isSelected={selectedDistrict === district}
-              onClick={() => setSelectedDistrict(district)}
+              key={`sido-${sido}`}
+              buttontext={sido.replace("특별시", "").replace("광역시", "").replace("도", "")}
+              isSelected={selectedSido === sido}
+              onClick={() => {
+                setSelectedSido(sido);
+                setSelectedGugun("");
+                setSelectedDong("");
+              }}
             />
           ))}
         </div>
       </div>
 
+      {/* 구/군 선택 */}
+      <div className="vertical-border-2">
+        <div className="frame-35">
+          {gugunList.map((gugun) => (
+            <PropertyDefaultWrapper
+              key={`gugun-${selectedSido}-${gugun}`} // ✅ 시도 + 구군으로 고유하게
+              buttontext={gugun}
+              isSelected={selectedGugun === gugun}
+              onClick={() => {
+                setSelectedGugun(gugun);
+                setSelectedDong("");
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* 동 선택 */}
       <div className="vertical-border-2">
         <div className="frame-36">
-          {neighborhoods.map((neighborhood) => (
+          {dongList.map((dong) => (
             <PropertyDefaultWrapper
-              key={neighborhood}
-              buttontext={neighborhood}
-              isSelected={selectedNeighborhood === neighborhood}
-              onClick={() => setSelectedNeighborhood(neighborhood)}
+              key={`dong-${selectedSido}-${selectedGugun}-${dong}`} // ✅ 시도 + 구군 + 동으로 고유하게
+              buttontext={dong}
+              isSelected={selectedDong === dong}
+              onClick={() => setSelectedDong(dong)}
             />
           ))}
         </div>
