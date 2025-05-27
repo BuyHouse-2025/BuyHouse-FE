@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 
 export const Background = ({ aptDetail }) => {
-  console.log("🟢 BackgroundWrapper received aptDetail:", aptDetail);
   return (
     <div className="background">
       <div className="div-4">
@@ -41,12 +40,58 @@ export const Background = ({ aptDetail }) => {
         <img className="image-6" alt="Image" src="https://c.animaapp.com/JuAZje8Q/img/image-10@2x.png" />
       </div>
 
-      <div className="frame-31">
-        <div className="frame-32">
-          <p className="p">AI가 예측한 1년 뒤 실거래가는?</p>
+      {/* ↓ 여기부터 교통·교육·편의시설 영역으로 대체 */}
+      <div className="amenities">
+        {/* 교통 */}
+        <div className="amenity">
+          <img src="https://img.icons8.com/ios-filled/24/3182f6/bus.png" alt="버스정류장" />
+          <div className="count">{aptDetail.bus}</div>
+          <div className="label">버스정류장</div>
+        </div>
+        <div className="amenity">
+          <img src="https://img.icons8.com/ios-filled/24/3182f6/subway.png" alt="지하철역" />
+          <div className="count">{aptDetail.metro}</div>
+          <div className="label">지하철역</div>
+        </div>
+        <div className="amenity">
+          <img src="https://img.icons8.com/ios-filled/24/3182f6/hospital.png" alt="병원" />
+          <div className="count">{aptDetail.hospital}</div>
+          <div className="label">병원</div>
         </div>
 
-        <img className="rectangle" alt="Rectangle" src="https://c.animaapp.com/JuAZje8Q/img/rectangle-1@2x.png" />
+        {/* 편의 */}
+        <div className="amenity">
+          <img src="https://img.icons8.com/ios-filled/24/3182f6/shopping-cart.png" alt="마트" />
+          <div className="count">{aptDetail.mart}</div>
+          <div className="label">마트</div>
+        </div>
+        <div className="amenity">
+          <img src="https://img.icons8.com/ios-filled/24/3182f6/shop.png" alt="편의점" />
+          <div className="count">{aptDetail.convenience}</div>
+          <div className="label">편의점</div>
+        </div>
+
+        {/* 교육 */}
+        <div className="amenity">
+          <img src="https://img.icons8.com/?size=100&id=50612&format=png&color=000000" alt="어린이집" />
+          <div className="count">{aptDetail.infant}</div>
+          <div className="label">어린이집</div>
+        </div>
+        <div className="amenity">
+          <img src="https://img.icons8.com/?size=100&id=EnXfuJtBYJTm&format=png&color=000000" alt="유치원" />
+          <div className="count">{aptDetail.preschool}</div>
+          <div className="label">유치원</div>
+        </div>
+        <div className="amenity">
+          <img src="https://img.icons8.com/ios-filled/24/3182f6/book.png" alt="초등학교" />
+          <div className="count">{aptDetail.priSchool}</div>
+          <div className="label">초등학교</div>
+        </div>
+        <div className="amenity">
+          <img src="https://img.icons8.com/ios-filled/24/3182f6/backpack.png" alt="중학교" />
+          <div className="count">{aptDetail.pubSchool}</div>
+          <div className="label">중학교</div>
+        </div>
       </div>
     </div>
   );

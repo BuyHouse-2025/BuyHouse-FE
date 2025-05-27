@@ -145,7 +145,7 @@
   align-self: stretch;
   display: flex;
   flex: 0 0 auto;
-  gap: 140px;
+  gap: 100px;
   position: relative;
   width: 100%;
 }
@@ -156,7 +156,7 @@
   flex-direction: column;
   gap: 3px;
   position: relative;
-  width: 34px;
+  width: 70px;
 }
 
 .frame-2 .container-7 {

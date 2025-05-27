@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export const Frame2 = ({ aptDetail, onClose }) => {
+export const Frame2 = ({ aptDetail }) => {
   return (
     <div className="frame-2">
       <div className="container">
@@ -37,7 +37,7 @@ export const Frame2 = ({ aptDetail, onClose }) => {
           </div>
 
           <div className="container-6">
-            <div className="text-wrapper-36">{aptDetail.floorAreaRatio}</div>
+            <div className="text-wrapper-36">{aptDetail.floorAreaRatio} %</div>
           </div>
         </div>
       </div>
@@ -45,21 +45,21 @@ export const Frame2 = ({ aptDetail, onClose }) => {
       <div className="frame-25">
         <div className="frame-26">
           <div className="container-7">
-            <div className="text-wrapper-38">{aptDetail.floorAreaRatio}</div>
+            <div className="text-wrapper-38">최소 평수</div>
           </div>
 
           <div className="container-8">
-            <div className="text-wrapper-36">298세대</div>
+            <div className="text-wrapper-36">{(aptDetail.minArea / 3.3).toFixed(1)} 평</div>
           </div>
         </div>
 
         <div className="frame-27">
           <div className="container-9">
-            <div className="text-wrapper-35">시공사</div>
+            <div className="text-wrapper-35">최대 평수</div>
           </div>
 
           <div className="container-10">
-            <div className="text-wrapper-36">(주)중앙건설</div>
+            <div className="text-wrapper-36">{(aptDetail.maxArea / 3.3).toFixed(1)} 평</div>
           </div>
         </div>
       </div>
