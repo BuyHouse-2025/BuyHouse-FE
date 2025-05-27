@@ -37,7 +37,7 @@ export const Background = ({ aptDetail }) => {
           </div>
         </div>
 
-        <img className="image-6" alt="Image" src="https://c.animaapp.com/JuAZje8Q/img/image-10@2x.png" />
+        <img className="image-6" alt="Image" src="src\assets\스크린샷 2025-05-27 114012.png" />
       </div>
 
       {/* ↓ 여기부터 교통·교육·편의시설 영역으로 대체 */}
