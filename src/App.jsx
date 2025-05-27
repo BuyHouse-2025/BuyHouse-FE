@@ -16,6 +16,7 @@ import { FindPwd } from "./screens/FindPwd";
 import { FindId } from "./screens/FindId";
 import { UpdatePwd } from "./screens/UpdatePwd";
 import { UpdateMemberInfo } from "./screens/UpdateMemberInfo";
+import { Search } from "./screens/Search";
 
 // Community screens 추가
 import { Community } from "./screens/Community";
@@ -25,6 +26,8 @@ import { CommunityUpdate } from "./screens/CommunityUpdate";
 
 // ✅ AuthContext
 import { AuthProvider } from "./screens/context/AuthContext";
+import { Card } from "./screens/Search/Card";
+import { Purchase } from "./screens/Purchase";
 
 const router = createBrowserRouter([
   { path: "/", element: <Screen /> },
@@ -44,12 +47,16 @@ const router = createBrowserRouter([
   { path: "/findpwd", element: <FindPwd /> },
   { path: "/updatePwd", element: <UpdatePwd /> },
   { path: "/updateMemberInfo", element: <UpdateMemberInfo /> },
+  { path: "/search", element: <Search/> },
+   { path: "/card", element: <Card/> },
 
   // Community 라우트
   { path: "/community", element: <Community /> },
   { path: "/community/post/:id", element: <CommunityPost /> },
   { path: "/community/write", element: <CommunityWrite /> },
   { path: "/community/edit/:id", element: <CommunityUpdate /> },
+  { path: "/purchase", element: <Purchase /> },
+
 ]);
 
 export const App = () => (

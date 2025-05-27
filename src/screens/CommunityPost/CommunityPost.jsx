@@ -44,14 +44,9 @@ export const CommunityPost = () => {
           views: 0,
         });
 
-        // const mappedComments = data.comments.map((c) => ({
-        //   id: c.id,
-        //   author: c.name,
-        //   date: new Date(c.createdDate).toISOString().split("T")[0],
-        //   content: c.content,
-        // }));
         setComments(data.comments);
         console.log(data.comments);
+
         console.log("✅ 현재 로그인 유저:", userName);
         console.log("✅ 게시글 작성자:", data.name);
 

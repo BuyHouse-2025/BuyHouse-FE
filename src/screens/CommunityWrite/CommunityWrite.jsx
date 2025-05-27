@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
@@ -56,8 +57,8 @@ export const CommunityWrite = () => {
       {/* Same header as Community.jsx */}
       <div className="community-header-top">
         <Link to="/" className="logo-container">
-          <div className="logo-icon">🏠</div>
-          <span className="logo-text">집사</span>
+          <img className="v" alt="V" src="https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png" />
+          <div className="text-wrapper-89" style={{ height: "61px", lineHeight: "61px" }}>집사</div>
         </Link>
       </div>
 

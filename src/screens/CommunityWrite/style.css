@@ -5,9 +5,11 @@
 
 /* Same header styling as Community.jsx */
 .community-header-top {
-  background: white;
-  padding: 20px 40px;
+  background-color: #ffffff;
+  padding: 6.5px 11px;
   border-bottom: 1px solid #e9ecef;
+  box-shadow: 5px 5px 10px #e4ecf2;
+  height: 70px;
 }
 
 .logo-container {

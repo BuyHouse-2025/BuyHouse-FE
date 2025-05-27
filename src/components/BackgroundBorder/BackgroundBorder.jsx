@@ -7,26 +7,26 @@ import React from "react";
 import { useReducer } from "react";
 import "./style.css";
 
-export const BackgroundBorder = ({ property1, divClassName }) => {
+export const BackgroundBorder = ({ property1, divClassName, onToggle }) => {
   const [state, dispatch] = useReducer(reducer, {
     property1: property1 || "one",
   });
 
+  const handleClick = () => {
+    dispatch("click");
+    if (onToggle) onToggle(state.property1); // 클릭 전 상태 전달
+  };
+
   return (
-    <div
-      className={`background-border ${state.property1}`}
-      onClick={() => {
-        dispatch("click");
-      }}
-    >
+    <div className={`background-border ${state.property1}`} onClick={handleClick}>
       <div className={`div-5 ${divClassName}`}>
         {state.property1 === "one" && <>구매</>}
-
         {state.property1 === "two" && <>판매</>}
       </div>
     </div>
   );
 };
+
 
 function reducer(state, action) {
   if (state.property1 === "one") {
