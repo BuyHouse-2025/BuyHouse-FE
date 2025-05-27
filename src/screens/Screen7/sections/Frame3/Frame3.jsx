@@ -31,7 +31,7 @@ export const Frame3 = ({ aptDetail }) => {
         </div>
         {displayDeals.map((deal, i) => (
           <div className="horizontal-border" key={`price-${i}`}>
-            <div className="text-wrapper-43">{deal.dealAmount}만</div>
+            <div className="text-wrapper-43">{(deal.dealAmount / 10000).toFixed(0)}억 {(deal.dealAmount % 10000)}만</div>
           </div>
         ))}
       </div>

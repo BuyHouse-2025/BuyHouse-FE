@@ -38,7 +38,6 @@ export const Favorite = ({ closeFavorite }) => {
                 aptSeq={item.aptSeq}
                 key={index}
                 title={item.aptNm}
-                type="매매"
                 address={`${item.roadNm} ${item.roadNmBonbun}-${item.roadNmBubun}`}
                 userWishList={wishList}
                 fetchWish={fetchWishList}

@@ -210,6 +210,7 @@
       }
     },
     {
+
       "id": "src/screens/Screen/Screen.jsx:560:16-to-src/screens/Screen6/Screen6.jsx",
       "source": "src/screens/Screen/Screen.jsx",
       "target": "src/screens/Screen6/Screen6.jsx",
@@ -226,6 +227,7 @@
       }
     },
     {
+
       "id": "src/screens/Screen/Screen.jsx:563:16-to-src/screens/Screen3/Screen3.jsx",
       "source": "src/screens/Screen/Screen.jsx",
       "target": "src/screens/Screen3/Screen3.jsx",
@@ -466,6 +468,7 @@
       }
     },
     {
+
       "id": "src/screens/CommunityPost/CommunityPost.jsx:116:4-to-src/screens/Community/Community.jsx",
       "source": "src/screens/CommunityPost/CommunityPost.jsx",
       "target": "src/screens/Community/Community.jsx",
@@ -482,6 +485,7 @@
       }
     },
     {
+
       "id": "src/screens/CommunityPost/CommunityPost.jsx:142:6-to-src/screens/Community/Community.jsx",
       "source": "src/screens/CommunityPost/CommunityPost.jsx",
       "target": "src/screens/Community/Community.jsx",
@@ -498,6 +502,7 @@
       }
     },
     {
+
       "id": "src/screens/CommunityPost/CommunityPost.jsx:164:6-to-src/screens/Community/Community.jsx",
       "source": "src/screens/CommunityPost/CommunityPost.jsx",
       "target": "src/screens/Community/Community.jsx",
@@ -514,6 +519,7 @@
       }
     },
     {
+
       "id": "src/screens/CommunityPost/CommunityPost.jsx:193:8-to-src/screens/Screen/Screen.jsx",
       "source": "src/screens/CommunityPost/CommunityPost.jsx",
       "target": "src/screens/Screen/Screen.jsx",
@@ -521,6 +527,7 @@
         "viaRoute": "/",
         "trigger": {
           "element": "<Link to=\"/\" className=\"logo-container\">\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>\n            집사\n          </div>\n        </Link>",
+
           "line": 193,
           "endLine": 198,
           "column": 8,
@@ -530,6 +537,7 @@
       }
     },
     {
+
       "id": "src/screens/CommunityWrite/CommunityWrite.jsx:22:6-to-src/screens/Community/Community.jsx",
       "source": "src/screens/CommunityWrite/CommunityWrite.jsx",
       "target": "src/screens/Community/Community.jsx",
@@ -546,6 +554,7 @@
       }
     },
     {
+
       "id": "src/screens/CommunityWrite/CommunityWrite.jsx:42:6-to-src/screens/Community/Community.jsx",
       "source": "src/screens/CommunityWrite/CommunityWrite.jsx",
       "target": "src/screens/Community/Community.jsx",
@@ -578,6 +587,7 @@
       }
     },
     {
+
       "id": "src/screens/CommunityWrite/CommunityWrite.jsx:59:8-to-src/screens/Screen/Screen.jsx",
       "source": "src/screens/CommunityWrite/CommunityWrite.jsx",
       "target": "src/screens/Screen/Screen.jsx",

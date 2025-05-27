@@ -16,7 +16,7 @@ import KakaoMap from "./KakaoMap/KakaoMap";
 
 import { useAuth } from "../context/AuthContext";
 
-export const Screen = ({}) => {
+export const Screen = ({ }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { isLoggedIn, logout } = useAuth();
@@ -126,6 +126,7 @@ export const Screen = ({}) => {
     fetchUserData();
   }, [screen9Visible]);
 
+
 useEffect(() => {
     const fetchWishList = async () => {
       try {
@@ -154,14 +155,11 @@ useEffect(() => {
     }
   };
 
-  fetchDongData();
-}, []);
 
-  
- // Screen.jsx에서 토큰 저장 부분 수정
-useEffect(() => {
-  const params = new URLSearchParams(location.search);
-  if (!params.toString()) return;
+  // Screen.jsx에서 토큰 저장 부분 수정
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (!params.toString()) return;
     // 쿼리 파라미터 중 첫 번째 key/value를 토큰으로 사용
     const [[key, value]] = Array.from(params.entries());
     console.log("🕵️‍♀️ URL param key:", key, "value:", value);
@@ -376,7 +374,19 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <ScreenScreen onClose={() => setShowScreenScreenOverlay(false)} />
+            <ScreenScreen
+              // 1) 이 팝업(ScreenScreen)을 닫는 콜백
+              onClose={() => setShowScreenScreenOverlay(false)}
+
+              // 2) 카드 클릭 시 상세조회
+              onCardClick={handleCardClick}
+
+              // 3) 검색 결과를 받아서 searchOverlay를 켜는 콜백
+              onSearch={(results) => {
+                setSearchRes(results);
+                openSearch(); // Screen.jsx에 이미 정의된 함수: searchVisible=true -> overlay 켜짐
+              }}
+            />
           </div>
         </div>
       )}
@@ -402,7 +412,19 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <ScreenWrapper onClose={() => setShowScreenWrapperOverlay(false)} />
+            <ScreenWrapper
+              // 1) 이 팝업(ScreenWrapper)을 닫는 콜백
+              onClose={() => setShowScreenWrapperOverlay(false)}
+
+              // 2) 카드 클릭 시 상세조회
+              onCardClick={handleCardClick}
+
+              // 3) 검색 결과를 받아서 searchOverlay를 켜는 콜백
+              onSearch={(results) => {
+                setSearchRes(results);
+                openSearch(); // searchVisible=true → Search 오버레이 표시
+              }}
+            />
           </div>
         </div>
       )}
@@ -531,7 +553,7 @@ useEffect(() => {
                 <img className="profit" alt="Profit" src="https://c.animaapp.com/JuAZje8Q/img/profit-1@2x.png" />
               </button>
               <Link className="community-button" to="/community">
-                  커뮤니티
+                커뮤니티
               </Link>
 
             </div>

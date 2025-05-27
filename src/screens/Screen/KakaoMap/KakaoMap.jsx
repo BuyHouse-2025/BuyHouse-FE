@@ -77,11 +77,11 @@ const KakaoMap = ({ center, locationInfo, onBoundsChange, apartmentList = [], on
         }}
       >
         {/* 중앙 마커 */}
-        <MapMarker position={mapCenter}>
+        {/* <MapMarker position={mapCenter}>
           <div style={{ color: "#000", padding: "5px", backgroundColor: "white", borderRadius: "4px" }}>
             {locationInfo ? `${locationInfo.sido} ${locationInfo.district} ${locationInfo.neighborhood}` : "서울 시청"}
           </div>
-        </MapMarker>
+        </MapMarker> */}
 
         {/* 아파트 리스트 마커들 */}
         {apartmentList.map((apt, idx) => (
@@ -90,7 +90,7 @@ const KakaoMap = ({ center, locationInfo, onBoundsChange, apartmentList = [], on
             position={{ lat: apt.lat, lng: apt.lng }}
             onClick={() => onMarkerClick?.(apt)}
           >
-            <div style={{ background: "#fff", padding: "2px 5px", borderRadius: "4px", fontSize: "12px" }}>
+            <div style={{ background: "#fff", padding: "2px 5px", borderRadius: "4px", fontSize: "12px", minWidth: "150px", textAlign: "center"}}>
               {apt.aptNm}
             </div>
           </MapMarker>
