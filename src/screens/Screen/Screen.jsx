@@ -37,7 +37,8 @@ export const Screen = ({}) => {
   const [aptSearch, setAptSearch] = useState("");
   const [dongData, setDongData] = useState([]);
   const [mapBounds, setMapBounds] = useState(null);
-
+  const [apartmentList, setApartmentList] = useState([]);
+  const [selectedAptDetail, setSelectedAptDetail] = useState(null);
 
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
@@ -108,7 +109,9 @@ export const Screen = ({}) => {
         setUserError("유저 정보를 불러오지 못했습니다.");
       }
     };
-  });
+
+    fetchUserData();
+  }, [screen9Visible]);
 
 useEffect(() => {
   const fetchDongData = async () => {
@@ -416,7 +419,13 @@ useEffect(() => {
           sido: selectedSido,
           district: selectedGugun,
           neighborhood: selectedDong
-        }} />
+        }}
+          onBoundsChange={(bounds) => {
+            setMapBounds(bounds); // 지도 이동 시 bounds만 저장
+          }}
+          onMarkerClick={handleMarkerClick}
+          apartmentList={apartmentList}
+        />
 
       </div>
 

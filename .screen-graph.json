@@ -150,15 +150,15 @@
   ],
   "edges": [
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:163:4-to-src\\screens\\Screen\\Screen.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:177:4-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\Screen\\Screen.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
           "element": "navigate(\"/\")",
-          "line": 163,
-          "endLine": 163,
+          "line": 177,
+          "endLine": 177,
           "column": 4,
           "endColumn": 17,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
@@ -166,15 +166,15 @@
       }
     },
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:474:16-to-src\\screens\\Screen6\\Screen6.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:495:16-to-src\\screens\\Screen6\\Screen6.jsx",
       "source": "src\\screens\\Screen\\Screen.jsx",
       "target": "src\\screens\\Screen6\\Screen6.jsx",
       "data": {
         "viaRoute": "/login",
         "trigger": {
-          "element": "<Link className=\"background-4\" to=\"/login\">\r\n                  <div className=\"text-wrapper-93\">로그인하기</div>\r\n                </Link>",
-          "line": 474,
-          "endLine": 476,
+          "element": "<Link className=\"background-4\" to=\"/login\">\n                  <div className=\"text-wrapper-93\">로그인하기</div>\n                </Link>",
+          "line": 495,
+          "endLine": 497,
           "column": 16,
           "endColumn": 23,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
@@ -182,15 +182,15 @@
       }
     },
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:477:16-to-src\\screens\\Screen3\\Screen3.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:498:16-to-src\\screens\\Screen3\\Screen3.jsx",
       "source": "src\\screens\\Screen\\Screen.jsx",
       "target": "src\\screens\\Screen3\\Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
-          "element": "<Link to=\"/join\">\r\n                  <button className=\"button-2\">\r\n                    <div className=\"text-wrapper-94\">회원가입</div>\r\n                  </button>\r\n                </Link>",
-          "line": 477,
-          "endLine": 481,
+          "element": "<Link to=\"/join\">\n                  <button className=\"button-2\">\n                    <div className=\"text-wrapper-94\">회원가입</div>\n                  </button>\n                </Link>",
+          "line": 498,
+          "endLine": 502,
           "column": 16,
           "endColumn": 23,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
@@ -236,7 +236,7 @@
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link className=\"frame-81\" to=\"/\">\r\n            <img className=\"v-2\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\" />\r\n            <div className=\"text-wrapper-104\">집사</div>\r\n          </Link>",
+          "element": "<Link className=\"frame-81\" to=\"/\">\n            <img className=\"v-2\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\" />\n            <div className=\"text-wrapper-104\">집사</div>\n          </Link>",
           "line": 93,
           "endLine": 96,
           "column": 10,
@@ -268,7 +268,7 @@
       "data": {
         "viaRoute": "/join",
         "trigger": {
-          "element": "<Link to=\"/join\">\r\n            <button type=\"button\" className=\"button-3\">\r\n              <div className=\"text-wrapper-121\">회원가입</div>\r\n            </button>\r\n          </Link>",
+          "element": "<Link to=\"/join\">\n            <button type=\"button\" className=\"button-3\">\n              <div className=\"text-wrapper-121\">회원가입</div>\n            </button>\n          </Link>",
           "line": 135,
           "endLine": 139,
           "column": 10,
@@ -284,7 +284,7 @@
       "data": {
         "viaRoute": "/findpwd",
         "trigger": {
-          "element": "<Link to=\"/findpwd\" className=\"text-wrapper-122\">\r\n          비밀번호 찾기\r\n        </Link>",
+          "element": "<Link to=\"/findpwd\" className=\"text-wrapper-122\">\n          비밀번호 찾기\n        </Link>",
           "line": 148,
           "endLine": 150,
           "column": 8,
@@ -412,7 +412,7 @@
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link to=\"/\" className=\"logo-container\">\r\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\r\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>집사</div>\r\n        </Link>",
+          "element": "<Link to=\"/\" className=\"logo-container\">\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>집사</div>\n        </Link>",
           "line": 58,
           "endLine": 61,
           "column": 8,
@@ -460,7 +460,7 @@
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link to=\"/\" className=\"logo-container\">\r\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\r\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>집사</div>\r\n        </Link>",
+          "element": "<Link to=\"/\" className=\"logo-container\">\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>집사</div>\n        </Link>",
           "line": 104,
           "endLine": 107,
           "column": 8,
@@ -508,7 +508,7 @@
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link to=\"/\" className=\"logo-container\">\r\n          <div className=\"logo-icon\">🏠</div>\r\n          <span className=\"logo-text\">집사</span>\r\n        </Link>",
+          "element": "<Link to=\"/\" className=\"logo-container\">\n          <div className=\"logo-icon\">🏠</div>\n          <span className=\"logo-text\">집사</span>\n        </Link>",
           "line": 33,
           "endLine": 36,
           "column": 8,
