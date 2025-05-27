@@ -154,6 +154,8 @@ useEffect(() => {
       console.error("❌ 동코드 데이터 불러오기 실패", error);
     }
   };
+      fetchDongData();
+  }, []);
 
 
   // Screen.jsx에서 토큰 저장 부분 수정
