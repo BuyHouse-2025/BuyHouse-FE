@@ -27,10 +27,9 @@
 }
 
 .screen-4 .frame-92 {
-  height: 433px;
-  position: relative;
-  top: 1px;
-  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .screen-4 .frame-93 {
@@ -41,7 +40,7 @@
   justify-content: center;
   left: 0;
   padding: 1px 0px;
-  position: absolute;
+  position: relative;
   top: 0;
   width: 380px;
 }
@@ -62,6 +61,10 @@
   position: relative;
   text-align: center;
   width: fit-content;
+
+  white-space: normal;        /* ← 줄바꿈 허용 */
+  word-break: keep-all;       /* 단어 중간 끊김 방지 */
+  line-height: 1.4;   
 }
 
 .screen-4 .frame-94 {

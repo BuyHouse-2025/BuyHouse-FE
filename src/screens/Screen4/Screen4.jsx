@@ -1,105 +1,71 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { MaskGroup } from "../../components/MaskGroup";
 import "./style.css";
 
-export const Screen4 = () => {
+export const Screen4 = ({ dongData = [], onMoveToLocation }) => {
+  const [interestList, setInterestList] = useState([]);
+
+  useEffect(() => {
+    const fetchInterest = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+        console.log("▶️ /api/users 요청 보냄…", token);
+
+        const res = await axios.get("http://localhost:8080/api/users/interest", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        });
+        console.log("🎯 응답 구조 확인:", res.data);
+        setInterestList(res.data.interests || []);
+      } catch (err) {
+        console.error("❌ 관심지역 불러오기 실패", err);
+      }
+    };
+
+    fetchInterest();
+  }, []);
+
+  const handleClick = (item) => {
+  const { sido, gugun, dong, lat, lng } = item;
+
+  if (lat === undefined || lng === undefined) {
+    alert("해당 지역의 좌표가 없습니다.");
+    return;
+  }
+
+  onMoveToLocation({
+    sido,
+    district: gugun,
+    neighborhood: dong,
+    lat,
+    lng,
+  });
+};
+
+
   return (
-    <div className="screen-4" data-model-id="1:1338">
+    <div className="screen-4">
       <div className="overlap-group-2">
         <div className="frame-91">
           <div className="frame-92">
-            <div className="frame-93">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 성동구 행당동</div>
-            </div>
+            {interestList.map((item) => (
+              <div key={item.id} className="frame-93" onClick={() => handleClick(item)}>
+                <MaskGroup
+                  className="mask-group-12"
+                  property1="false"
+                  propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
+                />
+                <div className="text-wrapper-112">
+                  {`${item.sido} ${item.gugun} ${item.dong}`}
+                </div>
+              </div>
+            ))}
 
-            <div className="frame-94">
-              <MaskGroup
-                className="mask-group-13"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-113">서울시 강북구 수유동</div>
-            </div>
-
-            <div className="frame-95">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 금천구 독산동</div>
-            </div>
-
-            <div className="frame-96">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 노원구 하계동</div>
-            </div>
-
-            <div className="frame-97">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 강서구 등촌동</div>
-            </div>
-
-            <div className="frame-98">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 종로구 종로1가</div>
-            </div>
-
-            <div className="frame-99">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 성동구 행당동</div>
-            </div>
-
-            <div className="frame-100">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 성동구 행당동</div>
-            </div>
-
-            <div className="frame-101">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 성동구 행당동</div>
-            </div>
-
-            <div className="frame-102">
-              <MaskGroup
-                className="mask-group-12"
-                property1="false"
-                propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
-              />
-              <div className="text-wrapper-112">서울시 성동구 행당동</div>
-            </div>
           </div>
         </div>
-
       </div>
     </div>
   );
