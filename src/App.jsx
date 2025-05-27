@@ -26,6 +26,7 @@ import { CommunityWrite } from "./screens/CommunityWrite";
 // ✅ AuthContext
 import { AuthProvider } from "./screens/context/AuthContext";
 import { Card } from "./screens/Search/Card";
+import { Purchase } from "./screens/Purchase";
 
 const router = createBrowserRouter([
   { path: "/", element: <Screen /> },
@@ -53,6 +54,7 @@ const router = createBrowserRouter([
   { path: "/community/post/:id", element: <CommunityPost /> },
   { path: "/community/write", element: <CommunityWrite /> },
   { path: "/community/edit/:id", element: <CommunityWrite /> },
+  { path: "/purchase", element: <Purchase /> },
 
 
 ]);
