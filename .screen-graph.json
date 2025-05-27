@@ -37,8 +37,7 @@
       "label": "Screen4",
       "routes": [
         "/favoriteRegion"
-      ],
-      "dataModelId": "1:1338"
+      ]
     },
     {
       "id": "src/screens/Screen5/Screen5.jsx",
@@ -243,6 +242,22 @@
           "column": 10,
           "endColumn": 17,
           "sourceFile": "src\\screens\\Screen3\\Screen3.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Screen6\\Screen6.jsx:32:4-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Screen6\\Screen6.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "navigate(\"/\")",
+          "line": 32,
+          "endLine": 32,
+          "column": 4,
+          "endColumn": 17,
+          "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
         }
       }
     },

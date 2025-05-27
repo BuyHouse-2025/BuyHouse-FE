@@ -31,13 +31,13 @@ export const Screen = ({}) => {
   const [showScreen8Overlay, setShowScreen8Overlay] = useState(false);
   const [screen7Visible, setScreen7Visible] = useState(false);
   const [screen7Active, setScreen7Active] = useState(false);
-  const [selectedDistrict, setSelectedDistrict] = useState("강남구");
-  const [selectedNeighborhood, setSelectedNeighborhood] = useState("삼성동");
+  const [selectedSido, setSelectedSido] = useState("서울특별시");
+  const [selectedGugun, setSelectedGugun] = useState("강남구");
+  const [selectedDong, setSelectedDong] = useState("삼성동");
   const [aptSearch, setAptSearch] = useState("");
-  const [bounds, setBounds] = useState(null);
+  const [dongData, setDongData] = useState([]);
   const [mapBounds, setMapBounds] = useState(null);
-  const [apartmentList, setApartmentList] = useState([]);
-  const [selectedAptDetail, setSelectedAptDetail] = useState(null);
+
 
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
@@ -49,16 +49,15 @@ export const Screen = ({}) => {
 
   // ✨ 추가: 선택된 위치 정보(지도 마커 라벨용)
   const [locationInfo, setLocationInfo] = useState({
-    district: selectedDistrict,
-    neighborhood: selectedNeighborhood,
+    sido: "서울특별시",
+    district: "강남구",
+    neighborhood: "삼성동"
   });
 
   const handleMoveToLocation = (locationData) => {
-    setMapCenter({
-      lat: locationData.lat,
-      lng: locationData.lng,
-    });
+    setMapCenter({ lat: locationData.lat, lng: locationData.lng });
     setLocationInfo({
+      sido: locationData.sido,
       district: locationData.district,
       neighborhood: locationData.neighborhood,
     });
@@ -109,15 +108,27 @@ export const Screen = ({}) => {
         setUserError("유저 정보를 불러오지 못했습니다.");
       }
     };
+  });
 
-    fetchUserData();
-  }, [screen9Visible]);
+useEffect(() => {
+  const fetchDongData = async () => {
+    try {
+      const res = await axios.get("http://localhost:8080/api/dongcode");
+      console.log("동 데이터 확인 👇", res.data); // 여기 찍어보자!
+      setDongData(res.data);
+    } catch (error) {
+      console.error("❌ 동코드 데이터 불러오기 실패", error);
+    }
+  };
 
-  // Screen.jsx에서 토큰 저장 부분 수정
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    if (!params.toString()) return;
+  fetchDongData();
+}, []);
 
+  
+ // Screen.jsx에서 토큰 저장 부분 수정
+useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  if (!params.toString()) return;
     // 쿼리 파라미터 중 첫 번째 key/value를 토큰으로 사용
     const [[key, value]] = Array.from(params.entries());
     console.log("🕵️‍♀️ URL param key:", key, "value:", value);
@@ -345,7 +356,7 @@ export const Screen = ({}) => {
         >
           <div className="screenscreen-content" onClick={(e) => e.stopPropagation()}>
             <div className="frame-74">
-              <div className="text-wrapper-98">관심지역</div>
+              <div className="interest-title">관심지역</div>
               <div className="background-6">
                 <div className="close-svg-wrapper">
                   <div className="close-svg-2">
@@ -359,7 +370,7 @@ export const Screen = ({}) => {
                 </div>
               </div>
             </div>
-            <Screen4 />
+            <Screen4 dongData={dongData} onMoveToLocation={handleMoveToLocation} />
           </div>
         </div>
       )}
@@ -381,31 +392,32 @@ export const Screen = ({}) => {
           >
             <Frame4
               onClose={() => setShowScreen8Overlay(false)}
-              selectedDistrict={selectedDistrict}
-              selectedNeighborhood={selectedNeighborhood}
+              selectedSido={selectedSido}
+              selectedGugun={selectedGugun}
+              selectedDong={selectedDong}
             />
 
             <Screen8
-              selectedDistrict={selectedDistrict}
-              setSelectedDistrict={setSelectedDistrict}
-              selectedNeighborhood={selectedNeighborhood}
-              setSelectedNeighborhood={setSelectedNeighborhood}
+              dongData={dongData}
+              selectedSido={selectedSido}
+              setSelectedSido={setSelectedSido}
+              selectedGugun={selectedGugun}
+              setSelectedGugun={setSelectedGugun}
+              selectedDong={selectedDong}
+              setSelectedDong={setSelectedDong}
               onMoveToLocation={handleMoveToLocation}
             />
           </div>
         </div>
       )}
 
-      <div className="overlap">
-        <KakaoMap
-          center={mapCenter}
-          locationInfo={locationInfo}
-          onBoundsChange={(bounds) => {
-            setMapBounds(bounds); // 지도 이동 시 bounds만 저장
-          }}
-          onMarkerClick={handleMarkerClick}
-          apartmentList={apartmentList}
-        />
+      <div className="overlap" >
+        <KakaoMap center={mapCenter} locationInfo={{
+          sido: selectedSido,
+          district: selectedGugun,
+          neighborhood: selectedDong
+        }} />
+
       </div>
 
       <div className="overlay-shadow" />
@@ -553,7 +565,10 @@ export const Screen = ({}) => {
                 />
               </div>
               <div className="frame-73">
-                <div className="text-wrapper-97">서울</div>
+                <div className="text-wrapper-97">
+                  {selectedSido.replace("특별시", "").replace("광역시", "").replace("도", "")}
+                </div>
+
                 <div className="background-5">
                   <div className="front-svg-fill">
                     <div className="div-6">
@@ -565,7 +580,7 @@ export const Screen = ({}) => {
                     </div>
                   </div>
                 </div>
-                <div className="text-wrapper-97">{selectedDistrict}</div>
+                <div className="text-wrapper-97">{selectedGugun}</div>
                 <div className="background-5">
                   <div className="front-svg-fill">
                     <div className="div-6">
@@ -577,7 +592,7 @@ export const Screen = ({}) => {
                     </div>
                   </div>
                 </div>
-                <div className="text-wrapper-97">{selectedNeighborhood}</div>
+                <div className="text-wrapper-97">{selectedDong}</div>
               </div>
             </div>
           </div>

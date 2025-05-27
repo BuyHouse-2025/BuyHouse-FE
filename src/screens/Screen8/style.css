@@ -32,6 +32,7 @@
   width: 329px;
   cursor: pointer;
   pointer-events: auto;
+  text-align: center;
 }
 
 .screen-8 .text-wrapper-126 {
@@ -47,4 +48,11 @@
   text-align: center;
   top: 12px;
   white-space: nowrap;
+}
+
+.movebtn {
+  color: #ffffff;
+  font-family: "SUIT-Regular", Helvetica;
+  font-size: 12.9px;
+  position: relative;
 }

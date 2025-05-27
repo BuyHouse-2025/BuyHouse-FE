@@ -5,41 +5,56 @@ import dongCoords from "../../assets/dong_coords.json"
 import "./style.css"
 
 export const Screen8 = ({
-  selectedDistrict,
-  setSelectedDistrict,
-  selectedNeighborhood,
-  setSelectedNeighborhood,
-  onMoveToLocation, // Add this prop to communicate with parent
+  dongData,
+  selectedSido,
+  setSelectedSido,
+  selectedGugun,
+  setSelectedGugun,
+  selectedDong,
+  setSelectedDong,
+  onMoveToLocation
 }) => {
   const handleMoveToLocation = () => {
-    // Find coordinates for the selected district and neighborhood
-    const location = dongCoords.find((coord) => coord.gu === selectedDistrict && coord.dong === selectedNeighborhood)
+    const location = dongData.find(
+      (d) =>
+        d.sido === selectedSido &&
+        d.gugun === selectedGugun &&
+        d.dong === selectedDong
+    );
 
-    if (location && onMoveToLocation) {
+    if (location) {
       onMoveToLocation({
         lat: location.lat,
         lng: location.lng,
-        district: selectedDistrict,
-        neighborhood: selectedNeighborhood,
-      })
+        sido: selectedSido,
+        district: selectedGugun,
+        neighborhood: selectedDong,
+      });
+    } else {
+      alert("해당 지역의 좌표를 찾을 수 없습니다.");
     }
-  }
+  };
 
   return (
     <div className="screen-8">
       <div className="overlap-group-5">
         <div className="background-14">
           <View
-            selectedDistrict={selectedDistrict}
-            setSelectedDistrict={setSelectedDistrict}
-            selectedNeighborhood={selectedNeighborhood}
-            setSelectedNeighborhood={setSelectedNeighborhood}
+            dongData={dongData}
+            selectedSido={selectedSido}
+            setSelectedSido={setSelectedSido}
+            selectedGugun={selectedGugun}
+            setSelectedGugun={setSelectedGugun}
+            selectedDong={selectedDong}
+            setSelectedDong={setSelectedDong}
           />
-          <div className="view-10" onClick={handleMoveToLocation}>
-            <div className="text-wrapper-126">{selectedNeighborhood}으로 이동</div>
-          </div>
+          
+          <button className="view-10" onClick={handleMoveToLocation}>
+              <div className="movebtn">{selectedDong}으로 이동</div>
+          </button>
+          
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
