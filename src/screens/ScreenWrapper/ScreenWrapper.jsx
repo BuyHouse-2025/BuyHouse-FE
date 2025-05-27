@@ -1,15 +1,13 @@
+// src/screens/ScreenWrapper/ScreenWrapper.jsx
 import React, { useState } from "react";
-import axios from "axios";
 import "./style.css";
 
-export const ScreenWrapper = ({ onClose }) => {
-    // 1) 평형 입력값 state
+export const ScreenWrapper = ({ onClose, onCardClick, onSearch }) => {
   const [minSquare, setMinSquare] = useState("");
   const [maxSquare, setMaxSquare] = useState("");
 
-  // 2) '검색하기' 클릭 시 실행될 핸들러
-    const handleSearch = async () => {
-    const searchRequestDto = {
+  const handleSearch = async () => {
+    const dto = {
       aptNm:     null,
       minPrice:  null,
       maxPrice:  null,
@@ -18,17 +16,24 @@ export const ScreenWrapper = ({ onClose }) => {
     };
 
     try {
-      // proxy 설정이 있으면 상대경로, 없으면 full URL 사용
-      const res = await axios.post("http://localhost:8080/api/estate", searchRequestDto);
-      console.log("평형 검색 결과:", res.data);
-      // TODO: res.data를 부모 state로 끌어올려서 화면에 렌더링
-    } catch (err) {
-      console.error("평형 검색 오류:", err);
-    } finally {
+      const res = await fetch("http://localhost:8080/api/estate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dto),
+      });
+      const data = await res.json();
+      console.log("🔎 평형 검색 결과:", data);
+
+      // 1) 검색 결과를 부모로 전달
+      onSearch(data);
+
+      // 2) 팝업 닫기
       onClose();
+    } catch (err) {
+      console.error("❌ 평형 검색 오류:", err);
     }
   };
-    
+
   return (
     <div className="screen-wrapper" data-model-id="1:1298">
       <div className="frame-78">

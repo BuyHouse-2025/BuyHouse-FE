@@ -126,6 +126,20 @@
       "dataModelId": "1:732"
     },
     {
+      "id": "src/screens/Search/Search.jsx",
+      "label": "Search",
+      "routes": [
+        "/search"
+      ]
+    },
+    {
+      "id": "src/screens/Search/Card/Card.jsx",
+      "label": "Card",
+      "routes": [
+        "/card"
+      ]
+    },
+    {
       "id": "src/screens/Community/Community.jsx",
       "label": "Community",
       "routes": [
@@ -152,19 +166,27 @@
       "routes": [
         "/community/edit/:id"
       ]
+    },
+    {
+      "id": "src/screens/Purchase/Purchase.jsx",
+      "label": "Purchase",
+      "routes": [
+        "/purchase"
+      ],
+      "dataModelId": "1:1298"
     }
   ],
   "edges": [
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:177:4-to-src\\screens\\Screen\\Screen.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:191:4-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\Screen\\Screen.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
           "element": "navigate(\"/\")",
-          "line": 177,
-          "endLine": 177,
+          "line": 191,
+          "endLine": 191,
           "column": 4,
           "endColumn": 17,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
@@ -172,15 +194,31 @@
       }
     },
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:495:16-to-src\\screens\\Screen6\\Screen6.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:509:14-to-src\\screens\\Community\\Community.jsx",
+      "source": "src\\screens\\Screen\\Screen.jsx",
+      "target": "src\\screens\\Community\\Community.jsx",
+      "data": {
+        "viaRoute": "/community",
+        "trigger": {
+          "element": "<Link className=\"community-button\" to=\"/community\">\r\n                  커뮤니티\r\n              </Link>",
+          "line": 509,
+          "endLine": 511,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\Screen\\Screen.jsx:536:16-to-src\\screens\\Screen6\\Screen6.jsx",
       "source": "src\\screens\\Screen\\Screen.jsx",
       "target": "src\\screens\\Screen6\\Screen6.jsx",
       "data": {
         "viaRoute": "/login",
         "trigger": {
           "element": "<Link className=\"background-4\" to=\"/login\">\r\n                  <div className=\"text-wrapper-93\">로그인하기</div>\r\n                </Link>",
-          "line": 495,
-          "endLine": 497,
+          "line": 536,
+          "endLine": 538,
           "column": 16,
           "endColumn": 23,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
@@ -188,15 +226,15 @@
       }
     },
     {
-      "id": "src\\screens\\Screen\\Screen.jsx:498:16-to-src\\screens\\Screen3\\Screen3.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:539:16-to-src\\screens\\Screen3\\Screen3.jsx",
       "source": "src\\screens\\Screen\\Screen.jsx",
       "target": "src\\screens\\Screen3\\Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
           "element": "<Link to=\"/join\">\r\n                  <button className=\"button-2\">\r\n                    <div className=\"text-wrapper-94\">회원가입</div>\r\n                  </button>\r\n                </Link>",
-          "line": 498,
-          "endLine": 502,
+          "line": 539,
+          "endLine": 543,
           "column": 16,
           "endColumn": 23,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
@@ -428,15 +466,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:121:4-to-src\\screens\\Community\\Community.jsx",
+      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:116:4-to-src\\screens\\Community\\Community.jsx",
       "source": "src\\screens\\CommunityPost\\CommunityPost.jsx",
       "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
           "element": "navigate(\"/community\")",
-          "line": 121,
-          "endLine": 121,
+          "line": 116,
+          "endLine": 116,
           "column": 4,
           "endColumn": 26,
           "sourceFile": "src\\screens\\CommunityPost\\CommunityPost.jsx"
@@ -444,15 +482,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:147:6-to-src\\screens\\Community\\Community.jsx",
+      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:142:6-to-src\\screens\\Community\\Community.jsx",
       "source": "src\\screens\\CommunityPost\\CommunityPost.jsx",
       "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
           "element": "navigate(\"/community\")",
-          "line": 147,
-          "endLine": 147,
+          "line": 142,
+          "endLine": 142,
           "column": 6,
           "endColumn": 28,
           "sourceFile": "src\\screens\\CommunityPost\\CommunityPost.jsx"
@@ -460,15 +498,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:169:6-to-src\\screens\\Community\\Community.jsx",
+      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:164:6-to-src\\screens\\Community\\Community.jsx",
       "source": "src\\screens\\CommunityPost\\CommunityPost.jsx",
       "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
           "element": "navigate(\"/community\")",
-          "line": 169,
-          "endLine": 169,
+          "line": 164,
+          "endLine": 164,
           "column": 6,
           "endColumn": 28,
           "sourceFile": "src\\screens\\CommunityPost\\CommunityPost.jsx"
@@ -476,15 +514,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:179:8-to-src\\screens\\Screen\\Screen.jsx",
+      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:193:8-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\CommunityPost\\CommunityPost.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
           "element": "<Link to=\"/\" className=\"logo-container\">\r\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\r\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>\r\n            집사\r\n          </div>\r\n        </Link>",
-          "line": 179,
-          "endLine": 184,
+          "line": 193,
+          "endLine": 198,
           "column": 8,
           "endColumn": 15,
           "sourceFile": "src\\screens\\CommunityPost\\CommunityPost.jsx"
@@ -492,15 +530,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:21:6-to-src\\screens\\Community\\Community.jsx",
+      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:22:6-to-src\\screens\\Community\\Community.jsx",
       "source": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
       "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
           "element": "navigate(\"/community\")",
-          "line": 21,
-          "endLine": 21,
+          "line": 22,
+          "endLine": 22,
           "column": 6,
           "endColumn": 28,
           "sourceFile": "src\\screens\\CommunityWrite\\CommunityWrite.jsx"
@@ -508,15 +546,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:41:6-to-src\\screens\\Community\\Community.jsx",
+      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:42:6-to-src\\screens\\Community\\Community.jsx",
       "source": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
       "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
           "element": "navigate(\"/community\")",
-          "line": 41,
-          "endLine": 41,
+          "line": 42,
+          "endLine": 42,
           "column": 6,
           "endColumn": 28,
           "sourceFile": "src\\screens\\CommunityWrite\\CommunityWrite.jsx"
@@ -524,15 +562,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:50:6-to-src\\screens\\Community\\Community.jsx",
+      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:51:6-to-src\\screens\\Community\\Community.jsx",
       "source": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
       "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
           "element": "navigate(\"/community\")",
-          "line": 50,
-          "endLine": 50,
+          "line": 51,
+          "endLine": 51,
           "column": 6,
           "endColumn": 28,
           "sourceFile": "src\\screens\\CommunityWrite\\CommunityWrite.jsx"
@@ -540,15 +578,15 @@
       }
     },
     {
-      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:58:8-to-src\\screens\\Screen\\Screen.jsx",
+      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:59:8-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link to=\"/\" className=\"logo-container\">\r\n          <div className=\"logo-icon\">🏠</div>\r\n          <span className=\"logo-text\">집사</span>\r\n        </Link>",
-          "line": 58,
-          "endLine": 61,
+          "element": "<Link to=\"/\" className=\"logo-container\">\r\n          <img className=\"v\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png\" />\r\n          <div className=\"text-wrapper-89\" style={{ height: \"61px\", lineHeight: \"61px\" }}>집사</div>\r\n        </Link>",
+          "line": 59,
+          "endLine": 62,
           "column": 8,
           "endColumn": 15,
           "sourceFile": "src\\screens\\CommunityWrite\\CommunityWrite.jsx"

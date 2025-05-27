@@ -1,21 +1,21 @@
 import React from "react";
 import "./style.css";
 
-export const ParagraphOverlay = ({ totalOwnedPrice, totalCurrentPrice, totalDiff, diffRate, count }) => {
+export const ParagraphOverlay = ({ totalOwned, totalCurrent, totalDiff, rate, count }) => {
   return (
     <div className="paragraph-overlay">
       <div className="price-all">
         <div className="text-wrapper-3">총 취득가격</div>
-        <div className="text-wrapper-4">{totalOwnedPrice}</div>
+        <div className="text-wrapper-4">{`${(totalOwned / 10000).toFixed(0)}억 ${(totalOwned % 10000)}만`}</div>
         <div className="text-wrapper-5">{count}개보유</div>
       </div>
       <div className="price-now">
         <div className="text-wrapper-3">현재 평가가격</div>
-        <div className="text-wrapper-4">{totalCurrentPrice}</div>
+        <div className="text-wrapper-4">{`${(totalCurrent / 10000).toFixed(0)}억 ${(totalCurrent % 10000)}만`}</div>
         <div className="text-wrapper-6">
           {(totalDiff >= 0 ? "+" : "") +
-            `${formatKoreanCurrency(totalDiff || 0)}/` +
-            `${(diffRate ?? 0).toFixed(2)}%`}
+            `${(totalDiff / 10000).toFixed(1)}억    ` + 
+            `${(rate ?? 0).toFixed(2)}%`}
         </div>
       </div>
     </div>
