@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
+import { BackgroundBorder } from "../../../../components/BackgroundBorder";
 
 // ✅ 날짜 포맷 (예: 2024-06-01 → 2024.06.01)
 const formatDate = (date) => {
@@ -13,11 +14,32 @@ const formatCurrency = (amount) => {
   const absAmount = Math.abs(amount);
   return `${sign}₩${absAmount.toLocaleString()}`;
 };
-export const Property = ({ name, dealType, price, area, date, gain, gainRate }) => {
+export const Property = ({ name, dealType, price, area, date, gain, gainRate, aptSeq }) => {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [overlayActive, setOverlayActive] = useState(false);
+  const [tradeMode, setTradeMode] = useState("one"); // 구매 상태부터 시작
+
+  const handleOpenOverlay = () => {
+    setShowOverlay(true);
+    setTimeout(() => setOverlayActive(true), 10); // slide-in용
+  };
+
+  const handleCloseOverlay = () => {
+    setOverlayActive(false);
+    setTimeout(() => setShowOverlay(false), 300); // slide-out 후 제거
+  };
+
   return (
     <div className="property-card">
       <div className="top">
         <div className="text name">{name}</div>
+        <BackgroundBorder
+          divClassName="background-border-instance"
+          property1="two"
+          aptSeq={aptSeq}
+          openOverlay={handleOpenOverlay}
+          onToggle={(newMode) => setTradeMode(newMode)}
+        />
       </div>
 
       <div className="info">
@@ -43,6 +65,16 @@ export const Property = ({ name, dealType, price, area, date, gain, gainRate }) 
           <div className="text rate">{gainRate}</div>
         </div>
       </div>
+      {showOverlay && (
+              <PurchaseOverlayPortal
+                aptSeq={aptSeq}
+                onClose={handleCloseOverlay}
+                isActive={overlayActive}
+                onToggle={(mode) => setTradeMode(mode)}
+              />
+      
+            )}
     </div>
+    
   );
 };

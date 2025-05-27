@@ -34,12 +34,14 @@ export const Screen = ({}) => {
   const [selectedSido, setSelectedSido] = useState("서울특별시");
   const [selectedGugun, setSelectedGugun] = useState("강남구");
   const [selectedDong, setSelectedDong] = useState("삼성동");
+  const [selectedDongcode, setSelectedDongcode] = useState("1168010500");
   const [aptSearch, setAptSearch] = useState("");
   const [dongData, setDongData] = useState([]);
   const [mapBounds, setMapBounds] = useState(null);
   const [apartmentList, setApartmentList] = useState([]);
   const [selectedAptDetail, setSelectedAptDetail] = useState(null);
-
+  const [selectedAptSeq, setSelectedAptSeq] = useState(null);
+  const [wishList, setWishList] = useState([]);
   const [searchRes, setSearchRes] = useState([]);
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
@@ -104,7 +106,6 @@ export const Screen = ({}) => {
         const token = localStorage.getItem("authToken");
         console.log("▶️ /api/users 요청 보냄…", token);
 
-        // 풀 URL을 사용합니다
         const res = await axios.get("http://localhost:8080/api/users", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -124,6 +125,23 @@ export const Screen = ({}) => {
 
     fetchUserData();
   }, [screen9Visible]);
+
+useEffect(() => {
+    const fetchWishList = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+        const response = await axios.get("http://localhost:8080/api/estate/wish", {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
+        setWishList(response.data);
+      } catch (err) {
+        console.error("관심 아파트 불러오기 실패 ❌", err);
+      }
+    };
+
+    fetchWishList();
+  }, [user!=null]);
 
 useEffect(() => {
   const fetchDongData = async () => {
@@ -250,6 +268,7 @@ useEffect(() => {
       const res = await axios.get(`http://localhost:8080/api/estate/${apt.aptSeq}`);
       // ② 받은 DTO를 상태에 저장
       setSelectedAptDetail(res.data);
+      setSelectedAptSeq(apt.aptSeq);
       // ③ 오버레이 열기
       openScreen7();
     } catch (err) {
@@ -276,8 +295,8 @@ useEffect(() => {
             className={`screen7-overlay-content ${screen7Active ? "active" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <BackgroundWrapper aptDetail={selectedAptDetail} onClose={closeScreen7} />
-            <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7} />
+            <BackgroundWrapper aptDetail={selectedAptDetail} onClose={closeScreen7} userWishList={wishList} aptSeq={selectedAptSeq} />
+            <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7}/>
           </div>
         </div>
       )}
@@ -431,11 +450,14 @@ useEffect(() => {
             }}
           >
             <Frame4
+              key={selectedDongcode} // 🔥 동코드 바뀔 때마다 컴포넌트 새로 마운트됨!
               onClose={() => setShowScreen8Overlay(false)}
               selectedSido={selectedSido}
               selectedGugun={selectedGugun}
               selectedDong={selectedDong}
+              selectedDongcode={selectedDongcode}
             />
+
 
             <Screen8
               dongData={dongData}
@@ -445,6 +467,8 @@ useEffect(() => {
               setSelectedGugun={setSelectedGugun}
               selectedDong={selectedDong}
               setSelectedDong={setSelectedDong}
+              selectedDongcode={selectedDongcode}
+              setSelectedDongcode={setSelectedDongcode}
               onMoveToLocation={handleMoveToLocation}
             />
           </div>

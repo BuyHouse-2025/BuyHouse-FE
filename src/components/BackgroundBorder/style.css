@@ -21,12 +21,45 @@
   width: 27px;
 }
 
-.background-border.one {
+.background-border.two {
   background-color: #ff666f;
   border-color: #ff6770;
 }
 
-.background-border.two {
+.background-border.one {
   background-color: #79cf68;
   border-color: #7acf69;
+}
+
+/* 애니메이션 트랜지션을 위한 공통 클래스 */
+.animated-toggle {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* 구매 상태 */
+.background-border.one {
+  background-color: #3b82f6;
+  transform: scale(1);
+}
+
+/* 판매 상태 */
+.background-border.two {
+  background-color: #f87171;
+  transform: scale(1.05);
+}
+
+/* 텍스트 페이드 효과 */
+.toggle-text {
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.background-border.one .toggle-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.background-border.two .toggle-text {
+  opacity: 1;
+  transform: translateY(-2px);
 }

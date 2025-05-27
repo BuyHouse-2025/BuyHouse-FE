@@ -1,6 +1,5 @@
 import React from "react";
 import { Background } from "./sections/Background";
-import { BackgroundWrapper } from "./sections/BackgroundWrapper";
 import { Frame2 } from "./sections/Frame2";
 import { Frame3 } from "./sections/Frame3";
 import "./style.css";

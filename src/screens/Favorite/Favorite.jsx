@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { CloseSvgFill } from "../../components/CloseSvgFill";
-import { MaskGroup } from "../../components/MaskGroup";
 import { EstateCard } from "./sections/EstateCard"
 import axios from "axios";
 import "./style.css";
@@ -8,8 +7,7 @@ import "./style.css";
 export const Favorite = ({ closeFavorite }) => {
   const [wishList, setWishList] = useState([]);
 
-  useEffect(() => {
-    const fetchWishList = async () => {
+  const fetchWishList = async () => {
       try {
         const token = localStorage.getItem("authToken");
         const response = await axios.get("http://localhost:8080/api/estate/wish", {
@@ -20,8 +18,9 @@ export const Favorite = ({ closeFavorite }) => {
       } catch (err) {
         console.error("관심 아파트 불러오기 실패 ❌", err);
       }
-    };
+  };
 
+  useEffect(() => {
     fetchWishList();
   }, []);
 
@@ -36,13 +35,13 @@ export const Favorite = ({ closeFavorite }) => {
           <div className="favitems">
             {wishList.map((item, index) => (
               <EstateCard
+                aptSeq={item.aptSeq}
                 key={index}
                 title={item.aptNm}
                 type="매매"
                 address={`${item.roadNm} ${item.roadNmBonbun}-${item.roadNmBubun}`}
-                priceLabel="실거래가"
-                priceValue="2억 9646만원"
-                image="/img/mask-group-1.png"
+                userWishList={wishList}
+                fetchWish={fetchWishList}
               />
             ))}
           </div>

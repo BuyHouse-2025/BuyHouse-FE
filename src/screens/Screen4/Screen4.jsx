@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { MaskGroup } from "../../components/MaskGroup";
 import "./style.css";
+import { LocationDips } from "../../components/LocationDips";
 
 export const Screen4 = ({ dongData = [], onMoveToLocation }) => {
   const [interestList, setInterestList] = useState([]);
@@ -53,10 +53,10 @@ export const Screen4 = ({ dongData = [], onMoveToLocation }) => {
           <div className="frame-92">
             {interestList.map((item) => (
               <div key={item.id} className="frame-93" onClick={() => handleClick(item)}>
-                <MaskGroup
+                <LocationDips
                   className="mask-group-12"
-                  property1="false"
-                  propertyFalse="https://c.animaapp.com/JuAZje8Q/img/-@2x.png"
+                  dongcode={item.dongcode}
+                  interested={interestList}
                 />
                 <div className="text-wrapper-112">
                   {`${item.sido} ${item.gugun} ${item.dong}`}

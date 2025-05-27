@@ -8,16 +8,15 @@ import "./style.css";
 import axios from "axios";
 
 
-export const MaskGroup = ({ className, aptSeq, wishList, refreshWishList }) => {
+export const LocationDips = ({ className, dongcode, interested, refreshWishList }) => {
   const [state, dispatch] = useReducer(reducer, { property1: false });
 
   useEffect(() => {
-  if (aptSeq && Array.isArray(wishList)) {
-    const isWished = wishList.some((item) => String(item.aptSeq) === String(aptSeq));
-    console.log("isWished 초기 상태:", isWished, "for aptSeq:", aptSeq);
-    dispatch({ type: "set", value: isWished });
-  }
-}, [aptSeq, wishList]);
+    if (dongcode && Array.isArray(interested)) {
+      const isInterested = interested.some((item) => String(item.dongcode) === String(dongcode));
+      dispatch({ type: "set", value: isInterested });
+    }
+  }, [dongcode, interested]);
 
 
   
@@ -29,7 +28,9 @@ export const MaskGroup = ({ className, aptSeq, wishList, refreshWishList }) => {
 
     if (newValue) {
       // ✅ 찜 등록: POST + JSON body
-      axios.post("http://localhost:8080/api/estate/wish", { aptSeq }, {
+      console.log("🔍 찜 등록 요청할 dongcode:", dongcode);
+
+      axios.post("http://localhost:8080/api/users/interest", { dongcode }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -43,23 +44,32 @@ export const MaskGroup = ({ className, aptSeq, wishList, refreshWishList }) => {
 
     } else {
       // ✅ 찜 취소: DELETE + path variable
-      axios.delete(`http://localhost:8080/api/estate/wish/${aptSeq}`, {
+      axios({
+        method: "delete",
+        url: "http://localhost:8080/api/users/interest",
+        data: {
+          dongcode: dongcode, // 🔥 백엔드 record와 정확히 맞춤
+        },
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
         withCredentials: true,
-      }).then((res) => {
-        console.log("찜 취소 ✅", res.data);
-        refreshWishList?.();
-      }).catch((err) => {
-        console.error("찜 취소 실패 ❌", err);
-      });
+      })
+        .then((res) => {
+          console.log("찜 취소 ✅", res.data);
+          refreshWishList?.();
+        })
+        .catch((err) => {
+          console.error("찜 취소 실패 ❌", err);
+        });
+
     }
   };
 
   return (
     <img
-      className={`mask-group ${className}`}
+      className={`dips ${className}`}
       alt="Property"
       src={
         state.property1
