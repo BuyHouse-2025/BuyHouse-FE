@@ -1,59 +1,77 @@
 "use client";
 
-import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import "./style.css";
 
-export const CommunityWrite = () => {
+export const CommunityUpdate = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const { user } = useAuth();
-  const userName = user?.name || "사용자";
 
+  // ① 기존 글 불러와서 초기값 세팅
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+        const res = await axios.get(`http://localhost:8080/api/board/${id}`, {
+          headers: {
+            Accept: "application/json",
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
+          withCredentials: true,
+        });
+        setTitle(res.data.title);
+        setContent(res.data.content);
+      } catch (err) {
+        console.error("❌ 수정할 게시글 불러오기 실패", err);
+        alert("게시글을 불러오는 중 오류가 발생했습니다.");
+        navigate("/community");
+      }
+    };
+    fetchPost();
+  }, [id, navigate]);
+
+  // ② 제출 핸들러: 반드시 PUT 요청을 보내고 응답이 와야 navigate
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (title.trim() && content.trim()) {
-      // Here you would typically save the post to your backend
-      alert("게시글이 작성되었습니다.");
-      navigate("/community");
-    } else {
-      alert("제목과 내용을 모두 입력해주세요.");
+    if (!title.trim() || !content.trim()) {
+      return alert("제목과 내용을 모두 입력해주세요.");
     }
 
-    const postRequestDto = { title, content };
-
     try {
-      // JWT 토큰 인증이 필요하다면 헤더에 담아주세요.
       const token = localStorage.getItem("authToken");
-      const res = await axios.post("http://localhost:8080/api/board/save", postRequestDto, {
-        headers: {
-          "Content-Type": "application/json",
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-        withCredentials: true, // 쿠키 기반 인증을 쓴다면
-      });
-
-      console.log("✅ 게시글 작성 응답:", res.data);
-      alert("게시글이 작성되었습니다.");
-      navigate("/community");
+      await axios.put(
+        `http://localhost:8080/api/board/${id}`,
+        { title, content },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            ...(token ? { Authorization: `Bearer ${token}` } : {}),
+          },
+          withCredentials: true,
+        }
+      );
+      alert("게시글이 성공적으로 수정되었습니다.");
+      navigate(`/community/post/${id}`); // 수정 후 상세 페이지로 돌아가기
     } catch (err) {
-      console.error("❌ 게시글 작성 실패:", err);
-      alert("게시글 작성 중 오류가 발생했습니다.");
+      console.error("❌ 게시글 수정 실패", err.response || err);
+      alert("수정 중 오류가 발생했습니다: " + (err.response?.data || err.message));
     }
   };
 
   const handleCancel = () => {
-    if (window.confirm("작성을 취소하시겠습니까?")) {
-      navigate("/community");
+    if (window.confirm("정말 수정 작업을 취소하시겠습니까?")) {
+      navigate(-1);
     }
   };
 
   return (
     <div className="community-write">
-      {/* Same header as Community.jsx */}
       <div className="community-header-top">
         <Link to="/" className="logo-container">
           <div className="logo-icon">🏠</div>
@@ -63,8 +81,8 @@ export const CommunityWrite = () => {
 
       <div className="write-container">
         <div className="write-header">
-          <h1 className="write-title">게시글 작성</h1>
-          <p className="write-subtitle">자유롭게 의견을 나누어 보세요</p>
+          <h1 className="write-title">게시글 수정</h1>
+          <p className="write-subtitle">수정할 내용을 편집하세요</p>
         </div>
 
         <div className="write-form-container">
@@ -103,7 +121,7 @@ export const CommunityWrite = () => {
                 취소
               </button>
               <button type="submit" className="submit-btn">
-                작성완료
+                수정완료
               </button>
             </div>
           </form>

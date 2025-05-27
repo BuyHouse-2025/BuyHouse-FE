@@ -19,15 +19,19 @@ export const Screen7 = ({ aptDetail, onClose }) => {
     "https://landthumb-phinf.pstatic.net/20180824_123/apt_realimage_1535074222418glODW_JPEG/82cc4d3c4db205083cc02ed41a2b927a.JPG?type=m1024",
   ];
 
-  // ② 배열에서 랜덤으로 하나 뽑기
-  const randomUrl = photoPool[Math.floor(Math.random() * photoPool.length)];
+  // ② aptDetail.bus 로 인덱스 고정
+  const busCount = aptDetail.bus ?? 0;
+  const index = busCount % photoPool.length;
+
+  // ③ 화면에 사용할 이미지 URL
+  const imageUrl = photoPool[index];
 
   return (
     <div className="screen-7" data-model-id="1:167">
       <div className="background-shadow">
         <div className="background-13">
           <div className="frame-117">
-            <img className="image-11" alt={aptDetail.aptNm} src={randomUrl} />
+            <img className="image-11" alt={aptDetail.aptNm} src={imageUrl} />
             <Frame2 aptDetail={aptDetail} />
             <Frame3 aptDetail={aptDetail} />
             <Background aptDetail={aptDetail} />

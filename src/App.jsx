@@ -21,6 +21,7 @@ import { UpdateMemberInfo } from "./screens/UpdateMemberInfo";
 import { Community } from "./screens/Community";
 import { CommunityPost } from "./screens/CommunityPost";
 import { CommunityWrite } from "./screens/CommunityWrite";
+import { CommunityUpdate } from "./screens/CommunityUpdate";
 
 // ✅ AuthContext
 import { AuthProvider } from "./screens/context/AuthContext";
@@ -48,9 +49,7 @@ const router = createBrowserRouter([
   { path: "/community", element: <Community /> },
   { path: "/community/post/:id", element: <CommunityPost /> },
   { path: "/community/write", element: <CommunityWrite /> },
-  { path: "/community/edit/:id", element: <CommunityWrite /> },
-
-
+  { path: "/community/edit/:id", element: <CommunityUpdate /> },
 ]);
 
 export const App = () => (
