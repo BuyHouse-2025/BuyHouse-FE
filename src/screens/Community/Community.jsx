@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useNavigate, Link } from "react-router-dom"
-import "./style.css"
-import axios from "axios"
+import { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import "./style.css";
+import axios from "axios";
 
 export const Community = () => {
-  const navigate = useNavigate()
-  const [posts, setPosts] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [page, setPage] = useState(0)
-  const [totalPages, setTotalPages] = useState(0)
+  const navigate = useNavigate();
+  const [posts, setPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
 
   const fetchPosts = async (pageNumber = 0) => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/board?page=${pageNumber}&size=10`)
-      const { content = [], totalPages } = res.data
+      const res = await axios.get(`http://localhost:8080/api/board?page=${pageNumber}&size=10`);
+      const { content = [], totalPages } = res.data;
 
       const mappedPosts = content.map((post) => ({
         id: post.id,
@@ -24,40 +24,42 @@ export const Community = () => {
         date: new Date(post.createdDate).toISOString().slice(0, 10),
         content: "",
         views: 0,
-      }))
+      }));
 
-      setPosts(mappedPosts)
-      setTotalPages(totalPages)
-      setPage(pageNumber)
+      setPosts(mappedPosts);
+      setTotalPages(totalPages);
+      setPage(pageNumber);
     } catch (err) {
-      console.error("❌ 게시글 로딩 실패:", err)
+      console.error("❌ 게시글 로딩 실패:", err);
     }
-  }
+  };
 
   useEffect(() => {
-    fetchPosts()
-  }, [])
+    fetchPosts();
+  }, []);
 
   const filteredPosts = posts.filter(
     (post) =>
       post.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.content?.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  );
 
   const handlePostClick = (postId) => {
-    navigate(`/community/post/${postId}`)
-  }
+    navigate(`/community/post/${postId}`);
+  };
 
   const handleWritePost = () => {
-    navigate("/community/write")
-  }
+    navigate("/community/write");
+  };
 
   return (
     <div className="community">
       <div className="community-header-top">
         <Link to="/" className="logo-container">
           <img className="v" alt="V" src="https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png" />
-          <div className="text-wrapper-89" style={{ height: "61px", lineHeight: "61px" }}>집사</div>
+          <div className="text-wrapper-89" style={{ height: "61px", lineHeight: "61px" }}>
+            집사
+          </div>
         </Link>
       </div>
 
@@ -126,5 +128,5 @@ export const Community = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

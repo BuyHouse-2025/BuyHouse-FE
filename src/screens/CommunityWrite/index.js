@@ -1,1 +1,1 @@
-export { CommunityWrite } from "./CommunityWrite"
+export { CommunityWrite } from "./CommunityWrite";

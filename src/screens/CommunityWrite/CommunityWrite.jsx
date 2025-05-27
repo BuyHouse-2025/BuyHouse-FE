@@ -1,33 +1,56 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import "./style.css"
+import axios from "axios";
+import "./style.css";
 
 export const CommunityWrite = () => {
-  const navigate = useNavigate()
-  const [title, setTitle] = useState("")
-  const [content, setContent] = useState("")
+  const navigate = useNavigate();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const { user } = useAuth();
   const userName = user?.name || "사용자";
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (title.trim() && content.trim()) {
       // Here you would typically save the post to your backend
-      alert("게시글이 작성되었습니다.")
-      navigate("/community")
+      alert("게시글이 작성되었습니다.");
+      navigate("/community");
     } else {
-      alert("제목과 내용을 모두 입력해주세요.")
+      alert("제목과 내용을 모두 입력해주세요.");
     }
-  }
+
+    const postRequestDto = { title, content };
+
+    try {
+      // JWT 토큰 인증이 필요하다면 헤더에 담아주세요.
+      const token = localStorage.getItem("authToken");
+      const res = await axios.post("http://localhost:8080/api/board/save", postRequestDto, {
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        withCredentials: true, // 쿠키 기반 인증을 쓴다면
+      });
+
+      console.log("✅ 게시글 작성 응답:", res.data);
+      alert("게시글이 작성되었습니다.");
+      navigate("/community");
+    } catch (err) {
+      console.error("❌ 게시글 작성 실패:", err);
+      alert("게시글 작성 중 오류가 발생했습니다.");
+    }
+  };
 
   const handleCancel = () => {
     if (window.confirm("작성을 취소하시겠습니까?")) {
-      navigate("/community")
+      navigate("/community");
     }
-  }
+  };
 
   return (
     <div className="community-write">
@@ -88,5 +111,5 @@ export const CommunityWrite = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

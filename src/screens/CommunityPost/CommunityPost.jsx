@@ -1,27 +1,28 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { useParams, useNavigate, Link } from "react-router-dom"
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import "./style.css"
-import axios from "axios"
+import "./style.css";
+import axios from "axios";
 
 export const CommunityPost = () => {
-  const { id } = useParams()
-  const navigate = useNavigate()
-  const [post, setPost] = useState(null)
-  const [comments, setComments] = useState([])
-  const [newComment, setNewComment] = useState("")
-  const [isAuthor, setIsAuthor] = useState(false)
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [post, setPost] = useState(null);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+  const [isAuthor, setIsAuthor] = useState(false);
   const { user } = useAuth();
   const userName = user?.name || "사용자";
+  const token = localStorage.getItem("authToken");
 
   useEffect(() => {
     const formatDate = (value) => {
       if (!value) return "";
       const date = new Date(value);
       return isNaN(date.getTime()) ? "" : date.toISOString().split("T")[0];
-    };  
+    };
 
     const fetchPost = async () => {
       try {
@@ -43,13 +44,8 @@ export const CommunityPost = () => {
           views: 0,
         });
 
-        const mappedComments = data.comments.map((c) => ({
-          id: c.id,
-          author: c.author,
-          date: new Date(c.createdDate).toISOString().split("T")[0],
-          content: c.content,
-        }));
-        setComments(mappedComments);
+        setComments(data.comments);
+        console.log(data.comments);
 
         console.log("✅ 현재 로그인 유저:", userName);
         console.log("✅ 게시글 작성자:", data.name);
@@ -65,46 +61,140 @@ export const CommunityPost = () => {
     fetchPost();
   }, [id]);
 
-
-  const handleAddComment = () => {
-    if (newComment.trim()) {
-      const comment = {
-        id: comments.length + 1,
-        author: "현재사용자",
-        date: new Date().toISOString().split("T")[0],
-        content: newComment,
-      }
-      setComments([...comments, comment])
-      setNewComment("")
+  const handleAddComment = async () => {
+    if (!newComment.trim()) {
+      alert("댓글을 입력해주세요.");
+      return;
     }
-  }
 
-  const handleEdit = () => {
-    navigate(`/community/edit/${id}`)
-  }
+    try {
+      const token = localStorage.getItem("authToken");
+      const payload = {
+        comment: newComment,
+        boardId: Number(id),
+        name: userName,
+      };
 
-  const handleDelete = () => {
-    if (window.confirm("정말로 삭제하시겠습니까?")) {
-      navigate("/community")
+      // ① POST 요청
+      const res = await axios.post("http://localhost:8080/api/board/comments", payload, {
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        withCredentials: true,
+      });
+
+      // ② 응답 DTO
+      const created = res.data;
+
+      // ③ 날짜 처리 (createdAt 필드가 없으면 오늘로)
+      const rawDate = created.createdAt;
+      const formattedDate = rawDate
+        ? new Date(rawDate).toISOString().split("T")[0]
+        : new Date().toISOString().split("T")[0];
+
+      // ④ comments 배열에 새 댓글 추가
+      setComments((prev) => [
+        ...prev,
+        {
+          id: created.id,
+          author: created.authorName || created.author,
+          date: formattedDate,
+          content: created.comment,
+        },
+      ]);
+
+      // ⑤ 입력창 초기화
+      setNewComment("");
+    } catch (err) {
+      console.error("❌ 댓글 작성 실패:", err.response?.data || err);
+      alert("댓글 작성 중 오류가 발생했습니다.");
     }
-  }
+  };
 
   const handleBack = () => {
-    navigate("/community")
-  }
-
-  
+    navigate("/community");
+  };
 
   if (!post) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
+
+  const handleEditDetail = async () => {
+    if (!window.confirm("이 게시글을 수정하시겠습니까?")) return;
+
+    try {
+      const token = localStorage.getItem("authToken");
+      const postRequestDto = {
+        title: post.title,
+        content: post.content,
+      };
+
+      await axios.put(`http://localhost:8080/api/board/${id}`, postRequestDto, {
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        withCredentials: true,
+      });
+
+      alert("게시글이 수정되었습니다.");
+      navigate("/community");
+    } catch (err) {
+      console.error("❌ 게시글 수정 실패:", err);
+      alert("수정에 실패했습니다: " + (err.response?.data || err.message));
+    }
+  };
+
+  // 게시글 삭제 (DELETE /api/board/{id})
+  const handleDelete = async () => {
+    if (!window.confirm("정말로 삭제하시겠습니까?")) return;
+
+    try {
+      const token = localStorage.getItem("authToken");
+      const res = await axios.delete(`http://localhost:8080/api/board/${id}`, {
+        headers: {
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        withCredentials: true,
+      });
+
+      console.log("✅ 게시글 삭제 응답:", res.data);
+      alert("게시글이 삭제되었습니다.");
+      navigate("/community");
+    } catch (err) {
+      console.error("❌ 게시글 삭제 실패:", err.response || err);
+      alert("삭제에 실패했습니다: " + (err.response?.data || err.message));
+    }
+  };
+
+  const handleDeleteComment = async (commentId) => {
+    if (!window.confirm("정말 이 댓글을 삭제하시겠습니까?")) return;
+
+    try {
+      const token = localStorage.getItem("authToken");
+      await axios.delete(`http://localhost:8080/api/board/comments/${commentId}`, {
+        headers: {
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        withCredentials: true,
+      });
+      // 삭제 성공하면 state 에서 필터링
+      setComments((prev) => prev.filter((c) => c.id !== commentId));
+    } catch (err) {
+      console.error("❌ 댓글 삭제 실패:", err.response?.data || err);
+      alert("댓글 삭제 중 오류가 발생했습니다.");
+    }
+  };
 
   return (
     <div className="community-post">
       <div className="community-header-top">
         <Link to="/" className="logo-container">
           <img className="v" alt="V" src="https://c.animaapp.com/JuAZje8Q/img/--------v4@2x.png" />
-          <div className="text-wrapper-89" style={{ height: "61px", lineHeight: "61px" }}>집사</div>
+          <div className="text-wrapper-89" style={{ height: "61px", lineHeight: "61px" }}>
+            집사
+          </div>
         </Link>
       </div>
 
@@ -124,21 +214,22 @@ export const CommunityPost = () => {
           </div>
 
           {isAuthor && (
-            <div className="post-actions">
-              <button className="edit-btn" onClick={handleEdit}>
+            <>
+              <button className="edit-btn" onClick={() => navigate(`/community/edit/${id}`)}>
                 수정
               </button>
               <button className="delete-btn" onClick={handleDelete}>
                 삭제
               </button>
-            </div>
+            </>
           )}
         </div>
 
+        {/* 본문 */}
         <div className="post-content">
           <div className="content-body">
-            {(post.content || "").split("\n").map((line, index) => (
-              <p key={index}>{line}</p>
+            {(post.content || "").split("\n").map((line, idx) => (
+              <p key={`line-${idx}`}>{line}</p>
             ))}
           </div>
         </div>
@@ -162,15 +253,21 @@ export const CommunityPost = () => {
             {comments.map((comment) => (
               <div key={comment.id} className="comment-item">
                 <div className="comment-header">
-                  <span className="comment-author">{comment.author}</span>
-                  <span className="comment-date">{comment.date}</span>
+                  <span className="comment-author">{comment.name}</span>
+                  <span className="comment-date">{new Date(comment.createdDate).toISOString().split("T")[0]}</span>
+                  {/* 삭제 버튼 */}
+                  {userName === comment.name && (
+                    <button className="comment-delete-btn" onClick={() => handleDeleteComment(comment.id)}>
+                      삭제
+                    </button>
+                  )}
                 </div>
-                <div className="comment-content">{comment.content}</div>
+                <div className="comment-content">{comment.comment}</div>
               </div>
             ))}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
