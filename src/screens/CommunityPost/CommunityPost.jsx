@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
-import Header from "../../components/header/header"
+import { useAuth } from "../context/AuthContext";
 import "./style.css"
 import axios from "axios"
 
@@ -13,7 +13,8 @@ export const CommunityPost = () => {
   const [comments, setComments] = useState([])
   const [newComment, setNewComment] = useState("")
   const [isAuthor, setIsAuthor] = useState(false)
-  
+  const { user } = useAuth();
+  const userName = user?.name || "사용자";
 
   useEffect(() => {
     const formatDate = (value) => {
@@ -28,6 +29,7 @@ export const CommunityPost = () => {
           headers: {
             Accept: "application/json",
           },
+          withCredentials: true,
         });
 
         const data = res.data;
@@ -49,11 +51,10 @@ export const CommunityPost = () => {
         }));
         setComments(mappedComments);
 
-        const currentUser = localStorage.getItem("userName");
-        console.log("✅ 현재 로그인 유저:", currentUser);
+        console.log("✅ 현재 로그인 유저:", userName);
         console.log("✅ 게시글 작성자:", data.name);
 
-        if (currentUser && data.name && currentUser === data.name.trim()) {
+        if (userName && data.name && userName === data.name.trim()) {
           setIsAuthor(true);
         }
       } catch (err) {

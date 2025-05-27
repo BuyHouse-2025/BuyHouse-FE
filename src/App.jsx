@@ -16,6 +16,7 @@ import { FindPwd } from "./screens/FindPwd";
 import { FindId } from "./screens/FindId";
 import { UpdatePwd } from "./screens/UpdatePwd";
 import { UpdateMemberInfo } from "./screens/UpdateMemberInfo";
+import { Search } from "./screens/Search";
 
 // Community screens 추가
 import { Community } from "./screens/Community";
@@ -24,6 +25,7 @@ import { CommunityWrite } from "./screens/CommunityWrite";
 
 // ✅ AuthContext
 import { AuthProvider } from "./screens/context/AuthContext";
+import { Card } from "./screens/Search/Card";
 
 const router = createBrowserRouter([
   { path: "/", element: <Screen /> },
@@ -43,6 +45,8 @@ const router = createBrowserRouter([
   { path: "/findpwd", element: <FindPwd /> },
   { path: "/updatePwd", element: <UpdatePwd /> },
   { path: "/updateMemberInfo", element: <UpdateMemberInfo /> },
+  { path: "/search", element: <Search/> },
+   { path: "/card", element: <Card/> },
 
   // Community 라우트
   { path: "/community", element: <Community /> },

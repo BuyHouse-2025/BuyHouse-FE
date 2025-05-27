@@ -3,10 +3,8 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Screen4 } from "../Screen4";
 import { Screen5 } from "../Screen5";
 import { Screen7 } from "../Screen7";
+import { Search } from "../Search";
 import { BackgroundWrapper } from "../Screen7/sections/BackgroundWrapper";
-import { Background } from "../Screen7/sections/Background";
-import { Frame2 } from "../Screen7/sections/Frame2";
-import { Frame3 } from "../Screen7/sections/Frame3";
 import { Screen8 } from "../Screen8";
 import { Frame4 } from "../Screen8/sections/Frame4";
 import { Screen9 } from "../Screen9";
@@ -31,6 +29,8 @@ export const Screen = ({}) => {
   const [showScreen8Overlay, setShowScreen8Overlay] = useState(false);
   const [screen7Visible, setScreen7Visible] = useState(false);
   const [screen7Active, setScreen7Active] = useState(false);
+  const [searchVisible, setSearchVisible] = useState(false);
+  const [searchActive, setSearchActive] = useState(false);
   const [selectedSido, setSelectedSido] = useState("서울특별시");
   const [selectedGugun, setSelectedGugun] = useState("강남구");
   const [selectedDong, setSelectedDong] = useState("삼성동");
@@ -40,6 +40,7 @@ export const Screen = ({}) => {
   const [apartmentList, setApartmentList] = useState([]);
   const [selectedAptDetail, setSelectedAptDetail] = useState(null);
 
+  const [searchRes, setSearchRes] = useState([]);
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
 
@@ -82,6 +83,17 @@ export const Screen = ({}) => {
   const closeScreen7 = () => {
     setScreen7Active(false);
     setTimeout(() => setScreen7Visible(false), 300);
+  };
+
+  const openSearch = () => {
+    setSearchVisible(true);
+    console.log("오픈픈");
+    setTimeout(() => setSearchActive(true), 10);
+  };
+
+  const closeSearch = () => {
+    setSearchActive(false);
+    setTimeout(() => setSearchVisible(false), 300);
   };
 
   useEffect(() => {
@@ -151,7 +163,8 @@ useEffect(() => {
       showScreenWrapperOverlay ||
       showScreen4Overlay ||
       showScreen8Overlay ||
-      screen7Visible;
+      screen7Visible ||
+      searchVisible;
 
     if (anyOverlayOpen) {
       document.body.style.overflow = "hidden";
@@ -170,6 +183,7 @@ useEffect(() => {
     showScreen4Overlay,
     showScreen8Overlay,
     screen7Visible,
+    searchVisible
   ]);
 
   const handleLogout = () => {
@@ -185,7 +199,9 @@ useEffect(() => {
       e.target.classList.contains("screenscreen-overlay") ||
       isScreen7 ||
       e.target.classList.contains("screen9-full-overlay") ||
-      e.target.classList.contains("screen9-overlay-content")
+      e.target.classList.contains("screen9-overlay-content") ||
+      e.target.classList.contains("search-full-overlay") ||
+      e.target.classList.contains("search-overlay-content")
     ) {
       closeFn();
     }
@@ -204,6 +220,8 @@ useEffect(() => {
     try {
       const res = await axios.post("http://localhost:8080/api/estate", searchRequestDto);
       console.log("🗂️ 아파트 이름 검색 결과:", res.data);
+      setSearchRes(res.data);
+      openSearch();
     } catch (err) {
       console.error("❌ 아파트 이름 검색 오류:", err);
     }
@@ -239,6 +257,17 @@ useEffect(() => {
     }
   };
 
+  const handleCardClick = async (aptSeq) => {
+    try {
+      const res = await axios.get(`http://localhost:8080/api/estate/${aptSeq}`);
+      setSelectedAptDetail(res.data);
+      openScreen7();
+    } catch (err) {
+      console.error("❌ 아파트 상세 조회 실패", err);
+    }
+  };
+
+
   return (
     <div className="screen">
       {screen7Visible && (
@@ -248,10 +277,18 @@ useEffect(() => {
             onClick={(e) => e.stopPropagation()}
           >
             <BackgroundWrapper aptDetail={selectedAptDetail} onClose={closeScreen7} />
-            {/* <Background aptDetail={selectedAptDetail} onClose={closeScreen7} />
-            <Frame2 aptDetail={selectedAptDetail} onClose={closeScreen7} />
-            <Frame3 aptDetail={selectedAptDetail} onClose={closeScreen7} /> */}
             <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7} />
+          </div>
+        </div>
+      )}
+
+      {searchVisible && (
+        <div className="search-full-overlay" onClick={(e) => handleClickOutside(e, closeSearch)}>
+          <div
+            className={`search-overlay-content ${searchActive ? "active" : ""}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Search results={searchRes} onCardClick={handleCardClick} />
           </div>
         </div>
       )}
@@ -469,6 +506,10 @@ useEffect(() => {
                 </div>
                 <img className="profit" alt="Profit" src="https://c.animaapp.com/JuAZje8Q/img/profit-1@2x.png" />
               </button>
+              <Link className="community-button" to="/community">
+                  커뮤니티
+              </Link>
+
             </div>
           </div>
 
