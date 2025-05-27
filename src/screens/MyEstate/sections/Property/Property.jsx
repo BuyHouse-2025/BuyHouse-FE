@@ -8,11 +8,11 @@ const formatDate = (date) => {
 };
 
 // ✅ 금액 포맷 (예: 42000000 → +₩42,000,000)
-const formatCurrency = (amount) => {
-  const sign = amount > 0 ? "+" : amount < 0 ? "-" : "";
-  const absAmount = Math.abs(amount);
-  return `${sign}₩${absAmount.toLocaleString()}`;
-};
+// const formatCurrency = (amount) => {
+//   const sign = amount > 0 ? "+" : amount < 0 ? "-" : "";
+//   const absAmount = Math.abs(amount);
+//   return `${sign}₩${absAmount.toLocaleString()}`;
+// };
 export const Property = ({ name, dealType, price, area, date, gain, gainRate }) => {
   return (
     <div className="property-card">
@@ -39,7 +39,7 @@ export const Property = ({ name, dealType, price, area, date, gain, gainRate }) 
       <div className="gain">
         <div className="text label">{formatDate(date)}</div>
         <div className="gain-wrapper">
-          <div className="text amount">{formatCurrency(gain)}</div>
+          <div className="text amount">{`${(gain / 10000).toFixed(0)}억 ${(gain % 10000)}만`}</div>
           <div className="text rate">{gainRate}</div>
         </div>
       </div>

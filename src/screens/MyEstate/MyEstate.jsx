@@ -71,9 +71,9 @@ export const MyEstate = ({ closeMyEstate }) => {
                   key={i}
                   name={item.aptNm}
                   dealType="매매"
-                  price={`${(item.currentPrice / 10000).toFixed(1)}억`}
+                  price={`${(item.currentPrice / 10000).toFixed(0)}억 ${(item.currentPrice % 10000)}만`}
                   area={"-"}
-                  date={"-"}
+                  date={item.purchaseDate}
                   gain={item.priceDifference}
                   gainRate={`${(item.priceDifference / item.ownedPrice * 100).toFixed(2)}%`}
                 />

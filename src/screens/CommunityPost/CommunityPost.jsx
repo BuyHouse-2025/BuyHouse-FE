@@ -254,7 +254,7 @@ export const CommunityPost = () => {
               <div key={comment.id} className="comment-item">
                 <div className="comment-header">
                   <span className="comment-author">{comment.name}</span>
-                  <span className="comment-date">{new Date(comment.createdDate).toISOString().split("T")[0]}</span>
+                  <span className="comment-date">{new Date(comment.createdDate).toISOString().split("T")[0] }</span>
                   {/* 삭제 버튼 */}
                   {userName === comment.name && (
                     <button className="comment-delete-btn" onClick={() => handleDeleteComment(comment.id)}>

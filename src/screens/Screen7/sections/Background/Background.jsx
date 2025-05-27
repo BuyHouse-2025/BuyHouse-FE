@@ -12,7 +12,7 @@ export const Background = ({ aptDetail }) => {
             </div>
 
             <div className="container-13">
-              <div className="text-wrapper-50">{aptDetail.naverMaxDeal}만원</div>
+              <div className="text-wrapper-50">{`${(aptDetail.naverMaxDeal / 10000).toFixed(0)}억 ${(aptDetail.naverMaxDeal % 10000)}만`}</div>
             </div>
 
             <div className="container-14">
@@ -28,7 +28,7 @@ export const Background = ({ aptDetail }) => {
             </div>
 
             <div className="container-15">
-              <div className="text-wrapper-54">{aptDetail.naverMinDeal}만원</div>
+              <div className="text-wrapper-54">{`${(aptDetail.naverMinDeal / 10000).toFixed(0)}억 ${(aptDetail.naverMinDeal % 10000)}만`}</div>
             </div>
 
             <div className="container-16">

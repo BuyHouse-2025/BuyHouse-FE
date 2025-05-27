@@ -38,11 +38,7 @@ export const Favorite = ({ closeFavorite }) => {
               <EstateCard
                 key={index}
                 title={item.aptNm}
-                type="매매"
                 address={`${item.roadNm} ${item.roadNmBonbun}-${item.roadNmBubun}`}
-                priceLabel="실거래가"
-                priceValue="2억 9646만원"
-                image="/img/mask-group-1.png"
               />
             ))}
           </div>
