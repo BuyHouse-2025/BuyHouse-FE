@@ -14,7 +14,7 @@ export const Screen7 = () => {
             <img
               className="image-11"
               alt="Image"
-              src="https://c.animaapp.com/JuAZje8Q/img/image-2-1@2x.png"
+              src="https://c.animaapp.com/JuAZje8Q/img/image-2-1@2x.png" // 사진 정보 받아와야할듯..?
             />
 
             <Frame2 />

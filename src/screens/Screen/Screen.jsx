@@ -4,19 +4,19 @@ import { Screen4 } from "../Screen4";
 import { Screen5 } from "../Screen5";
 import { Screen7 } from "../Screen7";
 import { BackgroundWrapper } from "../Screen7/sections/BackgroundWrapper";
+import { Background } from "../Screen7/sections/Background";
+import { Frame2 } from "../Screen7/sections/Frame2";
+import { Frame3 } from "../Screen7/sections/Frame3";
 import { Screen8 } from "../Screen8";
 import { Frame4 } from "../Screen8/sections/Frame4";
 import { Screen9 } from "../Screen9";
 import { ScreenScreen } from "../ScreenScreen";
 import { ScreenWrapper } from "../ScreenWrapper";
-import axios from "axios";       
+import axios from "axios";
 import "./style.css";
 import KakaoMap from "./KakaoMap/KakaoMap";
 
 import { useAuth } from "../context/AuthContext";
-
-
-
 
 export const Screen = ({ }) => {
   const navigate = useNavigate();
@@ -44,6 +44,7 @@ export const Screen = ({ }) => {
     lat: 37.566826,
     lng: 126.9786567,
   });
+
 
   // ✨ 추가: 선택된 위치 정보(지도 마커 라벨용)
   const [locationInfo, setLocationInfo] = useState({
@@ -82,33 +83,30 @@ export const Screen = ({ }) => {
   };
 
   useEffect(() => {
-  if (!screen9Visible) return;
+    if (!screen9Visible) return;
 
-  const fetchUserData = async () => {
-    try {
-      const token = localStorage.getItem("authToken");
-      console.log("▶️ /api/users 요청 보냄…", token);
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+        console.log("▶️ /api/users 요청 보냄…", token);
 
-      // 풀 URL을 사용합니다
-      const res = await axios.get("http://localhost:8080/api/users", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-         withCredentials: true,
-      });
+        // 풀 URL을 사용합니다
+        const res = await axios.get("http://localhost:8080/api/users", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        });
 
-      console.log("✅ 응답 수신:", res.data);
-      const { name, cash, estateAsset, totalAsset } = res.data;
-      setUser({ name, cash, estateAsset, totalAsset });
-      setUserError("");
-    } catch (err) {
-      console.error("❌ 사용자 정보 요청 실패", err);
-      setUserError("유저 정보를 불러오지 못했습니다.");
-    }
-  };
-
-  fetchUserData();
-}, [screen9Visible]);
+        console.log("✅ 응답 수신:", res.data);
+        const { name, cash, estateAsset, totalAsset } = res.data;
+        setUser({ name, cash, estateAsset, totalAsset });
+        setUserError("");
+      } catch (err) {
+        console.error("❌ 사용자 정보 요청 실패", err);
+        setUserError("유저 정보를 불러오지 못했습니다.");
+      }
+    };
 
 useEffect(() => {
   const fetchDongData = async () => {
@@ -130,17 +128,21 @@ useEffect(() => {
   const params = new URLSearchParams(location.search);
   if (!params.toString()) return;
 
-  // 쿼리 파라미터 중 첫 번째 key/value를 토큰으로 사용
-  const [[key, value]] = Array.from(params.entries());
-  console.log("🕵️‍♀️ URL param key:", key, "value:", value);
+  // Screen.jsx에서 토큰 저장 부분 수정
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (!params.toString()) return;
 
-  if (value) {
-    localStorage.setItem("authToken", value);
-    // 쿼리 제거
-    navigate(location.pathname, { replace: true });
-  }
-}, [location.search, location.pathname, navigate]);
+    // 쿼리 파라미터 중 첫 번째 key/value를 토큰으로 사용
+    const [[key, value]] = Array.from(params.entries());
+    console.log("🕵️‍♀️ URL param key:", key, "value:", value);
 
+    if (value) {
+      localStorage.setItem("authToken", value);
+      // 쿼리 제거
+      navigate(location.pathname, { replace: true });
+    }
+  }, [location.search, location.pathname, navigate]);
 
   useEffect(() => {
     const anyOverlayOpen =
@@ -172,12 +174,9 @@ useEffect(() => {
   ]);
 
   const handleLogout = () => {
-    logout();      // ← Context에 정의된 logout() 사용
+    logout(); // ← Context에 정의된 logout() 사용
     navigate("/");
   };
-
-
-
 
   const handleClickOutside = (e, closeFn) => {
     const isScreen7 =
@@ -193,6 +192,56 @@ useEffect(() => {
     }
   };
 
+
+  // 아파트 검색 핸들러
+  const handleNameSearch = async () => {
+    const searchRequestDto = {
+      aptNm: aptSearch ? aptSearch : null,
+      minPrice: null,
+      maxPrice: null,
+      minSquare: null,
+      maxSquare: null,
+    };
+
+    try {
+      const res = await axios.post("http://localhost:8080/api/estate", searchRequestDto);
+      console.log("🗂️ 아파트 이름 검색 결과:", res.data);
+    } catch (err) {
+      console.error("❌ 아파트 이름 검색 오류:", err);
+    }
+  };
+
+  // 지도 아파트 표시 핸들러
+  const handleFetchApartmentsInBounds = async () => {
+    if (!mapBounds) {
+      console.warn("❗ 지도 경계값이 아직 설정되지 않았습니다.");
+      return;
+    }
+
+    try {
+      const response = await axios.post("http://localhost:8080/api/estate/maker", mapBounds);
+      console.log("📍 버튼 클릭으로 조회된 아파트 리스트:", response.data);
+      setApartmentList(response.data); // 필요시
+    } catch (error) {
+      console.error("❌ 아파트 리스트 조회 실패:", error);
+    }
+  };
+
+
+  // 클릭된 aptSeq로 상세정보 요청 → 상태에 저장 → 오버레이 열기
+  const handleMarkerClick = async (apt) => {
+    try {
+      // ① apt.aptSeq 를 백엔드로 요청
+      const res = await axios.get(`http://localhost:8080/api/estate/${apt.aptSeq}`);
+      // ② 받은 DTO를 상태에 저장
+      setSelectedAptDetail(res.data);
+      // ③ 오버레이 열기
+      openScreen7();
+    } catch (err) {
+      console.error("❌ 아파트 상세 조회 실패", err);
+    }
+  };
+
   return (
     <div className="screen">
       {screen7Visible && (
@@ -201,27 +250,33 @@ useEffect(() => {
             className={`screen7-overlay-content ${screen7Active ? "active" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <BackgroundWrapper onClose={closeScreen7} />
-            <Screen7 />
+            <BackgroundWrapper
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            />
+            {/* <Background
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            />
+            <Frame2
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            />
+            <Frame3
+              aptDetail={selectedAptDetail}
+              onClose={closeScreen7}
+            /> */}
+            <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7} />
           </div>
         </div>
       )}
 
       {screen9Visible && (
-        <div
-          className="screen9-full-overlay"
-          onClick={(e) => handleClickOutside(e, closeScreen9)}
-        >
-          <div
-            className={`screen9-overlay ${screen9Active ? "active" : ""}`}
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="screen9-full-overlay" onClick={(e) => handleClickOutside(e, closeScreen9)}>
+          <div className={`screen9-overlay ${screen9Active ? "active" : ""}`} onClick={(e) => e.stopPropagation()}>
             <div className="screen9-content">
               <div className="close-button" onClick={closeScreen9}>
-                <img
-                  alt="Close"
-                  src="https://c.animaapp.com/JuAZje8Q/img/mask-group-27@2x.png"
-                />
+                <img alt="Close" src="https://c.animaapp.com/JuAZje8Q/img/mask-group-27@2x.png" />
               </div>
 
               {/* Screen9 컴포넌트에 user/userError props 전달 */}
@@ -280,7 +335,7 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <ScreenScreen />
+            <ScreenScreen onClose={() => setShowScreenScreenOverlay(false)} />
           </div>
         </div>
       )}
@@ -306,7 +361,7 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <ScreenWrapper />
+            <ScreenWrapper onClose={() => setShowScreenWrapperOverlay(false)} />
           </div>
         </div>
       )}
@@ -370,8 +425,6 @@ useEffect(() => {
               setSelectedDong={setSelectedDong}
               onMoveToLocation={handleMoveToLocation}
             />
-
-
           </div>
         </div>
       )}
@@ -382,6 +435,7 @@ useEffect(() => {
           district: selectedGugun,
           neighborhood: selectedDong
         }} />
+
       </div>
 
       <div className="overlay-shadow" />
@@ -401,7 +455,7 @@ useEffect(() => {
             </div>
 
             <div className="frame-65">
-              <button className="background-border-2">
+              <button className="background-border-2" onClick={handleFetchApartmentsInBounds}>
                 <img
                   className="mask-group-6"
                   alt="Mask group"
@@ -428,48 +482,49 @@ useEffect(() => {
           </div>
 
           <div className="frame-66">
-          {isLoggedIn ? (
-            // 로그인된 경우: My 아이콘 + 로그아웃 버튼
-            <>
-              <div className="overlap-group-wrapper" onClick={openScreen9}>
-                <div className="overlap-group">
-                  <div className="text-wrapper-92">My</div>
-                  <img
-                    className="user"
-                    alt="User"
-                    src="https://c.animaapp.com/JuAZje8Q/img/user-1@2x.png"
-                  />
+            {isLoggedIn ? (
+              // 로그인된 경우: My 아이콘 + 로그아웃 버튼
+              <>
+                <div className="overlap-group-wrapper" onClick={openScreen9}>
+                  <div className="overlap-group">
+                    <div className="text-wrapper-92">My</div>
+                    <img className="user" alt="User" src="https://c.animaapp.com/JuAZje8Q/img/user-1@2x.png" />
+                  </div>
                 </div>
-              </div>
-              <button
-                className="background-4"       // 스타일은 기존 로그인하기 버튼과 동일하게
-                onClick={handleLogout}
-              >
-                <div className="text-wrapper-93">로그아웃</div>
-              </button>
-            </>
-          ) : (
-            // 비로그인 상태: 로그인 / 회원가입
-            <>
-              <Link className="background-4" to="/login">
-                <div className="text-wrapper-93">로그인하기</div>
-              </Link>
-              <Link to="/join">
-                <button className="button-2">
-                  <div className="text-wrapper-94">회원가입</div>
+                <button
+                  className="background-4" // 스타일은 기존 로그인하기 버튼과 동일하게
+                  onClick={handleLogout}
+                >
+                  <div className="text-wrapper-93">로그아웃</div>
                 </button>
-              </Link>
-            </>
-          )}
+              </>
+            ) : (
+              // 비로그인 상태: 로그인 / 회원가입
+              <>
+                <Link className="background-4" to="/login">
+                  <div className="text-wrapper-93">로그인하기</div>
+                </Link>
+                <Link to="/join">
+                  <button className="button-2">
+                    <div className="text-wrapper-94">회원가입</div>
+                  </button>
+                </Link>
+              </>
+            )}
+          </div>
         </div>
-      </div>
 
         <div className="frame-67">
           <div className="frame-68">
             <div className="overlay-wrapper">
               <div className="overlay-3">
                 <div className="frame-69">
-                  <button className="search-button" type="submit" aria-label="Search">
+                  <button
+                    className="search-button"
+                    type="button"
+                    aria-label="Search"
+                    onClick={handleNameSearch}
+                  >
                     <img
                       src="https://static-00.iconduck.com/assets.00/system-search-symbolic-icon-256x256-5bb8fl7o.png"
                       alt="Search"
@@ -477,7 +532,12 @@ useEffect(() => {
                     />
                   </button>
                   <div className="container-wrapper">
-                    <input className="container-21" placeholder="아파트, 지역" />
+                    <input
+                      className="container-21"
+                      placeholder="아파트, 지역"
+                      value={aptSearch}
+                      onChange={(e) => setAptSearch(e.target.value)}
+                    />
                   </div>
                 </div>
               </div>
@@ -557,8 +617,6 @@ useEffect(() => {
                 </div>
                 <div className="text-wrapper-97">{selectedDong}</div>
               </div>
-
-
             </div>
           </div>
         </div>

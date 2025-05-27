@@ -3,7 +3,7 @@ import { BackgroundBorder } from "../../../../components/BackgroundBorder";
 import { MaskGroup } from "../../../../components/MaskGroup";
 import "./style.css";
 
-export const BackgroundWrapper = ({ onClose }) => {
+export const BackgroundWrapper = ({ aptDetail, onClose }) => {
   return (
     <div className="background-wrapper">
       <div className="frame-33">
@@ -14,7 +14,7 @@ export const BackgroundWrapper = ({ onClose }) => {
             propertyFalse="https://c.animaapp.com/JuAZje8Q/img/mask-group-23@2x.png"
           />
           <div className="paragraph">
-            <div className="text-wrapper-57">삼성중앙하이츠빌리지</div>
+            <div className="text-wrapper-57">{aptDetail.aptNm}</div>
           </div>
         </div>
 
