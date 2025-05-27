@@ -18,7 +18,7 @@ import KakaoMap from "./KakaoMap/KakaoMap";
 
 import { useAuth } from "../context/AuthContext";
 
-export const Screen = ({ }) => {
+export const Screen = ({}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { isLoggedIn, logout } = useAuth();
@@ -46,7 +46,6 @@ export const Screen = ({ }) => {
     lat: 37.566826,
     lng: 126.9786567,
   });
-
 
   // ✨ 추가: 선택된 위치 정보(지도 마커 라벨용)
   const [locationInfo, setLocationInfo] = useState({
@@ -189,7 +188,6 @@ useEffect(() => {
     }
   };
 
-
   // 아파트 검색 핸들러
   const handleNameSearch = async () => {
     const searchRequestDto = {
@@ -224,7 +222,6 @@ useEffect(() => {
     }
   };
 
-
   // 클릭된 aptSeq로 상세정보 요청 → 상태에 저장 → 오버레이 열기
   const handleMarkerClick = async (apt) => {
     try {
@@ -247,22 +244,10 @@ useEffect(() => {
             className={`screen7-overlay-content ${screen7Active ? "active" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <BackgroundWrapper
-              aptDetail={selectedAptDetail}
-              onClose={closeScreen7}
-            />
-            {/* <Background
-              aptDetail={selectedAptDetail}
-              onClose={closeScreen7}
-            />
-            <Frame2
-              aptDetail={selectedAptDetail}
-              onClose={closeScreen7}
-            />
-            <Frame3
-              aptDetail={selectedAptDetail}
-              onClose={closeScreen7}
-            /> */}
+            <BackgroundWrapper aptDetail={selectedAptDetail} onClose={closeScreen7} />
+            {/* <Background aptDetail={selectedAptDetail} onClose={closeScreen7} />
+            <Frame2 aptDetail={selectedAptDetail} onClose={closeScreen7} />
+            <Frame3 aptDetail={selectedAptDetail} onClose={closeScreen7} /> */}
             <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7} />
           </div>
         </div>
@@ -516,12 +501,7 @@ useEffect(() => {
             <div className="overlay-wrapper">
               <div className="overlay-3">
                 <div className="frame-69">
-                  <button
-                    className="search-button"
-                    type="button"
-                    aria-label="Search"
-                    onClick={handleNameSearch}
-                  >
+                  <button className="search-button" type="button" aria-label="Search" onClick={handleNameSearch}>
                     <img
                       src="https://static-00.iconduck.com/assets.00/system-search-symbolic-icon-256x256-5bb8fl7o.png"
                       alt="Search"

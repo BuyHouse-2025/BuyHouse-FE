@@ -30,8 +30,6 @@ export const MyEstate = ({ closeMyEstate }) => {
         setUser(userRes.data);
         setEstateSummary(estateRes.data);
         setEstateList(estateRes.data.ownedHouseList || []);
-
-        console.log(estateRes);
       } catch (err) {
         console.error("보유 부동산 정보 불러오기 실패 ❌", err);
       }
