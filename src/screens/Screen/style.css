@@ -227,6 +227,28 @@
   cursor: pointer;
 }
 
+.screen .community-button {
+  background-color: #87c9ef;
+  border: 1px solid;
+  border-color: #87c9ef;
+  border-radius: 7px;
+  display: block;
+  height: 43px;
+  position: relative;
+  width: 78px;
+  cursor: pointer;
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+  font-family: "SUIT-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 14px;
+  text-align: center;
+  align-content: center;
+  transition: background-color 0.3s ease;
+}
+
 .screen .overlay {
   position: fixed;
   top: 0;
@@ -246,6 +268,20 @@
   left: 0;
   width: 100%;
   height: fit-content;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  border-radius: 10px;
+}
+
+.screen .search-full-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0);
   display: flex;
   justify-content: center;
@@ -289,8 +325,8 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
-  height: 100%;
+  padding: 20px;
+  height: fit-content;
 }
 
 .screen .frame-106 {
@@ -315,6 +351,16 @@
   color: #2a2f37;
   font-family: "SUIT-Regular", Helvetica;
   font-size: 17.9px;
+  font-weight: 100;
+  letter-spacing: -0.6px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.screen .search-title {
+  color: #2a2f37;
+  font-family: "SUIT-Regular", Helvetica;
+  font-size: 16px;
   font-weight: 100;
   letter-spacing: -0.6px;
   line-height: 24px;
@@ -378,6 +424,20 @@
   overflow: hidden;
 }
 
+.screen .search-overlay-content {
+  position: fixed;
+  top: 130px;
+  left: 20px;
+  width: fit-content;
+  height: 810px;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .screen7-overlay-content {
   width: 388px;
   max-width: 100vw;
@@ -387,24 +447,43 @@
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
   overflow: hidden;
-}
-
-.screen7-overlay-content {
   position: fixed;
   top: 0;
   left: 0;
-  width: 388px;
-  height: 100%;
-  background-color: white;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%);
   z-index: 2000;
 }
 
+.search-overlay-content {
+  width: fit-content;
+  max-width: 100vw;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 1000;
+}
+
+
 .screen .screen7-overlay-content.active {
   transform: translateX(0); /* 슬라이드 인 */
   border-radius: 10px;
+}
+
+.screen .search-overlay-content.active {
+  transform: translateX(0); /* 슬라이드 인 */
+  border-radius: 10px;
+  width: fit-content;
+  
 }
 
 .screen .screen9-content {
