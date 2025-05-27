@@ -5,8 +5,7 @@
       "label": "Screen",
       "routes": [
         "/",
-        "/main",
-        "*"
+        "/main"
       ],
       "isRoot": true
     },
@@ -105,6 +104,13 @@
       "dataModelId": "1:611"
     },
     {
+      "id": "src/screens/FindPwd/FindPwd.jsx",
+      "label": "FindPwd",
+      "routes": [
+        "/findpwd"
+      ]
+    },
+    {
       "id": "src/screens/UpdatePwd/UpdatePwd.jsx",
       "label": "UpdatePwd",
       "routes": [
@@ -121,19 +127,39 @@
       "dataModelId": "1:732"
     },
     {
-      "id": "src/screens/FindPwd/FindPwd.jsx",
-      "label": "FindPwd",
+      "id": "src/screens/Community/Community.jsx",
+      "label": "Community",
       "routes": [
-        "/findpwd"
-      ],
-      "dataModelId": "1:661"
+        "/community"
+      ]
+    },
+    {
+      "id": "src/screens/CommunityPost/CommunityPost.jsx",
+      "label": "CommunityPost",
+      "routes": [
+        "/community/post/:id"
+      ]
+    },
+    {
+      "id": "src/screens/CommunityWrite/CommunityWrite.jsx",
+      "label": "CommunityWrite",
+      "routes": [
+        "/community/write",
+        "/community/edit/:id"
+      ]
     }
   ],
   "edges": [
     {
+<<<<<<< HEAD
       "id": "src\\screens\\Screen\\Screen.jsx:164:4-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\Screen\\Screen.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
+=======
+      "id": "src/screens/Screen/Screen.jsx:160:4-to-src/screens/Screen/Screen.jsx",
+      "source": "src/screens/Screen/Screen.jsx",
+      "target": "src/screens/Screen/Screen.jsx",
+>>>>>>> 4e6abf7e566366343fa99b9c9538384156818da5
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -175,6 +201,7 @@
           "column": 16,
           "endColumn": 23,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
+
         }
       }
     },
@@ -198,12 +225,13 @@
       "id": "src\\screens\\Screen3\\Screen3.jsx:70:8-to-src\\screens\\Screen6\\Screen6.jsx",
       "source": "src\\screens\\Screen3\\Screen3.jsx",
       "target": "src\\screens\\Screen6\\Screen6.jsx",
+
       "data": {
         "viaRoute": "/login",
         "trigger": {
           "element": "navigate(\"/login\")",
-          "line": 70,
-          "endLine": 70,
+          "line": 71,
+          "endLine": 71,
           "column": 8,
           "endColumn": 26,
           "sourceFile": "src\\screens\\Screen3\\Screen3.jsx"
@@ -211,6 +239,7 @@
       }
     },
     {
+
       "id": "src\\screens\\Screen3\\Screen3.jsx:92:10-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\Screen3\\Screen3.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
@@ -291,6 +320,7 @@
       }
     },
     {
+
       "id": "src\\screens\\FindId\\FindId.jsx:50:6-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\FindId\\FindId.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
@@ -298,8 +328,8 @@
         "viaRoute": "/",
         "trigger": {
           "element": "navigate(\"/\")",
-          "line": 50,
-          "endLine": 50,
+          "line": 52,
+          "endLine": 52,
           "column": 6,
           "endColumn": 19,
           "sourceFile": "src\\screens\\FindId\\FindId.jsx"
@@ -307,6 +337,7 @@
       }
     },
     {
+
       "id": "src\\screens\\FindId\\FindId.jsx:60:8-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\FindId\\FindId.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
@@ -339,6 +370,7 @@
       }
     },
     {
+
       "id": "src\\screens\\FindPwd\\FindPwd.jsx:80:10-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\FindPwd\\FindPwd.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
@@ -351,6 +383,7 @@
           "column": 10,
           "endColumn": 17,
           "sourceFile": "src\\screens\\FindPwd\\FindPwd.jsx"
+
         }
       }
     }

@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
   gap: 43px;
-  height: 1080px;
+  height: 100%;
   padding: 73px 598px;
   position: relative;
-  width: 1920px;
+  width: 100%;
 }
 
 .screen-6 .frame-107 {

@@ -1,11 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { useAuth } from "../../../context/AuthContext";
+import axios from "axios";
 
 export const Section = () => {
-  const { user } = useAuth(); // ✅ Context에서 가져오기
+  const { user } = useAuth();
   const userName = user?.name || "사용자";
-  
+  const [percentile, setPercentile] = useState(null);
+  const [rankingList, setRankingList] = useState([]);
+
+  useEffect(() => {
+    const fetchRanking = async () => {
+      try {
+        const token = localStorage.getItem("authToken");
+
+        const [userRankRes, totalRanksRes] = await Promise.all([
+          axios.get("http://localhost:8080/api/rankings/users", {
+            headers: { Authorization: `Bearer ${token}` },
+            withCredentials: true,
+          }),
+          axios.get("http://localhost:8080/api/rankings", {
+            headers: { Authorization: `Bearer ${token}` },
+            withCredentials: true,
+          })
+        ]);
+
+        setPercentile(userRankRes.data);
+        setRankingList(totalRanksRes.data);
+      } catch (err) {
+        console.error("랭킹 데이터 불러오기 실패 ❌", err);
+      }
+    };
+
+    fetchRanking();
+  }, []);
+
   return (
     <div className="section">
       <div className="frame-47">
@@ -14,15 +43,13 @@ export const Section = () => {
         </div>
 
         <div className="frame-48">
-          <img
-            className="rank"
-            alt="Rank"
-            src="https://c.animaapp.com/JuAZje8Q/img/rank-1@2x.png"
-          />
+          <img className="rank" alt="Rank" src="https://c.animaapp.com/JuAZje8Q/img/rank-1@2x.png" />
           <p className="element">
             <span className="span">현재 {userName}님의 자산은</span>
-            <span className="text-wrapper-72">&nbsp;</span>
-            <span className="text-wrapper-73">상위 30.6%</span>
+            <span className="text-wrapper-72"> </span>
+            <span className="text-wrapper-73">
+              {percentile ? `상위 ${percentile.percentile}%` : "로딩 중..."}
+            </span>
             <span className="span">입니다.</span>
           </p>
         </div>
@@ -60,21 +87,15 @@ export const Section = () => {
             <div className="frame-52">
               <div className="text-wrapper-77">이름</div>
 
-              <div className="text-wrapper-78">송은채</div>
-
-              <div className="text-wrapper-78">차무혁</div>
-
-              <div className="text-wrapper-78">최윤</div>
+              {rankingList.slice(0, 3).map((r, i) => (
+                <div key={i} className="text-wrapper-78">{r.name}</div>
+              ))}
             </div>
 
             <div className="frame-53">
-              <div className="text-wrapper-79">강민주</div>
-
-              <div className="text-wrapper-80">이방원</div>
-
-              <div className="text-wrapper-80">장춘삼</div>
-
-              <div className="text-wrapper-80">임덕자</div>
+              {rankingList.slice(3).map((r, i) => (
+                <div key={i} className="text-wrapper-80">{r.name}</div>
+              ))}
             </div>
           </div>
 
@@ -82,49 +103,32 @@ export const Section = () => {
             <div className="frame-55">
               <div className="text-wrapper-81">수익률</div>
 
-              <div className="frame-56">
-                <div className="markerratearrowup" />
+              {rankingList.slice(0, 3).map((r, i) => (
+                <div key={i} className="frame-56">
+                  <div className="markerratearrowup" />
+                  <div className="text-wrapper-82">
+                    {r.roi !== undefined && r.roi !== null
+                      ? r.roi.toFixed(2)
+                      : "0.00"}%
+                  </div>
 
-                <div className="text-wrapper-82">10.18%</div>
-              </div>
+                </div>
+              ))}
 
-              <div className="frame-56">
-                <div className="markerratearrowup" />
-
-                <div className="text-wrapper-82">5.75%</div>
-              </div>
-
-              <div className="frame-56">
-                <div className="markerratearrowup" />
-
-                <div className="text-wrapper-82">5.01%</div>
-              </div>
             </div>
 
             <div className="frame-57">
-              <div className="frame-56">
-                <div className="markerratearrowup" />
+              {rankingList.slice(3).map((r, i) => (
+                <div key={i} className="frame-56">
+                  <div className="markerratearrowup" />
+                  <div className="text-wrapper-82">
+                    {r.roi !== undefined && r.roi !== null
+                      ? r.roi.toFixed(2)
+                      : "0.00"}%
+                  </div>
 
-                <div className="text-wrapper-82">2.77%</div>
-              </div>
-
-              <div className="frame-56">
-                <div className="markerratearrowup" />
-
-                <div className="text-wrapper-82">2.26%</div>
-              </div>
-
-              <div className="frame-56">
-                <div className="markerratearrowup" />
-
-                <div className="text-wrapper-82">1.99%</div>
-              </div>
-
-              <div className="frame-56">
-                <div className="markerratearrowup" />
-
-                <div className="text-wrapper-82">1.92%</div>
-              </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -132,21 +136,15 @@ export const Section = () => {
             <div className="frame-59">
               <div className="text-wrapper-83">총 자산</div>
 
-              <div className="text-wrapper-84">202억 2890만원</div>
-
-              <div className="text-wrapper-84">179억 390만원</div>
-
-              <div className="text-wrapper-84">100억 1180만원</div>
+              {rankingList.slice(0, 3).map((r, i) => (
+                <div key={i} className="text-wrapper-84">{formatKoreanCurrency(r.totalAsset)}</div>
+              ))}
             </div>
 
             <div className="frame-53">
-              <div className="text-wrapper-85">99억 2890만원</div>
-
-              <div className="text-wrapper-86">97억 2890만원</div>
-
-              <div className="text-wrapper-86">88억 2890만원</div>
-
-              <div className="text-wrapper-86">87억 2890만원</div>
+              {rankingList.slice(3).map((r, i) => (
+                <div key={i} className="text-wrapper-86">{formatKoreanCurrency(r.totalAsset)}</div>
+              ))}
             </div>
           </div>
         </div>
@@ -154,3 +152,13 @@ export const Section = () => {
     </div>
   );
 };
+
+function formatKoreanCurrency(value) {
+  if (value >= 1_0000_0000) {
+    return `${Math.floor(value / 1_0000_0000)}억 ${(Math.floor(value % 1_0000_0000 / 10000))}만원`;
+  } else if (value >= 10000) {
+    return `${Math.floor(value / 10000)}만원`;
+  } else {
+    return `${value}원`;
+  }
+}

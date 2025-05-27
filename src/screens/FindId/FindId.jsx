@@ -3,6 +3,8 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
 
 export const FindId = () => {
   const navigate = useNavigate();
@@ -57,10 +59,7 @@ export const FindId = () => {
   return (
     <div className="findId-screen" data-model-id="1:611">
       <div className="findId-frame">
-        <Link className="banner" to="/">
-          <img className="logo" alt="V" src="https://c.animaapp.com/DSoZdjN8/img/--------v4-1@2x.png" />
-          <div className="jipsa">집사</div>
-        </Link>
+        <Header/>
 
         <form className="findId-form" onSubmit={handleSubmit}>
           <div className="findId-input-frame">
@@ -138,29 +137,7 @@ export const FindId = () => {
           </button>
         </form>
 
-        <div className="findId-footer">
-          <div className="findId-footer-frame">
-            <div className="findId-footer-ssafy">SSAFY</div>
-            <div className="findId-footer-day">
-              <div className="day">2025.05.29</div>
-              <div className="vertical-divider" />
-            </div>
-            <div className="findId-footer-name">
-              <div className="won">WON YUN SEO</div>
-              <div className="vertical-divider" />
-            </div>
-            <div className="findId-footer-name">
-              <div className="jang">JANG JONG WON</div>
-              <div className="vertical-divider" />
-            </div>
-          </div>
-          <div className="findId-footer-frame2">
-            <div className="findId-footer-jibsa">집사</div>
-            <div className="findId-footer-copyright">Copyright</div>
-            <div className="findId-footer-corp">© BUYHOME Corp.</div>
-            <div className="findId-footer-copyright">All Rights Reserved.</div>
-          </div>
-        </div>
+        <Footer/>
       </div>
     </div>
   );
