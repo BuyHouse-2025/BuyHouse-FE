@@ -1,7 +1,6 @@
 "use client"
 
 import { View } from "./sections/View"
-import dongCoords from "../../assets/dong_coords.json"
 import "./style.css"
 
 export const Screen8 = ({
@@ -12,6 +11,8 @@ export const Screen8 = ({
   setSelectedGugun,
   selectedDong,
   setSelectedDong,
+  selectedDongcode,
+  setSelectedDongcode,
   onMoveToLocation
 }) => {
   const handleMoveToLocation = () => {
@@ -47,6 +48,8 @@ export const Screen8 = ({
             setSelectedGugun={setSelectedGugun}
             selectedDong={selectedDong}
             setSelectedDong={setSelectedDong}
+            selectedDongcode={selectedDongcode}
+            setSelectedDongcode={setSelectedDongcode}
           />
           
           <button className="view-10" onClick={handleMoveToLocation}>

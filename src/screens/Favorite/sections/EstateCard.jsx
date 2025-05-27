@@ -1,6 +1,7 @@
 // src/screens/Screen/Favorite/sections/EstateCard.jsx
 import React, { useMemo } from "react";
 import "./EstateCard.css";
+import { MaskGroup } from "../../../components/MaskGroup"; // ✅ 반드시 포함
 
 const photoPool = [
   "https://landthumb-phinf.pstatic.net/20170727_55/apt_realimage_1501141532617fn29k_JPEG/c3af3f3c69eb5685e64460db3c1dfa3c.jpg?type=m1024",
@@ -13,23 +14,34 @@ const photoPool = [
 ];
 
 export const EstateCard = ({
+  aptSeq,
   title,
   type,
   address,
   priceLabel,
   priceValue,
   imageUrl,
+  userWishList,
+  fetchWish,
 }) => {
-  // 마운트 시 한 번만 풀에서 랜덤 이미지 선택
   const randomImage = useMemo(() => {
     return photoPool[Math.floor(Math.random() * photoPool.length)];
   }, []);
 
-  // 실제 사용할 src 결정: props.imageUrl 우선, 없으면 randomImage
   const imgSrc = imageUrl || randomImage;
 
   return (
     <div className="estate-card">
+      {/* 찜하기 아이콘 */}
+      <div className="image">
+        <MaskGroup
+          className="mask-group-instance"
+          aptSeq={aptSeq}
+          wishList={userWishList}
+          refreshWishList={fetchWish}
+        />
+      </div>
+
       {/* 텍스트 컨텐츠 */}
       <div className="estate-card__content">
         <div className="estate-card__header">
@@ -43,13 +55,12 @@ export const EstateCard = ({
         </div>
       </div>
 
-      {/* 썸네일 */}
+      {/* 이미지 썸네일 */}
       <div className="estate-card__img">
         <img
           src={imgSrc}
           alt={title}
           onError={(e) => {
-            // 혹시 로딩 실패 시 다시 풀에서 하나 골라 대체
             const fallback = photoPool[Math.floor(Math.random() * photoPool.length)];
             e.currentTarget.src = fallback;
           }}

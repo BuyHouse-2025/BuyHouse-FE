@@ -10,6 +10,8 @@ export const View = ({
   setSelectedGugun,
   selectedDong,
   setSelectedDong,
+  selectedDongcode,
+  setSelectedDongcode,
 }) => {
   const sidoList = [...new Set(dongData.map((d) => d.sido))];
   const gugunList = [...new Set(dongData.filter((d) => d.sido === selectedSido).map((d) => d.gugun))];
@@ -31,6 +33,7 @@ export const View = ({
                 setSelectedSido(sido);
                 setSelectedGugun("");
                 setSelectedDong("");
+                setSelectedDongcode("");
               }}
             />
           ))}
@@ -48,6 +51,7 @@ export const View = ({
               onClick={() => {
                 setSelectedGugun(gugun);
                 setSelectedDong("");
+                setSelectedDongcode("");
               }}
             />
           ))}
@@ -59,10 +63,43 @@ export const View = ({
         <div className="frame-36">
           {dongList.map((dong) => (
             <PropertyDefaultWrapper
-              key={`dong-${selectedSido}-${selectedGugun}-${dong}`} // ✅ 시도 + 구군 + 동으로 고유하게
+              key={`dong-${selectedSido}-${selectedGugun}-${dong}`}
               buttontext={dong}
               isSelected={selectedDong === dong}
-              onClick={() => setSelectedDong(dong)}
+              onClick={() => {
+                setSelectedDong(dong);
+
+                if (dongData.length === 0) {
+                  console.warn("⚠️ dongData 비어 있음!");
+                  setSelectedDongcode("");
+                  return;
+                }
+
+                if (!selectedSido || !selectedGugun || !dong) {
+                  console.warn("❌ 선택 항목이 비어있습니다", selectedSido, selectedGugun, dong);
+                  return;
+                }
+
+                const matched = dongData.find((d) => {
+                  if (!d || !d.sido || !d.gugun || !d.dong) return false;
+                  return (
+                    d.sido.trim() === selectedSido.trim() &&
+                    d.gugun.trim() === selectedGugun.trim() &&
+                    d.dong.trim() === dong.trim()
+                  );
+                });
+
+
+                if (matched && matched.dongcode) {
+                  console.log("✅ 설정할 dongcode:", matched.dongcode);
+                  setSelectedDongcode(matched.dongcode);
+                } else {
+                  console.warn("❌ dongcode 설정 실패 - matched:", matched);
+                  setSelectedDongcode(""); // or null
+                }
+
+              }}
+
             />
           ))}
         </div>

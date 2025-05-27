@@ -65,19 +65,21 @@ export const MyEstate = ({ closeMyEstate }) => {
                   count={estateList.length}
                 />
               )}
-
-              {estateList.map((item, i) => (
-                <Property
-                  key={i}
-                  name={item.aptNm}
-                  dealType="매매"
-                  price={`${(item.currentPrice / 10000).toFixed(0)}억 ${(item.currentPrice % 10000)}만`}
-                  area={"-"}
-                  date={item.purchaseDate}
-                  gain={item.priceDifference}
-                  gainRate={`${(item.priceDifference / item.ownedPrice * 100).toFixed(2)}%`}
-                />
-              ))}
+              <div className="property-list">
+                {estateList.map((item, i) => (
+                  <Property
+                    key={i}
+                    name={item.aptNm}
+                    dealType="매매"
+                    price={`${(item.currentPrice / 10000).toFixed(0)}억 ${(item.currentPrice % 10000)}만`}
+                    area={"-"}
+                    date={item.purchaseDate}
+                    gain={item.priceDifference}
+                    gainRate={`${(item.priceDifference / item.ownedPrice * 100).toFixed(2)}%`}
+                    aptSeq={item.aptSeq}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

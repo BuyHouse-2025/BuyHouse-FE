@@ -1,51 +1,52 @@
-/*
-We're constantly improving the code you see. 
-Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcNg&d=1152665201300829
-*/
-
-import React from "react";
-import { useReducer } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
+import axios from "axios";
 
-export const BackgroundBorder = ({ property1, divClassName, onToggle }) => {
-  const [state, dispatch] = useReducer(reducer, {
-    property1: property1 || "one",
-  });
+export const BackgroundBorder = ({ property1 = "one", divClassName, onToggle, openOverlay, aptSeq }) => {
+  const [mode, setMode] = useState(property1); // 내부 상태 따로 관리
+
+  useEffect(() => {
+    setMode(property1); // 외부 prop 변경되면 반영!
+  }, [property1]);
 
   const handleClick = () => {
-    dispatch("click");
-    if (onToggle) onToggle(state.property1); // 클릭 전 상태 전달
+    if (mode === "one") {
+      openOverlay?.(); // 구매 오버레이 띄우기
+    } else {
+      const confirmed = window.confirm("정말 판매하시겠습니까?");
+      if (!confirmed) return;
+      try {
+        const token = localStorage.getItem("authToken");
+        axios.delete(
+          `http://localhost:8080/api/estate/owned/${aptSeq}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+            withCredentials: true,
+          }
+        );
+
+      } catch (err) {
+        console.error("❌ 판매 요청 실패:", err);
+      }
+  
+    }
+
+    const newMode = mode === "one" ? "two" : "one";
+    setMode(newMode);
+    onToggle?.(newMode);
   };
 
   return (
-    <div className={`background-border ${state.property1}`} onClick={handleClick}>
+    <div className={`background-border ${mode} animated-toggle`} onClick={handleClick}>
       <div className={`div-5 ${divClassName}`}>
-        {state.property1 === "one" && <>구매</>}
-        {state.property1 === "two" && <>판매</>}
+        <span className="toggle-text">
+          {mode === "one" && <>구매</>}
+          {mode === "two" && <>판매</>}
+        </span>
       </div>
     </div>
   );
 };
-
-
-function reducer(state, action) {
-  if (state.property1 === "one") {
-    switch (action) {
-      case "click":
-        return {
-          property1: "two",
-        };
-    }
-  }
-
-  if (state.property1 === "two") {
-    switch (action) {
-      case "click":
-        return {
-          property1: "one",
-        };
-    }
-  }
-
-  return state;
-}

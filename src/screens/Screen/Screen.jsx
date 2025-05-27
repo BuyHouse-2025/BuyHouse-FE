@@ -34,12 +34,14 @@ export const Screen = ({ }) => {
   const [selectedSido, setSelectedSido] = useState("서울특별시");
   const [selectedGugun, setSelectedGugun] = useState("강남구");
   const [selectedDong, setSelectedDong] = useState("삼성동");
+  const [selectedDongcode, setSelectedDongcode] = useState("1168010500");
   const [aptSearch, setAptSearch] = useState("");
   const [dongData, setDongData] = useState([]);
   const [mapBounds, setMapBounds] = useState(null);
   const [apartmentList, setApartmentList] = useState([]);
   const [selectedAptDetail, setSelectedAptDetail] = useState(null);
-
+  const [selectedAptSeq, setSelectedAptSeq] = useState(null);
+  const [wishList, setWishList] = useState([]);
   const [searchRes, setSearchRes] = useState([]);
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
@@ -104,7 +106,6 @@ export const Screen = ({ }) => {
         const token = localStorage.getItem("authToken");
         console.log("▶️ /api/users 요청 보냄…", token);
 
-        // 풀 URL을 사용합니다
         const res = await axios.get("http://localhost:8080/api/users", {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -125,19 +126,34 @@ export const Screen = ({ }) => {
     fetchUserData();
   }, [screen9Visible]);
 
-  useEffect(() => {
-    const fetchDongData = async () => {
+
+useEffect(() => {
+    const fetchWishList = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/dongcode");
-        console.log("동 데이터 확인 👇", res.data); // 여기 찍어보자!
-        setDongData(res.data);
-      } catch (error) {
-        console.error("❌ 동코드 데이터 불러오기 실패", error);
+        const token = localStorage.getItem("authToken");
+        const response = await axios.get("http://localhost:8080/api/estate/wish", {
+          headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
+        });
+        setWishList(response.data);
+      } catch (err) {
+        console.error("관심 아파트 불러오기 실패 ❌", err);
       }
     };
 
-    fetchDongData();
-  }, []);
+    fetchWishList();
+  }, [user!=null]);
+
+useEffect(() => {
+  const fetchDongData = async () => {
+    try {
+      const res = await axios.get("http://localhost:8080/api/dongcode");
+      console.log("동 데이터 확인 👇", res.data); // 여기 찍어보자!
+      setDongData(res.data);
+    } catch (error) {
+      console.error("❌ 동코드 데이터 불러오기 실패", error);
+    }
+  };
 
 
   // Screen.jsx에서 토큰 저장 부분 수정
@@ -250,6 +266,7 @@ export const Screen = ({ }) => {
       const res = await axios.get(`http://localhost:8080/api/estate/${apt.aptSeq}`);
       // ② 받은 DTO를 상태에 저장
       setSelectedAptDetail(res.data);
+      setSelectedAptSeq(apt.aptSeq);
       // ③ 오버레이 열기
       openScreen7();
     } catch (err) {
@@ -276,8 +293,8 @@ export const Screen = ({ }) => {
             className={`screen7-overlay-content ${screen7Active ? "active" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <BackgroundWrapper aptDetail={selectedAptDetail} onClose={closeScreen7} />
-            <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7} />
+            <BackgroundWrapper aptDetail={selectedAptDetail} onClose={closeScreen7} userWishList={wishList} aptSeq={selectedAptSeq} />
+            <Screen7 aptDetail={selectedAptDetail} onClose={closeScreen7}/>
           </div>
         </div>
       )}
@@ -455,11 +472,14 @@ export const Screen = ({ }) => {
             }}
           >
             <Frame4
+              key={selectedDongcode} // 🔥 동코드 바뀔 때마다 컴포넌트 새로 마운트됨!
               onClose={() => setShowScreen8Overlay(false)}
               selectedSido={selectedSido}
               selectedGugun={selectedGugun}
               selectedDong={selectedDong}
+              selectedDongcode={selectedDongcode}
             />
+
 
             <Screen8
               dongData={dongData}
@@ -469,6 +489,8 @@ export const Screen = ({ }) => {
               setSelectedGugun={setSelectedGugun}
               selectedDong={selectedDong}
               setSelectedDong={setSelectedDong}
+              selectedDongcode={selectedDongcode}
+              setSelectedDongcode={setSelectedDongcode}
               onMoveToLocation={handleMoveToLocation}
             />
           </div>
