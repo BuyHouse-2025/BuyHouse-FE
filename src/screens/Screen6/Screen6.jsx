@@ -29,7 +29,7 @@ export const Screen6 = () => {
     login(token);  // ✅ 이제 완벽
     localStorage.setItem("authToken", token);
 
-    navigate("/auth/normal");
+    navigate("/");
   } catch (err) {
     console.error("로그인 실패:", err);
   }

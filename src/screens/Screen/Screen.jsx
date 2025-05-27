@@ -34,8 +34,10 @@ export const Screen = ({ }) => {
   const [selectedSido, setSelectedSido] = useState("서울특별시");
   const [selectedGugun, setSelectedGugun] = useState("강남구");
   const [selectedDong, setSelectedDong] = useState("삼성동");
-
+  const [aptSearch, setAptSearch] = useState("");
   const [dongData, setDongData] = useState([]);
+  const [mapBounds, setMapBounds] = useState(null);
+
 
   const [user, setUser] = useState(null);
   const [userError, setUserError] = useState("");
@@ -107,6 +109,7 @@ export const Screen = ({ }) => {
         setUserError("유저 정보를 불러오지 못했습니다.");
       }
     };
+  });
 
 useEffect(() => {
   const fetchDongData = async () => {
@@ -127,12 +130,6 @@ useEffect(() => {
 useEffect(() => {
   const params = new URLSearchParams(location.search);
   if (!params.toString()) return;
-
-  // Screen.jsx에서 토큰 저장 부분 수정
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    if (!params.toString()) return;
-
     // 쿼리 파라미터 중 첫 번째 key/value를 토큰으로 사용
     const [[key, value]] = Array.from(params.entries());
     console.log("🕵️‍♀️ URL param key:", key, "value:", value);
@@ -374,7 +371,7 @@ useEffect(() => {
         >
           <div className="screenscreen-content" onClick={(e) => e.stopPropagation()}>
             <div className="frame-74">
-              <div className="text-wrapper-98">관심지역</div>
+              <div className="interest-title">관심지역</div>
               <div className="background-6">
                 <div className="close-svg-wrapper">
                   <div className="close-svg-2">
@@ -388,7 +385,7 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <Screen4 />
+            <Screen4 dongData={dongData} onMoveToLocation={handleMoveToLocation} />
           </div>
         </div>
       )}

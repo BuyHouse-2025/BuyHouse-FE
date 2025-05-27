@@ -37,8 +37,7 @@
       "label": "Screen4",
       "routes": [
         "/favoriteRegion"
-      ],
-      "dataModelId": "1:1338"
+      ]
     },
     {
       "id": "src/screens/Screen5/Screen5.jsx",
@@ -151,15 +150,15 @@
   ],
   "edges": [
     {
-      "id": "src/screens/Screen/Screen.jsx:173:4-to-src/screens/Screen/Screen.jsx",
-      "source": "src/screens/Screen/Screen.jsx",
-      "target": "src/screens/Screen/Screen.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:175:4-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Screen\\Screen.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
           "element": "navigate(\"/\")",
-          "line": 173,
-          "endLine": 173,
+          "line": 175,
+          "endLine": 175,
           "column": 4,
           "endColumn": 17,
           "sourceFile": "src\\screens\\Screen\\Screen.jsx"
@@ -167,34 +166,34 @@
       }
     },
     {
-      "id": "src/screens/Screen/Screen.jsx:443:14-to-src/screens/Screen6/Screen6.jsx",
-      "source": "src/screens/Screen/Screen.jsx",
-      "target": "src/screens/Screen6/Screen6.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:501:16-to-src\\screens\\Screen6\\Screen6.jsx",
+      "source": "src\\screens\\Screen\\Screen.jsx",
+      "target": "src\\screens\\Screen6\\Screen6.jsx",
       "data": {
         "viaRoute": "/login",
         "trigger": {
-          "element": "<Link className=\"background-4\" to=\"/login\">\n                <div className=\"text-wrapper-93\">로그인하기</div>\n              </Link>",
-          "line": 443,
-          "endLine": 445,
-          "column": 14,
-          "endColumn": 21,
-          "sourceFile": "src/screens/Screen/Screen.jsx"
+          "element": "<Link className=\"background-4\" to=\"/login\">\n                  <div className=\"text-wrapper-93\">로그인하기</div>\n                </Link>",
+          "line": 501,
+          "endLine": 503,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
         }
       }
     },
     {
-      "id": "src/screens/Screen/Screen.jsx:446:14-to-src/screens/Screen3/Screen3.jsx",
-      "source": "src/screens/Screen/Screen.jsx",
-      "target": "src/screens/Screen3/Screen3.jsx",
+      "id": "src\\screens\\Screen\\Screen.jsx:504:16-to-src\\screens\\Screen3\\Screen3.jsx",
+      "source": "src\\screens\\Screen\\Screen.jsx",
+      "target": "src\\screens\\Screen3\\Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
-          "element": "<Link to=\"/join\">\n                <button className=\"button-2\">\n                  <div className=\"text-wrapper-94\">회원가입</div>\n                </button>\n              </Link>",
-          "line": 446,
-          "endLine": 450,
-          "column": 14,
-          "endColumn": 21,
-          "sourceFile": "src/screens/Screen/Screen.jsx"
+          "element": "<Link to=\"/join\">\n                  <button className=\"button-2\">\n                    <div className=\"text-wrapper-94\">회원가입</div>\n                  </button>\n                </Link>",
+          "line": 504,
+          "endLine": 508,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src\\screens\\Screen\\Screen.jsx"
         }
       }
     },
@@ -215,10 +214,9 @@
       }
     },
     {
-      "id": "src\\screens\\Screen3\\Screen3.jsx:70:8-to-src\\screens\\Screen6\\Screen6.jsx",
+      "id": "src\\screens\\Screen3\\Screen3.jsx:71:8-to-src\\screens\\Screen6\\Screen6.jsx",
       "source": "src\\screens\\Screen3\\Screen3.jsx",
       "target": "src\\screens\\Screen6\\Screen6.jsx",
-
       "data": {
         "viaRoute": "/login",
         "trigger": {
@@ -232,16 +230,15 @@
       }
     },
     {
-
-      "id": "src\\screens\\Screen3\\Screen3.jsx:92:10-to-src\\screens\\Screen\\Screen.jsx",
+      "id": "src\\screens\\Screen3\\Screen3.jsx:93:10-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\Screen3\\Screen3.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link className=\"frame-81\" to=\"/\">\r\n            <img className=\"v-2\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\" />\r\n            <div className=\"text-wrapper-104\">집사</div>\r\n          </Link>",
-          "line": 92,
-          "endLine": 95,
+          "element": "<Link className=\"frame-81\" to=\"/\">\n            <img className=\"v-2\" alt=\"V\" src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\" />\n            <div className=\"text-wrapper-104\">집사</div>\n          </Link>",
+          "line": 93,
+          "endLine": 96,
           "column": 10,
           "endColumn": 17,
           "sourceFile": "src\\screens\\Screen3\\Screen3.jsx"
@@ -249,31 +246,31 @@
       }
     },
     {
-      "id": "src\\screens\\Screen6\\Screen6.jsx:49:6-to-src\\screens\\Screen\\Screen.jsx",
+      "id": "src\\screens\\Screen6\\Screen6.jsx:32:4-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\Screen6\\Screen6.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link className=\"frame-107\" to=\"/\">\r\n        <img\r\n          className=\"v-3\"\r\n          alt=\"V\"\r\n          src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\"\r\n        />\r\n        <div className=\"text-wrapper-116\">집사</div>\r\n      </Link>",
-          "line": 49,
-          "endLine": 56,
-          "column": 6,
-          "endColumn": 13,
+          "element": "navigate(\"/\")",
+          "line": 32,
+          "endLine": 32,
+          "column": 4,
+          "endColumn": 17,
           "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
         }
       }
     },
     {
-      "id": "src\\screens\\Screen6\\Screen6.jsx:141:10-to-src\\screens\\Screen3\\Screen3.jsx",
+      "id": "src\\screens\\Screen6\\Screen6.jsx:135:10-to-src\\screens\\Screen3\\Screen3.jsx",
       "source": "src\\screens\\Screen6\\Screen6.jsx",
       "target": "src\\screens\\Screen3\\Screen3.jsx",
       "data": {
         "viaRoute": "/join",
         "trigger": {
-          "element": "<Link to=\"/join\">\r\n            <button type=\"button\" className=\"button-3\">\r\n              <div className=\"text-wrapper-121\">회원가입</div>\r\n            </button>\r\n          </Link>",
-          "line": 141,
-          "endLine": 145,
+          "element": "<Link to=\"/join\">\n            <button type=\"button\" className=\"button-3\">\n              <div className=\"text-wrapper-121\">회원가입</div>\n            </button>\n          </Link>",
+          "line": 135,
+          "endLine": 139,
           "column": 10,
           "endColumn": 17,
           "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
@@ -281,18 +278,34 @@
       }
     },
     {
-      "id": "src\\screens\\Screen6\\Screen6.jsx:154:8-to-src\\screens\\FindPwd\\FindPwd.jsx",
+      "id": "src\\screens\\Screen6\\Screen6.jsx:148:8-to-src\\screens\\FindPwd\\FindPwd.jsx",
       "source": "src\\screens\\Screen6\\Screen6.jsx",
       "target": "src\\screens\\FindPwd\\FindPwd.jsx",
       "data": {
         "viaRoute": "/findpwd",
         "trigger": {
-          "element": "<Link to=\"/findpwd\" className=\"text-wrapper-122\">\r\n          비밀번호 찾기\r\n        </Link>",
-          "line": 154,
-          "endLine": 156,
+          "element": "<Link to=\"/findpwd\" className=\"text-wrapper-122\">\n          비밀번호 찾기\n        </Link>",
+          "line": 148,
+          "endLine": 150,
           "column": 8,
           "endColumn": 15,
           "sourceFile": "src\\screens\\Screen6\\Screen6.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\components\\header\\header.jsx:9:6-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Screen6\\Screen6.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link className=\"header-logo\" to=\"/\">\r\n        <img\r\n          className=\"header-logo-image\"\r\n          alt=\"집사 로고\"\r\n          src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\"\r\n        />\r\n        <div className=\"header-text\">집사</div>\r\n      </Link>",
+          "line": 9,
+          "endLine": 16,
+          "column": 6,
+          "endColumn": 13,
+          "sourceFile": "src\\components\\header\\header.jsx"
         }
       }
     },
@@ -313,8 +326,7 @@
       }
     },
     {
-
-      "id": "src\\screens\\FindId\\FindId.jsx:50:6-to-src\\screens\\Screen\\Screen.jsx",
+      "id": "src\\screens\\FindId\\FindId.jsx:52:6-to-src\\screens\\Screen\\Screen.jsx",
       "source": "src\\screens\\FindId\\FindId.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
@@ -330,19 +342,18 @@
       }
     },
     {
-
-      "id": "src\\screens\\FindId\\FindId.jsx:60:8-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\FindId\\FindId.jsx",
+      "id": "src\\components\\header\\header.jsx:9:6-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Screen6\\Screen6.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link className=\"banner\" to=\"/\">\r\n          <img className=\"logo\" alt=\"V\" src=\"https://c.animaapp.com/DSoZdjN8/img/--------v4-1@2x.png\" />\r\n          <div className=\"jipsa\">집사</div>\r\n        </Link>",
-          "line": 60,
-          "endLine": 63,
-          "column": 8,
-          "endColumn": 15,
-          "sourceFile": "src\\screens\\FindId\\FindId.jsx"
+          "element": "<Link className=\"header-logo\" to=\"/\">\r\n        <img\r\n          className=\"header-logo-image\"\r\n          alt=\"집사 로고\"\r\n          src=\"https://c.animaapp.com/JuAZje8Q/img/--------v4-2@2x.png\"\r\n        />\r\n        <div className=\"header-text\">집사</div>\r\n      </Link>",
+          "line": 9,
+          "endLine": 16,
+          "column": 6,
+          "endColumn": 13,
+          "sourceFile": "src\\components\\header\\header.jsx"
         }
       }
     },
@@ -358,14 +369,14 @@
           "endLine": 68,
           "column": 6,
           "endColumn": 19,
-          "sourceFile": "src/screens/FindPwd/FindPwd.jsx"
+          "sourceFile": "src\\screens\\FindPwd\\FindPwd.jsx"
         }
       }
     },
     {
-      "id": "src/components/header/header.jsx:9:6-to-src/screens/Screen/Screen.jsx",
-      "source": "src/screens/Screen6/Screen6.jsx",
-      "target": "src/screens/Screen/Screen.jsx",
+      "id": "src\\components\\header\\header.jsx:9:6-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Screen6\\Screen6.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -374,14 +385,14 @@
           "endLine": 16,
           "column": 6,
           "endColumn": 13,
-          "sourceFile": "src/components/header/header.jsx"
+          "sourceFile": "src\\components\\header\\header.jsx"
         }
       }
     },
     {
-      "id": "src/screens/Community/Community.jsx:52:4-to-src/screens/CommunityWrite/CommunityWrite.jsx",
-      "source": "src/screens/Community/Community.jsx",
-      "target": "src/screens/CommunityWrite/CommunityWrite.jsx",
+      "id": "src\\screens\\Community\\Community.jsx:52:4-to-src\\screens\\CommunityWrite\\CommunityWrite.jsx",
+      "source": "src\\screens\\Community\\Community.jsx",
+      "target": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
       "data": {
         "viaRoute": "/community/write",
         "trigger": {
@@ -390,14 +401,14 @@
           "endLine": 52,
           "column": 4,
           "endColumn": 32,
-          "sourceFile": "src/screens/Community/Community.jsx"
+          "sourceFile": "src\\screens\\Community\\Community.jsx"
         }
       }
     },
     {
-      "id": "src/screens/Community/Community.jsx:58:8-to-src/screens/Screen/Screen.jsx",
-      "source": "src/screens/Community/Community.jsx",
-      "target": "src/screens/Screen/Screen.jsx",
+      "id": "src\\screens\\Community\\Community.jsx:58:8-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\Community\\Community.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -406,14 +417,14 @@
           "endLine": 61,
           "column": 8,
           "endColumn": 15,
-          "sourceFile": "src/screens/Community/Community.jsx"
+          "sourceFile": "src\\screens\\Community\\Community.jsx"
         }
       }
     },
     {
-      "id": "src/screens/CommunityPost/CommunityPost.jsx:87:6-to-src/screens/Community/Community.jsx",
-      "source": "src/screens/CommunityPost/CommunityPost.jsx",
-      "target": "src/screens/Community/Community.jsx",
+      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:87:6-to-src\\screens\\Community\\Community.jsx",
+      "source": "src\\screens\\CommunityPost\\CommunityPost.jsx",
+      "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
@@ -422,14 +433,14 @@
           "endLine": 87,
           "column": 6,
           "endColumn": 28,
-          "sourceFile": "src/screens/CommunityPost/CommunityPost.jsx"
+          "sourceFile": "src\\screens\\CommunityPost\\CommunityPost.jsx"
         }
       }
     },
     {
-      "id": "src/screens/CommunityPost/CommunityPost.jsx:92:4-to-src/screens/Community/Community.jsx",
-      "source": "src/screens/CommunityPost/CommunityPost.jsx",
-      "target": "src/screens/Community/Community.jsx",
+      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:92:4-to-src\\screens\\Community\\Community.jsx",
+      "source": "src\\screens\\CommunityPost\\CommunityPost.jsx",
+      "target": "src\\screens\\Community\\Community.jsx",
       "data": {
         "viaRoute": "/community",
         "trigger": {
@@ -438,14 +449,14 @@
           "endLine": 92,
           "column": 4,
           "endColumn": 26,
-          "sourceFile": "src/screens/CommunityPost/CommunityPost.jsx"
+          "sourceFile": "src\\screens\\CommunityPost\\CommunityPost.jsx"
         }
       }
     },
     {
-      "id": "src/screens/CommunityPost/CommunityPost.jsx:104:8-to-src/screens/Screen/Screen.jsx",
-      "source": "src/screens/CommunityPost/CommunityPost.jsx",
-      "target": "src/screens/Screen/Screen.jsx",
+      "id": "src\\screens\\CommunityPost\\CommunityPost.jsx:104:8-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\CommunityPost\\CommunityPost.jsx",
+      "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
@@ -454,25 +465,55 @@
           "endLine": 107,
           "column": 8,
           "endColumn": 15,
-          "sourceFile": "src/screens/CommunityPost/CommunityPost.jsx"
+          "sourceFile": "src\\screens\\CommunityPost\\CommunityPost.jsx"
         }
       }
     },
     {
-
-      "id": "src\\screens\\FindPwd\\FindPwd.jsx:80:10-to-src\\screens\\Screen\\Screen.jsx",
-      "source": "src\\screens\\FindPwd\\FindPwd.jsx",
+      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:17:6-to-src\\screens\\Community\\Community.jsx",
+      "source": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
+      "target": "src\\screens\\Community\\Community.jsx",
+      "data": {
+        "viaRoute": "/community",
+        "trigger": {
+          "element": "navigate(\"/community\")",
+          "line": 17,
+          "endLine": 17,
+          "column": 6,
+          "endColumn": 28,
+          "sourceFile": "src\\screens\\CommunityWrite\\CommunityWrite.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:25:6-to-src\\screens\\Community\\Community.jsx",
+      "source": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
+      "target": "src\\screens\\Community\\Community.jsx",
+      "data": {
+        "viaRoute": "/community",
+        "trigger": {
+          "element": "navigate(\"/community\")",
+          "line": 25,
+          "endLine": 25,
+          "column": 6,
+          "endColumn": 28,
+          "sourceFile": "src\\screens\\CommunityWrite\\CommunityWrite.jsx"
+        }
+      }
+    },
+    {
+      "id": "src\\screens\\CommunityWrite\\CommunityWrite.jsx:33:8-to-src\\screens\\Screen\\Screen.jsx",
+      "source": "src\\screens\\CommunityWrite\\CommunityWrite.jsx",
       "target": "src\\screens\\Screen\\Screen.jsx",
       "data": {
         "viaRoute": "/",
         "trigger": {
-          "element": "<Link className=\"findPwd-frame\" to=\"/\">\r\n            <img className=\"findPwd-logo\" alt=\"Logo\" src=\"https://c.animaapp.com/DSoZdjN8/img/--------v4-1@2x.png\" />\r\n            <div className=\"findPwd-jibsa\">집사</div>\r\n          </Link>",
-          "line": 80,
-          "endLine": 83,
-          "column": 10,
-          "endColumn": 17,
-          "sourceFile": "src\\screens\\FindPwd\\FindPwd.jsx"
-
+          "element": "<Link to=\"/\" className=\"logo-container\">\n          <div className=\"logo-icon\">🏠</div>\n          <span className=\"logo-text\">집사</span>\n        </Link>",
+          "line": 33,
+          "endLine": 36,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src\\screens\\CommunityWrite\\CommunityWrite.jsx"
         }
       }
     }
