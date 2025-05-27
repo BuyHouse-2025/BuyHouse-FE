@@ -9,12 +9,11 @@ export const Background = ({ aptDetail }) => {
         <div className="container-11">
           <div className="overlay-border">
             <div className="container-12">
-              <div className="text-wrapper-49">현재 역대 최고가</div>
+              <div className="text-wrapper-49">매물 최고가</div>
             </div>
 
             <div className="container-13">
-              <div className="text-wrapper-50">{1}</div>
-
+              <div className="text-wrapper-50">{aptDetail.naverMaxDeal}만원</div>
             </div>
 
             <div className="container-14">
@@ -30,11 +29,7 @@ export const Background = ({ aptDetail }) => {
             </div>
 
             <div className="container-15">
-              <div className="text-wrapper-54">{1}</div>
-
-              <div className="overlay-2">
-                <div className="text-wrapper-55">중층</div>
-              </div>
+              <div className="text-wrapper-54">{aptDetail.naverMinDeal}만원</div>
             </div>
 
             <div className="container-16">
@@ -43,11 +38,7 @@ export const Background = ({ aptDetail }) => {
           </div>
         </div>
 
-        <img
-          className="image-6"
-          alt="Image"
-          src="https://c.animaapp.com/JuAZje8Q/img/image-10@2x.png"
-        />
+        <img className="image-6" alt="Image" src="https://c.animaapp.com/JuAZje8Q/img/image-10@2x.png" />
       </div>
 
       <div className="frame-31">
@@ -55,11 +46,7 @@ export const Background = ({ aptDetail }) => {
           <p className="p">AI가 예측한 1년 뒤 실거래가는?</p>
         </div>
 
-        <img
-          className="rectangle"
-          alt="Rectangle"
-          src="https://c.animaapp.com/JuAZje8Q/img/rectangle-1@2x.png"
-        />
+        <img className="rectangle" alt="Rectangle" src="https://c.animaapp.com/JuAZje8Q/img/rectangle-1@2x.png" />
       </div>
     </div>
   );

@@ -18,10 +18,7 @@ export const BackgroundWrapper = ({ aptDetail, onClose }) => {
           </div>
         </div>
 
-        <BackgroundBorder
-          divClassName="background-border-instance"
-          property1="one"
-        />
+        <BackgroundBorder divClassName="background-border-instance" property1="one" />
         <div className="sideclose-svg-fill-wrapper" onClick={onClose}>
           <img
             className="mask-group-2"

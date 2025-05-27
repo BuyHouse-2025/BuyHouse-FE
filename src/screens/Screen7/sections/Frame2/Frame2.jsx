@@ -14,7 +14,9 @@ export const Frame2 = ({ aptDetail, onClose }) => {
         </div>
 
         <div className="container-3">
-          <div className="text-wrapper-36">서울시 강남구 학동로68길 30</div>
+          <div className="text-wrapper-36">
+            {aptDetail.umdNm} {aptDetail.jibun} {aptDetail.roadNm} {aptDetail.roadNmBonbun} {aptDetail.roadNmBubun}
+          </div>
         </div>
       </div>
 
@@ -25,7 +27,7 @@ export const Frame2 = ({ aptDetail, onClose }) => {
           </div>
 
           <div className="container-5">
-            <div className="text-wrapper-36">2004.12.29</div>
+            <div className="text-wrapper-36">{aptDetail.buildYear}</div>
           </div>
         </div>
 
@@ -35,7 +37,7 @@ export const Frame2 = ({ aptDetail, onClose }) => {
           </div>
 
           <div className="container-6">
-            <div className="text-wrapper-36">269% (17%)</div>
+            <div className="text-wrapper-36">{aptDetail.floorAreaRatio}</div>
           </div>
         </div>
       </div>
@@ -43,7 +45,7 @@ export const Frame2 = ({ aptDetail, onClose }) => {
       <div className="frame-25">
         <div className="frame-26">
           <div className="container-7">
-            <div className="text-wrapper-38">세대수</div>
+            <div className="text-wrapper-38">{aptDetail.floorAreaRatio}</div>
           </div>
 
           <div className="container-8">
